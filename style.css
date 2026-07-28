@@ -105,13 +105,14 @@ header {
 }
 
 .logo-img {
-  height: 68px;
-  max-height: 75px;
+  height: 95px;
+  max-height: 105px;
   width: auto;
   display: block;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
+
 
 .logo-container:hover .logo-img {
   transform: scale(1.02);
