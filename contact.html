@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — JM Medicose</title>
+  <meta name="description" content="Reach out to JM Medicose for product details, quotations and inquiries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Namdhinggo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cnt-hero-section {
+      background: linear-gradient(135deg, #015699 0%, #0f294a 100%);
+      padding: 60px 0 70px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .cnt-hero-title {
+      font-family: var(--font-title);
+      font-size: 44px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .cnt-hero-sub {
+      font-size: 17px;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cnt-main-wrapper {
+      max-width: 1280px;
+      margin: -40px auto 60px;
+      padding: 0 24px;
+      position: relative;
+      z-index: 10;
+    }
+    .cnt-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 36px;
+    }
+    .cnt-info-card {
+      background: #ffffff;
+      border: 1.5px solid rgba(1, 86, 153, 0.12);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(15, 41, 74, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .cnt-info-head h2 {
+      font-family: var(--font-title);
+      font-size: 30px;
+      font-weight: 700;
+      color: #0f294a;
+      margin-bottom: 10px;
+    }
+    .cnt-info-head p {
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+    .cnt-info-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .cnt-info-icon-box {
+      width: 52px;
+      height: 52px;
+      background: rgba(1, 86, 153, 0.08);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #015699;
+    }
+    .cnt-info-icon-box svg {
+      width: 24px;
+      height: 24px;
+      stroke: #015699;
+      stroke-width: 2;
+      fill: none;
+    }
+    .cnt-info-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fe2523;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .cnt-info-val {
+      font-size: 15px;
+      color: #0f294a;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .cnt-info-val a {
+      color: #015699;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cnt-info-val a:hover {
+      color: #fe2523;
+    }
+    .cnt-form-card {
+      background: #ffffff;
+      border: 1.5px solid rgba(1, 86, 153, 0.12);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(15, 41, 74, 0.06);
+    }
+    .cnt-form-head h3 {
+      font-family: var(--font-title);
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f294a;
+      margin-bottom: 6px;
+    }
+    .cnt-form-head p {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 26px;
+    }
+    .cnt-form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .cnt-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .cnt-form-group label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0f294a;
+    }
+    .cnt-form-group input,
+    .cnt-form-group select,
+    .cnt-form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #0f294a;
+      outline: none;
+      background: #f8fafc;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      box-sizing: border-box;
+    }
+    .cnt-form-group input:focus,
+    .cnt-form-group select:focus,
+    .cnt-form-group textarea:focus {
+      border-color: #015699;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(1, 86, 153, 0.12);
+    }
+    .cnt-submit-btn {
+      background: #fe2523;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s ease, opacity 0.2s ease;
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+    .cnt-submit-btn:hover {
+      opacity: 0.9;
+    }
+    .cnt-map-card {
+      margin-top: 40px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(1, 86, 153, 0.12);
+      box-shadow: 0 10px 30px rgba(15, 41, 74, 0.06);
+      height: 420px;
+    }
+    @media (max-width: 992px) {
+      .cnt-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="assests/logo.png" alt="JM Medicose Logo" class="logo-img">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li class="active"><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <a href="#enquire-now" class="header-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+        Request Enquiry
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="cnt-hero-section">
+    <div class="section-container">
+      <h1 class="cnt-hero-title">Contact Us</h1>
+      <p class="cnt-hero-sub">Connect with our product specialists to request demonstrations, catalogues, and quotations.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <main class="cnt-main-wrapper">
+    <div class="cnt-cards-grid">
+
+      <!-- LEFT: CONTACT INFO CARD -->
+      <div class="cnt-info-card">
+        <div class="cnt-info-head">
+          <h2>Get In Touch</h2>
+          <p>JM Medicose assists medical professionals and skincare clinics globally. For product catalogs, specifications, or inquiry statuses, please reach out to us using the form or details below.</p>
+        </div>
+
+        <div class="cnt-info-item">
+          <div class="cnt-info-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="cnt-info-title">Location / Head Office</div>
+            <div class="cnt-info-val">Florence height shop no 6 ground floor near make my waffle malad west, Mumbai, Maharashtra 400095</div>
+          </div>
+        </div>
+
+        <div class="cnt-info-item">
+          <div class="cnt-info-icon-box">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div>
+            <div class="cnt-info-title">Email Inquiries</div>
+            <div class="cnt-info-val">
+              <a href="mailto:info@jmmedicose.com">info@jmmedicose.com</a><br>
+              <a href="mailto:sales@jmmedicose.com">sales@jmmedicose.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cnt-info-item">
+          <div class="cnt-info-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="cnt-info-title">Direct Contact</div>
+            <div class="cnt-info-val">
+              Corporate Office: <a href="tel:+911145678900">+91 11 4567 8900</a><br>
+              Sales Hotline: <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: INQUIRY FORM CARD -->
+      <div class="cnt-form-card" id="enquire-now">
+        <div class="cnt-form-head">
+          <h3>Send Us an Inquiry</h3>
+          <p>Fill out your requirements below and our team will get back to you shortly.</p>
+        </div>
+
+        <form class="cnt-form-grid" id="contact-page-form">
+          <div class="cnt-form-group">
+            <label for="form-product">Product of Interest</label>
+            <select id="form-product" name="product_of_interest" required>
+              <option value="">-- Select a Product / Machine --</option>
+              <option value="Pulse Lift EMS Face Lift (JMHM-17)">Pulse Lift EMS Face Lift (JMHM-17)</option>
+              <option value="HIFU-12D Machine (JMHF-3)">HIFU-12D Machine (JMHF-3)</option>
+              <option value="Fractional CO2 Laser Machine V2 (JMCO-11)">Fractional CO₂ Laser Machine — V2 (JMCO-11)</option>
+              <option value="Fractional CO2 Laser Machine (JMHF-4)">Fractional CO₂ Laser Machine (JMHF-4)</option>
+              <option value="Diode Laser Machine (JMMD-9)">Diode Laser Machine (JMMD-9)</option>
+              <option value="350PS TruePico Picosecond Laser (JMPS1)">350PS TruePico Picosecond Laser (JMPS1)</option>
+              <option value="Picosecond Laser V2 (JMPS1-V2)">Picosecond Laser — V2 (JMPS1-V2)</option>
+              <option value="O2 HydraFacial (JMAL-7)">O₂ HydraFacial (JMAL-7)</option>
+              <option value="PDT HydraFacial (JMPD-14)">PDT HydraFacial (JMPD-14)</option>
+            </select>
+          </div>
+
+          <div class="cnt-form-group">
+            <label for="form-name">Your Full Name</label>
+            <input type="text" id="form-name" name="full_name" placeholder="John Doe" required>
+          </div>
+
+          <div class="cnt-form-group">
+            <label for="form-phone">Phone Number</label>
+            <input type="tel" id="form-phone" name="phone" placeholder="e.g. +91 98765 43210" required>
+          </div>
+
+          <div class="cnt-form-group">
+            <label for="form-msg">Optional Message / Requirements</label>
+            <textarea id="form-msg" name="message" rows="4" placeholder="Tell us more about your clinic's needs..."></textarea>
+          </div>
+
+          <button type="submit" class="cnt-submit-btn">Submit Form</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- MAP CONTAINER -->
+    <div class="cnt-map-card">
+      <iframe src="https://maps.google.com/maps?q=Florence%20height%20shop%20no%206%20ground%20floor%20near%20make%20my%20waffle%20malad%20west,%20Mumbai,%20Maharashtra%20400095&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo-box">
+          <span class="footer-logo-text">JM MEDICOSE</span>
+        </a>
+        <p class="footer-brand-desc">
+          Professional aesthetic, dermatology and medical equipment, meso products &amp; chemical peels presented through one organised product range.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Connect</h4>
+        <ul class="footer-links-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">LinkedIn</a></li>
+        </ul>
+        <div class="footer-social-icons">
+          <a href="contact.html" aria-label="Instagram" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
+          </a>
+          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="products.html?category=machines">Aesthetic Equipment</a></li>
+          <li><a href="products.html?category=meso">Meso Products</a></li>
+          <li><a href="products.html?category=peels">Chemical Peels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Useful Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-centered">
+      <div class="footer-copyright">
+        &copy; JM MEDICOSE 2026 | <a href="index.html">SITE DESIGN</a> | <a href="about.html">QUALITY ASSURED</a>
+      </div>
+      <div class="footer-italic-tagline">
+        Professional Aesthetic &amp; Dermatology Equipment Solutions
+      </div>
+      <div class="footer-legal-links">
+        <a href="contact.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Disclosure</a>
+        <a href="contact.html">Privacy &amp; Disclaimer</a>
+        <a href="contact.html">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      // Auto-select product from URL parameters if passed e.g. contact.html?product=...
+      const urlParams = new URLSearchParams(window.location.search);
+      const prd = urlParams.get('product');
+      if (prd) {
+        const selectEl = document.getElementById('form-product');
+        if (selectEl) {
+          for (let opt of selectEl.options) {
+            if (opt.value.toLowerCase().includes(prd.toLowerCase())) {
+              opt.selected = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Form submission UI feedback
+      const form = document.getElementById('contact-page-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const btn = form.querySelector('.cnt-submit-btn');
+          btn.textContent = 'Form Submitted Successfully!';
+          btn.style.background = '#0d9488';
+          setTimeout(function () {
+            btn.textContent = 'Submit Form';
+            btn.style.background = '#fe2523';
+            form.reset();
+          }, 3000);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

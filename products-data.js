@@ -1,0 +1,781 @@
+const productsData = [
+  // 1. Pulse Lift EMS Face Lift
+  {
+    id: "pulse-lift-ems",
+    name: "Pulse Lift EMS Face Lift",
+    model: "JMHM-17",
+    category: "machines",
+    categoryLabel: "Facial Equipment",
+    description: "A professional facial system designed around EMS face-lift and roller-based facial applications.",
+    images: [
+      "assests/products/ems-roller-1.png",
+      "assests/products/ems-roller-2.png",
+      "assests/products/ems-roller-3.png"
+    ],
+    highlights: [
+      "EMS-based facial system",
+      "Roller applicator",
+      "Integrated control display"
+    ],
+    overviewHeading: "EMS and Roller-Based Facial Application",
+    overviewParagraph1: "The Pulse Lift EMS Face Lift is a professional facial system developed for non-invasive EMS facial rejuvenation and roller-based facial stimulation applications as listed in the JM Medicose catalogue.",
+    overviewParagraph2: "Combining ergonomic roller heads with adjustable microcurrent pulse frequencies, this compact system integrates precise control options through an intuitive console interface.",
+    applications: [
+      "EMS-based face-lift applications",
+      "Roller-assisted facial applications",
+      "Skin tone & elasticity enhancement",
+      "Lymphatic facial massage"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "The system includes a digital control screen for setting pulse intensity and treatment duration." },
+      { title: "Professional Applicator System", text: "Ergonomic EMS roller handpieces engineered for smooth contact across facial contours." },
+      { title: "Compact Console Design", text: "Lightweight and versatile console configuration suitable for modern treatment rooms." },
+      { title: "Product-Specific Configuration", text: "Operating modes and roller attachments can be configured according to client preferences." }
+    ],
+    techHeading: "EMS and Roller-Based Facial Application",
+    techCopy: "The system is designed around EMS face-lift functionality and a roller-based facial applicator. Microcurrent impulses stimulate facial muscles while mechanical roller stimulation improves micro-circulation.",
+    systemItems: [
+      "Integrated display",
+      "Main console",
+      "EMS roller applicator",
+      "Professional handpiece set",
+      "Power module"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "Pulse Lift EMS Face Lift" },
+      { field: "Product Category", value: "Facial Equipment" },
+      { field: "Model Reference", value: "JMHM-17" },
+      { field: "Technology Type", value: "Electrical Muscle Stimulation (EMS) & Roller" },
+      { field: "System Format", value: "Tabletop / Compact Console" },
+      { field: "Control Interface", value: "Integrated display" },
+      { field: "Applicator Format", value: "Connected roller applicators" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["hifu-12d", "o2-hydrafacial", "pdt-hydrafacial"]
+  },
+
+  // 2. HIFU-12D Machine
+  {
+    id: "hifu-12d",
+    name: "HIFU-12D Machine",
+    model: "JMHF-3",
+    category: "machines",
+    categoryLabel: "HIFU System",
+    description: "A focused-ultrasound system for catalogue-listed skin-tightening, wrinkle-removal and fat-reduction applications.",
+    images: [
+      "assests/products/hifu-12d-1.png",
+      "assests/products/hifu-12d-2.png",
+      "assests/products/hifu-12d-3.png"
+    ],
+    highlights: [
+      "Focused ultrasound technology",
+      "Multiple treatment applicators",
+      "Integrated touchscreen"
+    ],
+    overviewHeading: "Focused-Ultrasound Clinical Platform",
+    overviewParagraph1: "The HIFU-12D Machine is a professional focused-ultrasound system developed for the applications stated in the JM Medicose catalogue. Its console-based configuration combines an integrated display with connected applicators for organised professional operation.",
+    overviewParagraph2: "The catalogue lists skin tightening, fat reduction, wrinkle removal and double-chin removal as applications for this system.",
+    applications: [
+      "Skin tightening",
+      "Fat reduction",
+      "Wrinkle removal",
+      "Double-chin removal"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "The system includes an interactive touchscreen interface for managing energy parameters and shot depth." },
+      { title: "Professional Applicator System", text: "Connected applicators support precise multi-depth energy delivery across facial and body areas." },
+      { title: "Mobile Console Design", text: "The wheeled console supports organised positioning within a professional clinic environment." },
+      { title: "Product-Specific Configuration", text: "The available handpieces, operating functions and configuration may vary according to the supplied unit." }
+    ],
+    techHeading: "Focused-Ultrasound Technology",
+    techCopy: "The HIFU system uses focused ultrasound energy for the applications stated in the catalogue. The connected applicators are designed to support targeted professional operation through the machine's integrated console.",
+    systemItems: [
+      "Integrated touchscreen display",
+      "Main mobile console",
+      "HIFU handpiece",
+      "Multiple depth cartridges",
+      "Foot pedal switch",
+      "Wheeled base"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "HIFU-12D Machine" },
+      { field: "Product Category", value: "HIFU System" },
+      { field: "Model Reference", value: "JMHF-3" },
+      { field: "Technology Type", value: "Focused ultrasound (HIFU)" },
+      { field: "System Format", value: "Console-based professional system" },
+      { field: "Control Interface", value: "Integrated touchscreen display" },
+      { field: "Applicator Format", value: "Connected multi-cartridge handpiece" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["pulse-lift-ems", "fractional-co2-v2", "o2-hydrafacial"]
+  },
+
+  // 3. Fractional CO₂ Laser Machine — V2
+  {
+    id: "fractional-co2-v2",
+    name: "Fractional CO₂ Laser Machine — V2",
+    model: "JMCO-11",
+    category: "machines",
+    categoryLabel: "Fractional Laser",
+    description: "A professional fractional CO₂ laser system for resurfacing, scar, wrinkle and skin-texture applications.",
+    images: [
+      "assests/products/fractional-co2-v2-1.png",
+      "assests/products/fractional-co2-v2-2.png",
+      "assests/products/fractional-co2-v2-3.png"
+    ],
+    highlights: [
+      "Fractional CO₂ technology",
+      "Articulated treatment arm",
+      "Integrated display"
+    ],
+    overviewHeading: "Advanced Fractional CO₂ Laser System",
+    overviewParagraph1: "The Fractional CO₂ Laser Machine — V2 is a high-performance laser platform designed for intensive skin resurfacing, scar revision, and deep collagen remodeling.",
+    overviewParagraph2: "Featuring an articulated optical arm and custom scanning patterns, this unit delivers precise micro-ablative thermal zones for comprehensive skin renewal.",
+    applications: [
+      "Skin resurfacing",
+      "Scar applications",
+      "Wrinkle applications",
+      "Skin-texture applications"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "High-resolution touch screen for adjusting pulse duration, overlap ratio, and scan geometry." },
+      { title: "Articulated Arm Delivery", text: "7-joint light-guiding articulated arm ensures minimal power loss and smooth maneuverability." },
+      { title: "Mobile Console Design", text: "Sturdy wheeled chassis engineered for stability and easy transport across treatment rooms." },
+      { title: "Product-Specific Configuration", text: "Scanning handpieces and surgical tips can be tailored to clinical focus areas." }
+    ],
+    techHeading: "Fractional CO₂ Laser Delivery",
+    techCopy: "Fractional CO₂ technology delivers laser energy through controlled treatment zones. The catalogue connects this technology with resurfacing and skin-texture applications, including wrinkle and scar-related use.",
+    systemItems: [
+      "Integrated color touchscreen",
+      "Main laser console",
+      "7-joint articulated light arm",
+      "Fractional scanner handpiece",
+      "Surgical cutting head",
+      "Safety foot switch"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "Fractional CO₂ Laser Machine — V2" },
+      { field: "Product Category", value: "Fractional Laser" },
+      { field: "Model Reference", value: "JMCO-11" },
+      { field: "Technology Type", value: "Fractional CO₂ laser (10,600nm)" },
+      { field: "System Format", value: "Console-based optical system" },
+      { field: "Control Interface", value: "Integrated touchscreen display" },
+      { field: "Light Delivery", value: "Articulated treatment arm" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["fractional-co2", "truepico-laser", "hifu-12d"]
+  },
+
+  // 4. Fractional CO₂ Laser Machine
+  {
+    id: "fractional-co2",
+    name: "Fractional CO₂ Laser Machine",
+    model: "JMHF-4",
+    category: "machines",
+    categoryLabel: "Fractional Laser",
+    description: "A console-based fractional CO₂ laser system designed for catalogue-listed resurfacing and skin-texture applications.",
+    images: [
+      "assests/products/fractional-co2-1.png",
+      "assests/products/fractional-co2-2.png",
+      "assests/products/fractional-co2-3.png",
+      "assests/products/fractional-co2-4.png"
+    ],
+    highlights: [
+      "Fractional laser delivery",
+      "Articulated treatment arm",
+      "Mobile console design"
+    ],
+    overviewHeading: "Console-Based Fractional CO₂ Laser",
+    overviewParagraph1: "The Fractional CO₂ Laser Machine is a robust medical-grade laser console designed for skin resurfacing and epidermal renovation.",
+    overviewParagraph2: "Engineered for daily clinical operations, it features a durable articulated arm and adjustable spot patterns for customizable treatment density.",
+    applications: [
+      "Skin resurfacing",
+      "Scar applications",
+      "Wrinkle applications",
+      "Skin-texture applications"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "Touch interface allowing easy selection between scanning, surgical, and continuous modes." },
+      { title: "Articulated Treatment Arm", text: "Counter-balanced articulated arm allowing effortless movement during procedures." },
+      { title: "Mobile Console Design", text: "Full-height vertical console with smooth-rolling caster wheels." },
+      { title: "Product-Specific Configuration", text: "Handpiece attachments and scanner modes customizable per clinic setup." }
+    ],
+    techHeading: "Fractional CO₂ Laser Delivery",
+    techCopy: "Fractional CO₂ technology delivers laser energy through controlled treatment zones. The catalogue connects this technology with resurfacing and skin-texture applications, including wrinkle and scar-related use.",
+    systemItems: [
+      "Control display screen",
+      "Main laser console",
+      "Articulated arm",
+      "Fractional scanner probe",
+      "Foot control pedal",
+      "Mobile base"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "Fractional CO₂ Laser Machine" },
+      { field: "Product Category", value: "Fractional Laser" },
+      { field: "Model Reference", value: "JMHF-4" },
+      { field: "Technology Type", value: "Fractional CO₂ laser" },
+      { field: "System Format", value: "Console-based system" },
+      { field: "Control Interface", value: "Integrated display" },
+      { field: "Applicator Format", value: "Articulated treatment arm" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["fractional-co2-v2", "picosecond-v2", "pdt-hydrafacial"]
+  },
+
+  // 5. Diode Laser Machine
+  {
+    id: "diode-laser",
+    name: "Diode Laser Machine",
+    model: "JMMD-9",
+    category: "machines",
+    categoryLabel: "Hair-Removal Laser",
+    description: "A professional diode-laser system developed for catalogue-listed hair-removal applications.",
+    images: [
+      "assests/products/diode-laser-1.png",
+      "assests/products/diode-laser-2.png",
+      "assests/products/diode-laser-3.png"
+    ],
+    highlights: [
+      "Diode-laser technology",
+      "Professional handpiece",
+      "Integrated console controls"
+    ],
+    overviewHeading: "High-Performance Diode Hair Removal System",
+    overviewParagraph1: "The Diode Laser Machine is a high-efficiency laser system specifically engineered for fast, comfortable, and consistent hair removal.",
+    overviewParagraph2: "Featuring a high-capacity cooling tip and high pulse frequency, it delivers smooth glide-in-motion operation across all body zones.",
+    applications: [
+      "Hair removal"
+    ],
+    features: [
+      { title: "Integrated Console Controls", text: "Intuitive touchscreen interface with preset skin type parameters and pulse rate adjustments." },
+      { title: "Professional Handpiece", text: "Ergonomic high-power diode handpiece with contact cooling tip." },
+      { title: "Mobile Console Design", text: "Heavy-duty mobile console designed for heavy daily clinical usage." },
+      { title: "Product-Specific Configuration", text: "Handpiece spot sizes and power configurations available upon enquiry." }
+    ],
+    techHeading: "Diode-Laser Technology",
+    techCopy: "The system uses semiconductor-based diode-laser technology through a professional handpiece. For this product page, hair removal should remain the primary application until the supplied unit's exact wavelength and configuration are confirmed.",
+    systemItems: [
+      "Control display screen",
+      "Main diode laser unit",
+      "Diode laser applicator",
+      "Contact cooling sapphire tip",
+      "Water circulation module",
+      "Wheeled base"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "Diode Laser Machine" },
+      { field: "Product Category", value: "Hair-Removal Laser" },
+      { field: "Model Reference", value: "JMMD-9" },
+      { field: "Technology Type", value: "Diode laser technology" },
+      { field: "System Format", value: "Console-based system" },
+      { field: "Control Interface", value: "Integrated console controls" },
+      { field: "Applicator Format", value: "Professional diode handpiece" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["truepico-laser", "picosecond-v2", "hifu-12d"]
+  },
+
+  // 6. 350PS TruePico Picosecond Laser
+  {
+    id: "truepico-laser",
+    name: "350PS TruePico Picosecond Laser",
+    model: "JMPS1",
+    category: "machines",
+    categoryLabel: "Picosecond Laser",
+    description: "A picosecond-laser system for catalogue-listed tattoo-removal, pigmentation-correction and skin-rejuvenation applications.",
+    images: [
+      "assests/products/pico-laser-1.png",
+      "assests/products/pico-laser-2.png",
+      "assests/products/pico-laser-3.png"
+    ],
+    highlights: [
+      "Picosecond pulse technology",
+      "Articulated treatment arm",
+      "Integrated control interface"
+    ],
+    overviewHeading: "Ultra-Short Pulse Picosecond Laser",
+    overviewParagraph1: "The 350PS TruePico Picosecond Laser uses ultra-short picosecond pulse delivery to fragment pigment particles into fine dust without thermal damage to surrounding tissue.",
+    overviewParagraph2: "Ideal for stubborn multi-color tattoo removal, epidermal pigmentation, and photo-rejuvenation protocols.",
+    applications: [
+      "Tattoo removal",
+      "Pigmentation correction",
+      "Skin rejuvenation"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "Smart touch screen for selecting spot size, pulse energy, and repetition rate." },
+      { title: "Articulated Treatment Arm", text: "Balanced optical arm providing flexible positioning and stable beam output." },
+      { title: "Mobile Console Design", text: "Durable mobile casing designed for clinical stability." },
+      { title: "Product-Specific Configuration", text: "Zoom handpieces and specialized wavelength tips configurable upon request." }
+    ],
+    techHeading: "Picosecond Pulse Technology",
+    techCopy: "Picosecond-laser systems use ultra-short laser pulses. The JM Medicose catalogue associates this product category with tattoo removal, pigmentation correction and skin-rejuvenation applications.",
+    systemItems: [
+      "Touchscreen control display",
+      "Main picosecond laser unit",
+      "Light-guiding articulated arm",
+      "Picosecond treatment tips",
+      "Key switch & emergency stop",
+      "Wheeled base"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "350PS TruePico Picosecond Laser" },
+      { field: "Product Category", value: "Picosecond Laser" },
+      { field: "Model Reference", value: "JMPS1" },
+      { field: "Technology Type", value: "Picosecond laser technology" },
+      { field: "System Format", value: "Console-based system" },
+      { field: "Control Interface", value: "Integrated control interface" },
+      { field: "Light Delivery", value: "Articulated treatment arm" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["picosecond-v2", "fractional-co2-v2", "diode-laser"]
+  },
+
+  // 7. Picosecond Laser — V2
+  {
+    id: "picosecond-v2",
+    name: "Picosecond Laser — V2",
+    model: "JMPS1-V2",
+    category: "machines",
+    categoryLabel: "Picosecond Laser",
+    description: "A professional picosecond-laser system for pigmentation, tattoo-removal and skin-rejuvenation applications.",
+    images: [
+      "assests/products/pico-laser-v2-1.png",
+      "assests/products/pico-laser-v2-2.png",
+      "assests/products/pico-laser-v2-3.png"
+    ],
+    highlights: [
+      "Picosecond laser delivery",
+      "Articulated treatment arm",
+      "Mobile console"
+    ],
+    overviewHeading: "Picosecond Laser System — Variant 2",
+    overviewParagraph1: "The Picosecond Laser — V2 is a versatile picosecond laser platform featuring refined body styling and enhanced optical arm mobility.",
+    overviewParagraph2: "It is designed for effective treatment of dermal and epidermal pigmentation, dark tattoo removal, and skin rejuvenation.",
+    applications: [
+      "Tattoo removal",
+      "Pigmentation correction",
+      "Skin rejuvenation"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "User-friendly graphical screen with instant parameter memory functions." },
+      { title: "Articulated Treatment Arm", text: "Multi-joint articulated arm engineered for high optical efficiency." },
+      { title: "Mobile Console", text: "Ergonomic console layout with built-in arm rest and cord management." },
+      { title: "Product-Specific Configuration", text: "Provisional variant model with customizable handpiece attachments." }
+    ],
+    techHeading: "Picosecond Pulse Technology",
+    techCopy: "Picosecond-laser systems use ultra-short laser pulses. The JM Medicose catalogue associates this product category with tattoo removal, pigmentation correction and skin-rejuvenation applications.",
+    systemItems: [
+      "Integrated color screen",
+      "Laser power generator console",
+      "Articulated optical arm",
+      "Treatment applicator probe",
+      "Foot switch",
+      "Mobile caster base"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "Picosecond Laser — V2" },
+      { field: "Product Category", value: "Picosecond Laser" },
+      { field: "Model Reference", value: "JMPS1-V2" },
+      { field: "Technology Type", value: "Picosecond laser delivery" },
+      { field: "System Format", value: "Console-based system" },
+      { field: "Control Interface", value: "Integrated display" },
+      { field: "Light Delivery", value: "Articulated treatment arm" },
+      { field: "Mobility", value: "Wheeled console" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["truepico-laser", "hifu-12d", "fractional-co2-v2"]
+  },
+
+  // 8. O₂ HydraFacial
+  {
+    id: "o2-hydrafacial",
+    name: "O₂ HydraFacial",
+    model: "JMAL-7",
+    category: "machines",
+    categoryLabel: "Facial System",
+    description: "A multi-function facial system for deep cleansing, exfoliation, hydration and skin-rejuvenation workflows.",
+    images: [
+      "assests/products/o2-hydrafacial-1.png",
+      "assests/products/o2-hydrafacial-2.png",
+      "assests/products/o2-hydrafacial-3.png"
+    ],
+    highlights: [
+      "Multi-function facial system",
+      "Multiple facial handpieces",
+      "Solution-container system"
+    ],
+    overviewHeading: "All-in-One Oxygen HydraFacial Platform",
+    overviewParagraph1: "The O₂ HydraFacial system combines hydro-dermabrasion, oxygen spray infusion, bio-lifting, and ultrasonic cleansing into a single cohesive facial care center.",
+    overviewParagraph2: "Equipped with multi-stage solution bottles and specialized handpieces, it supports complete deep-cleansing, exfoliation, and hydration routines.",
+    applications: [
+      "Deep cleansing",
+      "Exfoliation",
+      "Hydration",
+      "Skin rejuvenation"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "Digital control screen for adjusting liquid flow rates, vacuum suction power, and probe selection." },
+      { title: "Multiple Facial Handpieces", text: "Includes hydro-peel wand, oxygen spray gun, ultrasonic scrubber, and bipolar RF tips." },
+      { title: "Solution-Container System", text: "Integrated multi-bottle container rack for quick switching between cleansing and nutrient solutions." },
+      { title: "Product-Specific Configuration", text: "Handpiece set and solution bottle configuration customizable per clinic requirements." }
+    ],
+    techHeading: "Multi-Step Facial Workflow",
+    techCopy: "The system combines professional facial functions associated with cleansing, exfoliation, hydration and skin rejuvenation. Its configuration includes multiple applicators and solution containers for organised facial-care workflows.",
+    systemItems: [
+      "Control display screen",
+      "Main facial workstation console",
+      "Hydro-dermabrasion wand",
+      "O2 spray injector",
+      "Ultrasonic scrubber probe",
+      "Solution container rack"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "O₂ HydraFacial" },
+      { field: "Product Category", value: "Facial System" },
+      { field: "Model Reference", value: "JMAL-7" },
+      { field: "Technology Type", value: "Hydro-dermabrasion & O2 spray infusion" },
+      { field: "System Format", value: "Multi-function workstation" },
+      { field: "Control Interface", value: "Integrated digital interface" },
+      { field: "Applicators", value: "Multiple connected facial probes" },
+      { field: "Mobility", value: "Mobile trolley format" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["pdt-hydrafacial", "pulse-lift-ems", "hifu-12d"]
+  },
+
+  // 9. PDT HydraFacial
+  {
+    id: "pdt-hydrafacial",
+    name: "PDT HydraFacial",
+    model: "JMPD-14",
+    category: "machines",
+    categoryLabel: "Facial System",
+    description: "A multi-step facial system combining HydraFacial functions with photodynamic therapy for hydration, tone and texture applications.",
+    images: [
+      "assests/products/pdt-hydrafacial-1.png",
+      "assests/products/pdt-hydrafacial-2.png",
+      "assests/products/pdt-hydrafacial-3.png"
+    ],
+    highlights: [
+      "HydraFacial workflow",
+      "PDT light component",
+      "Multiple facial applicators"
+    ],
+    overviewHeading: "HydraFacial & Photodynamic Light Therapy Platform",
+    overviewParagraph1: "The PDT HydraFacial integrates deep hydro-peel exfoliation with multi-wavelength LED photodynamic therapy (PDT) canopy for enhanced skin calming and repair.",
+    overviewParagraph2: "This dual-technology system addresses hydration, tone, acne management, and cellular regeneration in a streamlined multi-step workflow.",
+    applications: [
+      "Hydration applications",
+      "Skin-tone applications",
+      "Skin-texture applications"
+    ],
+    features: [
+      { title: "Integrated Control Interface", text: "Touch interface to configure liquid suction pressure and LED wavelength light spectrums." },
+      { title: "PDT Light Component", text: "Integrated photodynamic light arch delivering targeted red, blue, and green light therapy." },
+      { title: "Multiple Facial Applicators", text: "Complete probe suite including cold hammer, hydro probe, and RF face lifter." },
+      { title: "Product-Specific Configuration", text: "LED canopy configuration and bottle layout customizable per order." }
+    ],
+    techHeading: "HydraFacial and PDT Combination",
+    techCopy: "The system combines a multi-step HydraFacial workflow with photodynamic therapy. The catalogue associates this combination with hydration, skin tone and skin-texture applications.",
+    systemItems: [
+      "Digital control display",
+      "Main workstation body",
+      "PDT LED light canopy",
+      "Hydro-exfoliation probe",
+      "Multi-spectrum facial applicators",
+      "Solution bottle array"
+    ],
+    infoTable: [
+      { field: "Product Name", value: "PDT HydraFacial" },
+      { field: "Product Category", value: "Facial System" },
+      { field: "Model Reference", value: "JMPD-14" },
+      { field: "Technology Type", value: "HydraFacial & Photodynamic Therapy (PDT)" },
+      { field: "System Format", value: "Console workstation with LED canopy" },
+      { field: "Control Interface", value: "Integrated display screen" },
+      { field: "Applicators", value: "PDT canopy + facial handpieces" },
+      { field: "Mobility", value: "Wheeled workstation" },
+      { field: "Exact Configuration", value: "Available on enquiry" }
+    ],
+    relatedIds: ["o2-hydrafacial", "pulse-lift-ems", "fractional-co2"]
+  },
+
+  // ==========================================
+  // MESO SOLUTIONS (PAGES 24-25)
+  // ==========================================
+  {
+    id: "hair-re-growth",
+    name: "Hair Re-Growth",
+    model: "JMM-01",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum penetration.",
+    indication: "Hair Re-Growth Effect",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Panthenol",
+      "Biotin",
+      "Sodium Hydroxide",
+      "Disodium EDTA",
+      "Potassium Sorbate",
+      "Sodium Benzoate"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum penetration.",
+    relatedIds: ["glow-meso", "growth-factor-meso", "stretch-mark-and-scars-meso"]
+  },
+  {
+    id: "glow-meso",
+    name: "Glow Meso",
+    model: "JMM-02",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A meso cocktail used topically with a nano roller for maximum penetration.",
+    indication: "Glowing Effect / Lightening Effect",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Dimethylaminoethanol Tartrate",
+      "Sodium Hyaluronate",
+      "Ascorbic Acid",
+      "Potassium Sorbate",
+      "Sodium Benzoate"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A meso cocktail used topically with a nano roller for maximum penetration.",
+    relatedIds: ["hair-re-growth", "whitening-glutathion-meso", "growth-factor-meso"]
+  },
+  {
+    id: "lipo-dissolve",
+    name: "Lipo Dissolve",
+    model: "JMM-03",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A Deoxycholate + PPC PRO cocktail described for dissolving unwanted fat under the skin.",
+    indication: "Double Chin, Love Handles, Inner Thighs and Underarms",
+    detailNote: "The PDF states that the treatment involves multiple deeper injections on the targeted area and that the procedure is performed by an experienced professional.",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Sodium Phosphatidylcholine",
+      "Sodium Deoxycholate",
+      "Disodium EDTA",
+      "Sodium Hydroxide"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A Deoxycholate + PPC PRO cocktail described for dissolving unwanted fat under the skin.",
+    relatedIds: ["glow-meso", "stretch-mark-and-scars-meso", "whitening-glutathion-meso"]
+  },
+  {
+    id: "whitening-glutathion-meso",
+    name: "Whitening Glutathion Meso",
+    model: "JMM-04",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A glutathion meso cocktail used topically with a nano roller on the desired area of the body.",
+    indication: "Glowing Effect / Lightening Effect",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Glutathione",
+      "Sodium Ascorbate",
+      "Sodium Chloride",
+      "Sodium Hydroxide"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A glutathion meso cocktail used topically with a nano roller on the desired area of the body.",
+    relatedIds: ["glow-meso", "hair-re-growth", "growth-factor-meso"]
+  },
+  {
+    id: "stretch-mark-and-scars-meso",
+    name: "Stretch Mark & Scars Meso",
+    model: "JMM-05",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A meso cocktail described for stretch-mark and scar-reduction applications and topical use with a nano roller.",
+    indication: "Anti-Stretch Mark / Anti-Scar Effect",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Panthenol",
+      "Propylene Glycol",
+      "Disodium EDTA",
+      "Mimosa Tenuiflora Bark Extract",
+      "Potassium Sorbate",
+      "Hydrolyzed Elastin",
+      "Sodium Hydroxide",
+      "Sodium Benzoate"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A meso cocktail described for stretch-mark and scar-reduction applications and topical use with a nano roller.",
+    relatedIds: ["lipo-dissolve", "growth-factor-meso", "glow-meso"]
+  },
+  {
+    id: "growth-factor-meso",
+    name: "Growth Factor Meso",
+    model: "JMM-06",
+    category: "meso",
+    categoryLabel: "MESO SOLUTION",
+    description: "A growth-factor meso cocktail described for generating new cells and topical use on the skin and scalp.",
+    indication: "Regenerating Effect",
+    images: ["assests/cat-meso.png"],
+    ingredients: [
+      "Aqua / Water",
+      "Sodium Chloride",
+      "Sodium DNA",
+      "Sodium Bicarbonate",
+      "Ferulic Acid",
+      "Ceramide",
+      "Hydrolyzed Wheat Protein",
+      "Phytosterols"
+    ],
+    overviewHeading: "About This Meso Solution",
+    overviewParagraph1: "A growth-factor meso cocktail described for generating new cells and topical use on the skin and scalp.",
+    relatedIds: ["hair-re-growth", "glow-meso", "stretch-mark-and-scars-meso"]
+  },
+
+  // ==========================================
+  // CHEMICAL PEELS (PAGES 26-28)
+  // ==========================================
+  {
+    id: "glycolic-peel",
+    name: "Glycolic Peel",
+    model: "JMP-01",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
+    variants: ["Glycolic 20%", "Glycolic 40%", "Glycolic 60%"],
+    directions: "Apply evenly to cleaned, dried skin. Leave for specified application duration according to skin sensitivity and neutralise thoroughly.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
+    relatedIds: ["tca-peel", "lactic-peel", "salicylic-peel"]
+  },
+  {
+    id: "tca-peel",
+    name: "TCA Peel",
+    model: "JMP-02",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
+    variants: ["TCA 10%", "TCA 20%", "TCA 40%", "TCA 70%"],
+    directions: "Apply with precise technique to targeted facial zones. Monitor skin response carefully and neutralise per protocol.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
+    relatedIds: ["glycolic-peel", "jessner-peel", "phenol-5-percent-peel"]
+  },
+  {
+    id: "lactic-peel",
+    name: "Lactic Peel",
+    model: "JMP-03",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    variants: ["Lactic 70%"],
+    directions: "Apply gently across treatment area, monitor skin erythema, and neutralise thoroughly after target exposure time.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    relatedIds: ["glycolic-peel", "salicylic-peel", "dark-circle-peel"]
+  },
+  {
+    id: "salicylic-peel",
+    name: "Salicylic Peel",
+    model: "JMP-04",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    variants: ["Salicylic 10%", "Salicylic 20%", "Salicylic 30%"],
+    directions: "Apply evenly onto oily or acne-prone areas. Allow peel to self-neutralise or neutralise per catalogue guidance.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    relatedIds: ["salicylic-mandelac-peel", "lactic-peel", "glycolic-peel"]
+  },
+  {
+    id: "jessner-peel",
+    name: "Jessner Peel",
+    model: "JMP-05",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
+    directions: "Apply uniform layers with cotton applicator until frosting occurs. Follow post-peel recovery guidelines.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
+    relatedIds: ["tca-peel", "retinol-yellow-peel", "phenol-5-percent-peel"]
+  },
+  {
+    id: "salicylic-mandelac-peel",
+    name: "Salicylic Mandelac Peel",
+    model: "JMP-06",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    directions: "Apply to clean facial skin. Leave for recommended exposure time before gentle neutralization.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    relatedIds: ["salicylic-peel", "arginine-cocktail-peel", "dark-circle-peel"]
+  },
+  {
+    id: "phenol-5-percent-peel",
+    name: "Phenol 5% Peel",
+    model: "JMP-07",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
+    applications: ["Acne scarring", "Skin discolouration", "Wrinkling", "Sun damage"],
+    directions: "Apply by trained healthcare provider only. Monitor skin closely and neutralise accurately per protocol.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
+    relatedIds: ["tca-peel", "jessner-peel", "retinol-yellow-peel"]
+  },
+  {
+    id: "dark-circle-peel",
+    name: "Dark Circle Peel",
+    model: "JMP-08",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    directions: "Apply carefully around peri-orbital contours. Neutralise promptly according to delicate skin protocols.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    relatedIds: ["arginine-cocktail-peel", "lactic-peel", "salicylic-mandelac-peel"]
+  },
+  {
+    id: "arginine-cocktail-peel",
+    name: "Arginine Cocktail Peel",
+    model: "JMP-09",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
+    directions: "Apply to delicate facial and eye areas. Allow gentle infusion before neutralising with cool water spray.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
+    relatedIds: ["dark-circle-peel", "lactic-peel", "retinol-yellow-peel"]
+  },
+  {
+    id: "retinol-yellow-peel",
+    name: "Retinol Yellow Peel",
+    model: "JMP-10",
+    category: "peels",
+    categoryLabel: "CHEMICAL PEEL",
+    description: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
+    directions: "Apply evenly across facial skin. Leave on skin for recommended contact hours before washing off thoroughly.",
+    images: ["assests/cat-peels.png"],
+    overviewHeading: "About This Chemical Peel",
+    overviewParagraph1: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
+    relatedIds: ["jessner-peel", "phenol-5-percent-peel", "glycolic-peel"]
+  }
+];

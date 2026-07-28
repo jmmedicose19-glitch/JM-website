@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — JM Medicose</title>
+  <meta name="description" content="Explore detailed product information for JM Medicose professional medical and aesthetic equipment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Namdhinggo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Image Gallery Styles */
+    .pd-gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+    .pd-main-img-box {
+      width: 100%;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 20px rgba(1, 86, 153, 0.08);
+      border: 1.5px solid rgba(1, 86, 153, 0.12);
+    }
+    .pd-main-img-box img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: opacity 0.25s ease;
+    }
+    .pd-thumbs-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pd-thumb-btn {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      border: 2px solid #e2e8f0;
+      background: #ffffff;
+      padding: 6px;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .pd-thumb-btn:hover, .pd-thumb-btn.active {
+      border-color: #fe2523;
+      box-shadow: 0 4px 12px rgba(254, 37, 35, 0.15);
+      transform: translateY(-2px);
+    }
+    .pd-thumb-btn img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="assests/logo.png" alt="JM Medicose Logo" class="logo-img">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="active"><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <a href="#pd-enquiry" class="header-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+        Request Enquiry
+      </a>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       SECTION 1: PRODUCT HERO
+       ================================================================ -->
+  <section class="pd-hero" id="pd-overview-anchor">
+    <div style="max-width: 1280px; margin: 0 auto 20px auto; padding: 0 24px;">
+      <a href="products.html" class="pd-back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to All Products
+      </a>
+    </div>
+
+    <div class="pd-hero-inner">
+
+      <!-- Left: Image Gallery Panel -->
+      <div class="pd-gallery-container">
+        <div class="pd-main-img-box">
+          <img src="" alt="Product Image" id="pd-hero-img">
+        </div>
+        <div class="pd-thumbs-row" id="pd-thumbs-row">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="pd-hero-info">
+        <div class="pd-hero-cat-label" id="pd-cat-label">PRODUCT CATEGORY</div>
+        <h1 class="pd-hero-title" id="pd-hero-title">Product Name</h1>
+        <div class="pd-hero-model" id="pd-hero-model">Model Reference: ---</div>
+        <p class="pd-hero-intro" id="pd-hero-intro">---</p>
+        <div class="pd-hero-chips" id="pd-hero-chips">
+          <!-- Populated by JS -->
+        </div>
+        <div class="pd-hero-actions">
+          <a href="#pd-enquiry" class="pd-hero-btn-enquire">Enquire About This Product</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 2: STICKY PRODUCT NAVIGATION
+       ================================================================ -->
+  <nav class="pd-sticky-nav" id="pd-sticky-nav">
+    <div class="pd-sticky-nav-inner">
+      <a href="#pd-overview-anchor" class="pd-nav-link active">Overview</a>
+      <a href="#pd-features" class="pd-nav-link">Features</a>
+      <a href="#pd-technology" class="pd-nav-link">Technology</a>
+      <a href="#pd-info-table" class="pd-nav-link">Product Information</a>
+      <a href="#pd-enquiry" class="pd-nav-link">Enquire</a>
+    </div>
+  </nav>
+
+  <!-- ================================================================
+       SECTION 3: PRODUCT OVERVIEW
+       ================================================================ -->
+  <section id="pd-features-anchor">
+    <div class="pd-section pd-overview-grid">
+      <div class="pd-overview-text">
+        <span class="pd-section-tag">PRODUCT OVERVIEW</span>
+        <h2 class="pd-section-heading" id="pd-overview-heading">---</h2>
+        <p id="pd-overview-p1">---</p>
+        <p id="pd-overview-p2">---</p>
+      </div>
+      <div class="pd-overview-img-box">
+        <img src="" alt="Secondary Product Image" id="pd-overview-img" style="width:100%;display:block;padding:24px;box-sizing:border-box;background:#f0f7ff;max-height:340px;object-fit:contain;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 5: COMMON FEATURES
+       ================================================================ -->
+  <section id="pd-features">
+    <div class="pd-section">
+      <span class="pd-section-tag">VISIBLE CONFIGURATION</span>
+      <h2 class="pd-section-heading">Common Features</h2>
+      <div class="pd-features-grid" id="pd-features-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 6: HOW THE TECHNOLOGY WORKS
+       ================================================================ -->
+  <section class="pd-tech-section" id="pd-technology">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;text-align:center;">
+      <span class="pd-tech-tag">HOW IT WORKS</span>
+      <h2 class="pd-tech-heading" id="pd-tech-heading">---</h2>
+      <p class="pd-tech-text" id="pd-tech-text" style="max-width:680px;margin:0 auto;">---</p>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 8: PRODUCT INFORMATION TABLE
+       ================================================================ -->
+  <section style="background:#f8fafc;border-top:1px solid #e2e8f0;" id="pd-info-table">
+    <div class="pd-section">
+      <span class="pd-section-tag">PRODUCT INFORMATION</span>
+      <h2 class="pd-section-heading">Product Information</h2>
+      <table class="pd-info-table">
+        <tbody id="pd-info-tbody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 9: PRODUCT ENQUIRY
+       ================================================================ -->
+  <section class="pd-enquiry-section" id="pd-enquiry">
+    <div class="pd-enquiry-inner">
+      <!-- Left -->
+      <div>
+        <div class="pd-enquiry-left-img">
+          <img src="" alt="Enquire product" id="pd-enq-img">
+        </div>
+        <div style="margin-top:22px;">
+          <div class="pd-enquiry-product-name" id="pd-enq-name">Product Name</div>
+          <div class="pd-enquiry-model" id="pd-enq-model">Model Reference: ---</div>
+          <p class="pd-enquiry-sub">Enquire about the available configuration and product information.</p>
+        </div>
+      </div>
+      <!-- Right: Form -->
+      <div>
+        <form class="pd-enquiry-form" id="pd-enquiry-form">
+          <div class="pd-enquiry-form-row">
+            <input type="text" name="full_name" placeholder="Full name" required>
+            <input type="text" name="organisation" placeholder="Clinic / company / organisation">
+          </div>
+          <div class="pd-enquiry-form-row">
+            <input type="tel" name="phone" placeholder="Phone number" required>
+            <input type="email" name="email" placeholder="Email address">
+          </div>
+          <div class="pd-enquiry-form-row">
+            <input type="text" name="city" placeholder="City">
+            <input type="hidden" name="product_name" id="enq-product-name" value="">
+          </div>
+          <textarea name="message" placeholder="Message (optional)"></textarea>
+          <button type="submit" class="pd-enquiry-submit">Send Product Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECTION 10: RELATED PRODUCTS
+       ================================================================ -->
+  <section class="pd-related-section">
+    <div class="pd-related-inner">
+      <span class="pd-section-tag">EXPLORE RELATED EQUIPMENT</span>
+      <h2 class="pd-section-heading">Explore Related Equipment</h2>
+      <div class="pd-related-grid" id="pd-related-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo-box">
+          <span class="footer-logo-text">JM MEDICOSE</span>
+        </a>
+        <p class="footer-brand-desc">
+          Professional aesthetic, dermatology and medical equipment, meso products &amp; chemical peels presented through one organised product range.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Connect</h4>
+        <ul class="footer-links-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">LinkedIn</a></li>
+        </ul>
+        <div class="footer-social-icons">
+          <a href="contact.html" aria-label="Instagram" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
+          </a>
+          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="products.html?category=machines">Aesthetic Equipment</a></li>
+          <li><a href="products.html?category=meso">Meso Products</a></li>
+          <li><a href="products.html?category=peels">Chemical Peels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Useful Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-centered">
+      <div class="footer-copyright">
+        &copy; JM MEDICOSE 2026 | <a href="index.html">SITE DESIGN</a> | <a href="about.html">QUALITY ASSURED</a>
+      </div>
+      <div class="footer-italic-tagline">
+        Professional Aesthetic &amp; Dermatology Equipment Solutions
+      </div>
+      <div class="footer-legal-links">
+        <a href="contact.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Disclosure</a>
+        <a href="contact.html">Privacy &amp; Disclaimer</a>
+        <a href="contact.html">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Dynamic Product Detail Rendering Script -->
+  <script>
+    (function () {
+      // 1. Parse URL Parameter ?id=
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 'hifu-12d';
+
+      // 2. Find product in productsData
+      let p = typeof productsData !== 'undefined' ? productsData.find(x => x.id === productId) : null;
+      if (!p && typeof productsData !== 'undefined' && productsData.length > 0) {
+        p = productsData[0]; // fallback
+      }
+
+      if (!p) return;
+
+      // Update Page Title
+      document.title = p.name + " — JM Medicose";
+
+      // HERO SECTION
+      const mainImg = document.getElementById('pd-hero-img');
+      const thumbsRow = document.getElementById('pd-thumbs-row');
+      
+      if (p.images && p.images.length > 0) {
+        mainImg.src = p.images[0];
+        mainImg.alt = p.name;
+
+        // Populate Thumbnails Gallery
+        thumbsRow.innerHTML = '';
+        p.images.forEach((imgSrc, index) => {
+          const btn = document.createElement('button');
+          btn.className = 'pd-thumb-btn' + (index === 0 ? ' active' : '');
+          btn.innerHTML = `<img src="${imgSrc}" alt="${p.name} view ${index + 1}">`;
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('.pd-thumb-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+              mainImg.src = imgSrc;
+              mainImg.style.opacity = '1';
+            }, 150);
+          });
+          thumbsRow.appendChild(btn);
+        });
+      }
+
+      document.getElementById('pd-cat-label').textContent = (p.categoryLabel || 'EQUIPMENT').toUpperCase();
+      document.getElementById('pd-hero-title').textContent = p.name;
+      document.getElementById('pd-hero-model').textContent = 'Model Reference: ' + p.model;
+      document.getElementById('pd-hero-intro').textContent = p.description;
+
+      const chipsContainer = document.getElementById('pd-hero-chips');
+      if (chipsContainer) {
+        if (p.indication) {
+          chipsContainer.innerHTML = `<span class="pd-hero-chip" style="background:#015699;color:#fff;font-weight:700;">Indication: ${p.indication}</span>`;
+        } else if (p.variants) {
+          chipsContainer.innerHTML = p.variants.map(v => `<span class="pd-hero-chip" style="background:#e0f2fe;color:#015699;font-weight:700;">${v}</span>`).join('');
+        } else if (p.highlights) {
+          chipsContainer.innerHTML = p.highlights.map(h => `<span class="pd-hero-chip">${h}</span>`).join('');
+        }
+      }
+
+      // OVERVIEW SECTION
+      if (p.category === 'meso') {
+        document.getElementById('pd-overview-heading').textContent = 'About This Meso Solution';
+      } else if (p.category === 'peels') {
+        document.getElementById('pd-overview-heading').textContent = 'About This Chemical Peel';
+      } else {
+        document.getElementById('pd-overview-heading').textContent = p.overviewHeading || p.name;
+      }
+      document.getElementById('pd-overview-p1').textContent = p.overviewParagraph1 || p.description;
+      document.getElementById('pd-overview-p2').textContent = p.overviewParagraph2 || (p.detailNote ? p.detailNote : '');
+      
+      const overviewImg = document.getElementById('pd-overview-img');
+      if (overviewImg) {
+        overviewImg.src = (p.images && p.images.length > 1) ? p.images[1] : (p.images[0] || '');
+        overviewImg.alt = p.name + ' Detail';
+      }
+
+      // SECTION 3: INDICATION (MESO) OR CONCENTRATIONS (PEELS)
+      const appGrid = document.getElementById('pd-app-grid');
+      const appSectionTag = document.querySelector('#pd-features-anchor + section .pd-section-tag') || document.querySelector('.pd-section-tag');
+      if (appGrid) {
+        if (p.category === 'meso' && p.indication) {
+          appGrid.innerHTML = `
+            <div class="indication-highlight-card" style="grid-column: 1 / -1;">
+              <div class="indication-highlight-title">INDICATION</div>
+              <div class="indication-highlight-val">${p.indication}</div>
+            </div>
+          `;
+        } else if (p.category === 'peels' && p.variants) {
+          appGrid.innerHTML = `
+            <div style="grid-column: 1 / -1; display:flex; gap:12px; flex-wrap:wrap;">
+              ${p.variants.map(v => `<div style="background:#e0f2fe; color:#015699; font-size:18px; font-weight:700; padding:12px 24px; border-radius:10px; border:1px solid #dbeafe;">${v}</div>`).join('')}
+            </div>
+          `;
+        } else if (p.applications) {
+          appGrid.innerHTML = p.applications.map(app => `
+            <div class="pd-app-card">
+              <div class="pd-app-icon">
+                <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div class="pd-app-label">${app}</div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // SECTION 4: INGREDIENTS (MESO) OR DIRECTIONS (PEELS) OR FEATURES
+      const featuresGrid = document.getElementById('pd-features-grid');
+      const featuresTitle = document.querySelector('#pd-features .pd-section-heading');
+      if (featuresGrid) {
+        if (p.category === 'meso' && p.ingredients) {
+          if (featuresTitle) featuresTitle.textContent = 'Ingredients Listed in the Catalogue';
+          featuresGrid.innerHTML = `
+            <div class="ingredients-grid-2col" style="grid-column: 1 / -1; width:100%;">
+              ${p.ingredients.map(ing => `<div class="ingredient-card-item">${ing}</div>`).join('')}
+            </div>
+          `;
+        } else if (p.category === 'peels' && p.directions) {
+          if (featuresTitle) featuresTitle.textContent = 'Directions Provided in the Catalogue';
+          featuresGrid.innerHTML = `
+            <div class="directions-info-card" style="grid-column: 1 / -1; width:100%;">
+              <div class="directions-card-title">Directions</div>
+              <p>${p.directions}</p>
+            </div>
+          `;
+        } else if (p.features) {
+          if (featuresTitle) featuresTitle.textContent = 'Common Features';
+          featuresGrid.innerHTML = p.features.map(f => `
+            <div class="pd-feature-card">
+              <div class="pd-feature-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-linecap="round"/></svg>
+              </div>
+              <div class="pd-feature-title">${f.title}</div>
+              <p class="pd-feature-text">${f.text}</p>
+            </div>
+          `).join('');
+        } else {
+          document.getElementById('pd-features').style.display = 'none';
+        }
+      }
+
+      // TECHNOLOGY SECTION
+      const techSec = document.getElementById('pd-technology');
+      if (techSec) {
+        if (p.techHeading || p.techCopy) {
+          techSec.style.display = '';
+          document.getElementById('pd-tech-heading').textContent = p.techHeading || 'Technology Overview';
+          document.getElementById('pd-tech-text').textContent = p.techCopy || '';
+        } else {
+          techSec.style.display = 'none';
+        }
+      }
+
+      // SYSTEM ELEMENTS & INFO TABLE
+      const infoTableSec = document.getElementById('pd-info-table');
+      if (infoTableSec) {
+        if (p.infoTable) {
+          infoTableSec.style.display = '';
+          const infoTbody = document.getElementById('pd-info-tbody');
+          if (infoTbody) {
+            infoTbody.innerHTML = p.infoTable.map(row => `
+              <tr><td>${row.field}</td><td>${row.value}</td></tr>
+            `).join('');
+          }
+        } else {
+          infoTableSec.style.display = 'none';
+        }
+      }
+
+      // ENQUIRY SECTION
+      const enqImg = document.getElementById('pd-enq-img');
+      if (enqImg && p.images && p.images.length > 0) {
+        enqImg.src = p.images[0];
+        enqImg.alt = p.name;
+      }
+      document.getElementById('pd-enq-name').textContent = p.name;
+      document.getElementById('pd-enq-model').textContent = p.model ? ('Model Reference: ' + p.model) : p.categoryLabel;
+      const hiddenInput = document.getElementById('enq-product-name');
+      if (hiddenInput) hiddenInput.value = p.name + (p.model ? (' (' + p.model + ')') : '');
+
+      // RELATED PRODUCTS SECTION
+      const relatedGrid = document.getElementById('pd-related-grid');
+      if (relatedGrid && p.relatedIds && typeof productsData !== 'undefined') {
+        const relatedItems = productsData.filter(x => p.relatedIds.includes(x.id));
+        relatedGrid.innerHTML = relatedItems.map(rel => `
+          <div class="prd-card">
+            <a href="product-detail.html?id=${rel.id}" class="prd-card-image-link">
+              <div class="prd-card-img-area">
+                <span class="prd-cat-badge">${rel.categoryLabel}</span>
+                <span class="prd-model-ref">${rel.model}</span>
+                <img src="${rel.images ? rel.images[0] : ''}" alt="${rel.name}">
+              </div>
+            </a>
+            <div class="prd-card-body">
+              <a href="product-detail.html?id=${rel.id}" class="prd-name-link">
+                <h3 class="prd-name">${rel.name}</h3>
+              </a>
+              <p class="prd-desc">${rel.description}</p>
+              <div class="prd-card-actions">
+                <a href="product-detail.html?id=${rel.id}" class="prd-btn-primary">
+                  View Details
+                  <svg class="prd-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="contact.html?product=${encodeURIComponent(rel.name)}&model=${encodeURIComponent(rel.model)}" class="prd-btn-enquire">Enquire</a>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // STICKY NAV SCROLL HIGHLIGHT
+      const sections = [
+        { el: document.getElementById('pd-overview-anchor'), link: document.querySelector('.pd-nav-link[href="#pd-overview-anchor"]') },
+        { el: document.getElementById('pd-features'), link: document.querySelector('.pd-nav-link[href="#pd-features"]') },
+        { el: document.getElementById('pd-technology'), link: document.querySelector('.pd-nav-link[href="#pd-technology"]') },
+        { el: document.getElementById('pd-info-table'), link: document.querySelector('.pd-nav-link[href="#pd-info-table"]') },
+        { el: document.getElementById('pd-enquiry'), link: document.querySelector('.pd-nav-link[href="#pd-enquiry"]') },
+      ];
+
+      window.addEventListener('scroll', function () {
+        let current = null;
+        sections.forEach(function (s) {
+          if (!s.el) return;
+          if (window.scrollY >= s.el.offsetTop - 120) current = s;
+        });
+        sections.forEach(function (s) {
+          if (s.link) s.link.classList.remove('active');
+        });
+        if (current && current.link) current.link.classList.add('active');
+      }, { passive: true });
+
+      // FORM SUBMISSION HANDLER
+      const form = document.getElementById('pd-enquiry-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const btn = form.querySelector('.pd-enquiry-submit');
+          btn.textContent = 'Enquiry Sent!';
+          btn.style.background = '#0d9488';
+          setTimeout(function () {
+            btn.textContent = 'Send Product Enquiry';
+            btn.style.background = '#fe2523';
+            form.reset();
+          }, 3000);
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
