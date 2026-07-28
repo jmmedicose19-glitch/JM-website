@@ -1,7 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
+  // Site-wide Image Protection: prevent drag and right-click context menu on images
+  document.addEventListener("contextmenu", (e) => {
+    if (e.target.tagName === "IMG" || e.target.closest("img")) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.tagName === "IMG" || e.target.closest("img")) {
+      e.preventDefault();
+    }
+  });
+
   // Mobile Navigation Menu Toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
+
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
