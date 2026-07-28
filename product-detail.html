@@ -112,28 +112,16 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Connect</h4>
         <ul class="footer-links-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html">LinkedIn</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
-        <div class="footer-social-icons">
-          <a href="contact.html" aria-label="Instagram" class="social-circle-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
-          </a>
-          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-col-title">Services</h4>
+        <h4 class="footer-col-title">Categories</h4>
         <ul class="footer-links-list">
-          <li><a href="products.html?category=machines">Aesthetic Equipment</a></li>
-          <li><a href="products.html?category=meso">Meso Products</a></li>
+          <li><a href="products.html?category=machines">Machines</a></li>
+          <li><a href="products.html?category=meso">Meso Solutions</a></li>
           <li><a href="products.html?category=peels">Chemical Peels</a></li>
         </ul>
       </div>
@@ -151,16 +139,10 @@
 
     <div class="footer-bottom-centered">
       <div class="footer-copyright">
-        &copy; JM MEDICOSE 2026 | <a href="index.html">SITE DESIGN</a> | <a href="about.html">QUALITY ASSURED</a>
+        &copy; JM MEDICOSE 2026
       </div>
       <div class="footer-italic-tagline">
         Professional Aesthetic &amp; Dermatology Equipment Solutions
-      </div>
-      <div class="footer-legal-links">
-        <a href="contact.html">Terms &amp; Conditions</a>
-        <a href="contact.html">Disclosure</a>
-        <a href="contact.html">Privacy &amp; Disclaimer</a>
-        <a href="contact.html">Accessibility</a>
       </div>
     </div>
   </footer>
@@ -173,7 +155,7 @@
     (function () {
       // 1. Parse URL Parameter ?id=
       const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id') || 'hifu-12d';
+      const productId = urlParams.get('id') || 'pulse-lift-ems';
 
       // 2. Find product in productsData
       let p = typeof productsData !== 'undefined' ? productsData.find(x => x.id === productId) : null;
@@ -183,8 +165,12 @@
 
       if (!p) return;
 
-      // Update Page Title
-      document.title = p.name + " — JM Medicose";
+      // Update Page Title and Meta Description
+      document.title = `${p.name} ${p.model ? '| ' + p.model : ''} | JM Medicose`;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.setAttribute('content', p.description);
+      }
 
       const app = document.getElementById('product-detail-app');
       if (!app) return;
@@ -253,9 +239,10 @@
           <!-- HERO SECTION -->
           <section class="pd-hero" id="pd-overview-anchor">
             <div style="max-width: 1280px; margin: 0 auto 20px auto; padding: 0 24px;">
-              <a href="products.html" class="pd-back-btn">
+              <div style="font-size:14px; color:#64748b; margin-bottom:12px;"><a href="index.html" style="color:#015699; text-decoration:none;">Home</a> &nbsp;&gt;&nbsp; <a href="products.html" style="color:#015699; text-decoration:none;">Products</a> &nbsp;&gt;&nbsp; <a href="products.html?category=machines" style="color:#015699; text-decoration:none;">Machines</a> &nbsp;&gt;&nbsp; <span style="color:#0f294a; font-weight:600;">${p.name}</span></div>
+              <a href="products.html?category=machines" class="pd-back-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                Back to All Products
+                Back to Machines
               </a>
             </div>
 
@@ -454,6 +441,7 @@
           <!-- HERO SECTION (45:55 SPLIT) -->
           <section class="pd-hero" id="pd-overview-anchor">
             <div style="max-width: 1280px; margin: 0 auto 20px auto; padding: 0 24px;">
+              <div style="font-size:14px; color:#64748b; margin-bottom:12px;"><a href="index.html" style="color:#015699; text-decoration:none;">Home</a> &nbsp;&gt;&nbsp; <a href="products.html" style="color:#015699; text-decoration:none;">Products</a> &nbsp;&gt;&nbsp; <a href="products.html?category=meso" style="color:#015699; text-decoration:none;">Meso Solutions</a> &nbsp;&gt;&nbsp; <span style="color:#0f294a; font-weight:600;">${p.name}</span></div>
               <a href="products.html?category=meso" class="pd-back-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                 Back to Meso Solutions
@@ -615,8 +603,9 @@
           <!-- HERO SECTION (40:60 SPLIT) -->
           <section class="pd-hero" id="pd-overview-anchor">
             <div style="max-width: 1280px; margin: 0 auto 20px auto; padding: 0 24px;">
+              <div style="font-size:14px; color:#64748b; margin-bottom:12px;"><a href="index.html" style="color:#015699; text-decoration:none;">Home</a> &nbsp;&gt;&nbsp; <a href="products.html" style="color:#015699; text-decoration:none;">Products</a> &nbsp;&gt;&nbsp; <a href="products.html?category=peels" style="color:#015699; text-decoration:none;">Chemical Peels</a> &nbsp;&gt;&nbsp; <span style="color:#0f294a; font-weight:600;">${p.name}</span></div>
               <a href="products.html?category=peels" class="pd-back-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 19 12 12 5"/></svg>
                 Back to Chemical Peels
               </a>
             </div>

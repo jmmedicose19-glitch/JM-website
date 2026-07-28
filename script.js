@@ -644,5 +644,54 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Contact Form URL Pre-population Handler
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramProduct = urlParams.get('product');
+  const paramCategory = urlParams.get('category');
+  const formCatSelect = document.getElementById('form-cat');
+  const formProductSelect = document.getElementById('form-product');
+
+  if (paramCategory && formCatSelect) {
+    formCatSelect.value = paramCategory;
+  }
+
+  if (paramProduct && formProductSelect) {
+    setTimeout(() => {
+      for (let i = 0; i < formProductSelect.options.length; i++) {
+        if (formProductSelect.options[i].value.toLowerCase().includes(paramProduct.toLowerCase())) {
+          formProductSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }, 150);
+  }
+
+  // Contact Page Form Submission Handler
+  const contactForm = document.getElementById('contact-page-form');
+  const feedbackMsg = document.getElementById('form-feedback-msg');
+  const submitBtn = document.getElementById('form-submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Enquiry...';
+      }
+      setTimeout(() => {
+        if (feedbackMsg) {
+          feedbackMsg.style.display = 'block';
+          feedbackMsg.style.color = '#15803d';
+          feedbackMsg.textContent = 'Thank you! Your enquiry has been received successfully. We will get back to you shortly.';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Enquiry';
+        }
+        contactForm.reset();
+      }, 1200);
+    });
+  }
 });
 
