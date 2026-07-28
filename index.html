@@ -50,8 +50,9 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <h1 class="hero-title">EXPLORE MEDICAL & AESTHETIC PRODUCTS WITH <span>CLARITY</span></h1>
-        <p class="hero-subtitle">Discover machines, Meso Solutions and Chemical Peels with product information based on the JM Medicose catalogue.</p>
+        <span class="hero-eyebrow" style="font-size:13px; font-weight:800; color:#fe2523; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:block;">JM MEDICOSE PRODUCT RANGE</span>
+        <h1 class="hero-title" style="font-family:var(--font-title); font-size:42px; line-height:1.2; color:#ffffff; margin-bottom:16px;">Medical &amp; Aesthetic Machines, Meso Solutions and Chemical Peels</h1>
+        <p class="hero-subtitle" style="font-size:17px; line-height:1.6; color:#cbd5e1; margin-bottom:28px;">Explore products with clear catalogue-based descriptions, applications and technical information.</p>
 
         <div class="hero-buttons">
           <a href="products.html" class="btn-primary">
@@ -91,110 +92,35 @@
         <p class="section-subtitle">Energy-based devices, Meso Solutions, and Chemical Peels structured around catalogue specifications.</p>
       </div>
 
-      <div class="product-range-grid">
-        <!-- Machines (Featured) -->
-        <div class="featured-card">
-          <div class="featured-info">
-            <div>
-              <span class="featured-badge">Featured</span>
-              <h3 class="featured-title">Machines</h3>
-              <div class="orange-divider"></div>
-              <p class="featured-desc">Advanced devices for every aesthetic need.</p>
-            </div>
-            <a href="products.html?category=machines" class="explore-link" aria-label="Explore Machines">
-              <span class="explore-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </span>
-              Explore Machines
-            </a>
-          </div>
-          <div class="featured-image-container">
-          </div>
+      <div class="product-range-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px;">
+        <!-- Machines -->
+        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
+          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Machines</h3>
+          <div class="orange-divider"></div>
+          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Explore the machines listed in the JM Medicose catalogue.</p>
+          <a href="products.html?category=machines" class="explore-link-blue">Explore Machines &rarr;</a>
         </div>
 
-        <!-- Right Side Grid (Skincare, Meso, Peels) -->
-        <div class="right-cards-grid">
-          <!-- Skincare Products -->
-          <div class="range-card">
-            <div class="range-info">
-              <div>
-                <h3 class="range-title">Skincare Products</h3>
-                <div class="orange-divider"></div>
-                <p class="range-desc">Professional skincare for every skin type.</p>
-              </div>
-              <a href="products.html?category=skincare" class="explore-link-blue" aria-label="Explore Skincare">
-                <span class="explore-arrow-outline">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </span>
-                Explore Skincare
-              </a>
-            </div>
-            <div class="range-image-container">
-              <img src="assests/products/o2-hydrafacial-1.png" alt="Skincare Products Category">
-            </div>
-          </div>
+        <!-- Meso Solutions -->
+        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
+          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Meso Solutions</h3>
+          <div class="orange-divider"></div>
+          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Browse Meso Solutions with listed indications and ingredients.</p>
+          <a href="products.html?category=meso" class="explore-link-blue">Explore Meso Solutions &rarr;</a>
+        </div>
 
-          <!-- Meso Products -->
-          <div class="range-card">
-            <div class="range-info">
-              <div>
-                <h3 class="range-title">Meso Products</h3>
-                <div class="orange-divider"></div>
-                <p class="range-desc">Premium solutions for skin rejuvenation and repair.</p>
-              </div>
-              <a href="products.html?category=meso" class="explore-link-blue" aria-label="Explore Meso">
-                <span class="explore-arrow-outline">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </span>
-                Explore Meso
-              </a>
-            </div>
-            <div class="range-image-container">
-              <img src="assests/products/ems-roller-1.png" alt="Meso Products Category">
-            </div>
-          </div>
-
-          <!-- Chemical Peels (Wide) -->
-          <div class="range-card peels-wide-card">
-            <div class="range-info">
-              <div>
-                <h3 class="range-title">Chemical Peels</h3>
-                <div class="orange-divider"></div>
-                <p class="range-desc">Effective peels for visible and lasting results.</p>
-              </div>
-              <a href="products.html?category=peels" class="explore-link-blue" aria-label="Explore Peels">
-                <span class="explore-arrow-outline">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </span>
-                Explore Peels
-              </a>
-            </div>
-            <div class="range-image-container">
-              <img src="assests/products/pdt-hydrafacial-1.png" alt="Chemical Peels Category">
-            </div>
-          </div>
+        <!-- Chemical Peels -->
+        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
+          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Chemical Peels</h3>
+          <div class="orange-divider"></div>
+          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Explore chemical peels with listed concentrations and directions.</p>
+          <a href="products.html?category=peels" class="explore-link-blue">Explore Chemical Peels &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: FIND EQUIPMENT BY APPLICATION (BLUEPRINT MOCKUP DESIGN) -->
+  <!-- SECTION 3: FIND EQUIPMENT BY APPLICATION -->
   <section class="find-app-section">
     <div class="find-app-container">
 
@@ -207,16 +133,21 @@
               FIND EQUIPMENT
             </div>
             <h2 class="find-app-title">Find Equipment<br>by Application</h2>
-            <p class="find-app-subtitle">Select an application to discover the most advanced medical & aesthetic
-              solutions.</p>
+            <p class="find-app-subtitle">Select an application to view relevant equipment listed in the JM Medicose catalogue.</p>
           </div>
 
           <!-- Application Category Switcher Pills -->
-          <div class="app-switcher-pills">
-            <button class="app-switcher-btn active" data-app="skin">Skin Rejuvenation</button>
-            <button class="app-switcher-btn" data-app="hair">Hair Removal</button>
-            <button class="app-switcher-btn" data-app="body">Body Contouring</button>
-            <button class="app-switcher-btn" data-app="peels">Chemical Peels</button>
+          <div class="app-switcher-pills" style="max-width:100%; overflow-x:auto;">
+            <button class="app-switcher-btn active" data-app="Skin Rejuvenation & Resurfacing">Skin Rejuvenation & Resurfacing</button>
+            <button class="app-switcher-btn" data-app="Hair Removal">Hair Removal</button>
+            <button class="app-switcher-btn" data-app="Hair Growth">Hair Growth</button>
+            <button class="app-switcher-btn" data-app="Pigmentation & Tattoo Removal">Pigmentation & Tattoo Removal</button>
+            <button class="app-switcher-btn" data-app="Skin Tightening & Lifting">Skin Tightening & Lifting</button>
+            <button class="app-switcher-btn" data-app="Scar, Wrinkle & Skin-Texture Applications">Scar, Wrinkle & Skin-Texture</button>
+            <button class="app-switcher-btn" data-app="Facial Cleansing & Hydration">Facial Cleansing & Hydration</button>
+            <button class="app-switcher-btn" data-app="Skin Analysis">Skin Analysis</button>
+            <button class="app-switcher-btn" data-app="Fat Reduction">Fat Reduction</button>
+            <button class="app-switcher-btn" data-app="Hemorrhoids, Fistulas & Sinus Pilonidalis">Hemorrhoids & Sinus Pilonidalis</button>
           </div>
         </div>
       </div>
@@ -242,11 +173,10 @@
               <div class="hero-dash"></div>
               <h3 class="hero-title" id="app-hero-title">Skin Rejuvenation<br>& Resurfacing</h3>
               <p class="hero-desc" id="app-hero-desc">
-                Advanced laser technologies that rejuvenate skin, improve texture, reduce fine lines, and restore a more
-                youthful, radiant appearance.
+                Laser and energy-based equipment listed for skin rejuvenation, texture refinement, and skin resurfacing applications.
               </p>
               <a href="products.html?category=machines" class="hero-link">
-                Learn more about this application
+                View equipment for this application
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -267,8 +197,7 @@
                 <span class="equip-spec-pill">JMCO-11</span>
               </div>
               <h4 class="equip-title">Fractional CO₂ Laser — V2</h4>
-              <p class="equip-desc">Precision fractional resurfacing for dramatic skin renewal, texture refinement and
-                collagen stimulation.</p>
+              <p class="equip-desc">Fractional CO₂ laser system listed for skin rejuvenation, scarring and catalogue-stated applications.</p>
               <a href="product-detail.html?id=fractional-co2-v2" class="equip-link">
                 View details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -296,8 +225,7 @@
                 <span class="equip-spec-pill">JMHF-3</span>
               </div>
               <h4 class="equip-title">HIFU-12D Machine</h4>
-              <p class="equip-desc">Non-invasive high-intensity focused ultrasound for skin tightening, SMAS lifting,
-                and contouring.</p>
+              <p class="equip-desc">High-intensity focused ultrasound system listed for face, neck and body applications.</p>
               <a href="product-detail.html?id=hifu-12d" class="equip-link">
                 View details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -328,8 +256,7 @@
                 <span class="equip-spec-pill">JMMD-9</span>
               </div>
               <h4 class="equip-title">Diode Laser Machine</h4>
-              <p class="equip-desc">Advanced triple wavelength broad-spectrum system for deep skin treatment and laser
-                hair removal.</p>
+              <p class="equip-desc">A diode-laser system listed for hair removal and other catalogue-stated applications.</p>
               <a href="product-detail.html?id=diode-laser" class="equip-link">
                 View details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
