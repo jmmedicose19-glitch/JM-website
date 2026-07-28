@@ -394,23 +394,148 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Handle Enquiry submission feedback safely
-  const enquiryForms = document.querySelectorAll(".enquiry-form");
-  enquiryForms.forEach(form => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector("button[type='submit']");
-      const prevText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+  // Handle Enquiry Form — Real Web3Forms submission with validation
+  const mainEnquiryForm = document.getElementById('main-enquiry-form');
+  if (mainEnquiryForm) {
 
-      setTimeout(() => {
-        // Clear inputs safely
-        form.reset();
+    // Pre-fill product from URL query string (?product=...)
+    const urlParams = new URLSearchParams(window.location.search);
+    const preProduct = urlParams.get('product');
+    if (preProduct) {
+      // Wait for dropdown to be populated, then select
+      const tryPreFill = () => {
+        const sel = document.getElementById('form-product');
+        if (!sel) return;
+        const opt = Array.from(sel.options).find(o => o.value === preProduct || o.textContent.startsWith(preProduct));
+        if (opt) {
+          sel.value = opt.value;
+        } else {
+          // Option not yet rendered — try again after a tick
+          setTimeout(tryPreFill, 100);
+        }
+      };
+      tryPreFill();
+    }
+
+    // Also handle legacy .select-enquiry-product links that set a data attribute
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.select-enquiry-product');
+      if (btn) {
+        const productName = btn.getAttribute('data-product');
+        const sel = document.getElementById('form-product');
+        if (sel && productName) sel.value = productName;
+      }
+    });
+
+    const showFieldError = (fieldId, msg) => {
+      const span = mainEnquiryForm.querySelector(`[data-for="${fieldId}"]`);
+      if (span) span.textContent = msg;
+      const field = document.getElementById(fieldId);
+      if (field) field.classList.add('field-invalid');
+    };
+
+    const clearFieldError = (fieldId) => {
+      const span = mainEnquiryForm.querySelector(`[data-for="${fieldId}"]`);
+      if (span) span.textContent = '';
+      const field = document.getElementById(fieldId);
+      if (field) field.classList.remove('field-invalid');
+    };
+
+    const validateForm = () => {
+      let valid = true;
+      const required = [
+        { id: 'form-product',  label: 'Product of Interest' },
+        { id: 'form-name',     label: 'Full Name' },
+        { id: 'form-phone',    label: 'Phone Number' },
+        { id: 'form-email',    label: 'Email Address' },
+        { id: 'form-clinic',   label: 'Clinic / Company' },
+        { id: 'form-city',     label: 'City' }
+      ];
+      required.forEach(({ id, label }) => {
+        const el = document.getElementById(id);
+        if (!el || !el.value.trim()) {
+          showFieldError(id, `${label} is required.`);
+          valid = false;
+        } else {
+          clearFieldError(id);
+        }
+      });
+      // Email format check
+      const emailEl = document.getElementById('form-email');
+      if (emailEl && emailEl.value.trim()) {
+        const emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
+        if (!emailOK) {
+          showFieldError('form-email', 'Please enter a valid email address.');
+          valid = false;
+        }
+      }
+      return valid;
+    };
+
+    // Clear error on blur/input
+    ['form-product','form-name','form-phone','form-email','form-clinic','form-city'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => clearFieldError(id));
+    });
+
+    mainEnquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Honeypot check
+      const botField = mainEnquiryForm.querySelector('[name="botcheck"]');
+      if (botField && botField.value) return; // Silently drop spam
+
+      if (!validateForm()) return;
+
+      const submitBtn = document.getElementById('enquiry-submit-btn');
+      const btnLabel  = submitBtn.querySelector('.btn-label');
+      const btnSpinner = submitBtn.querySelector('.btn-spinner');
+      const successMsg = document.getElementById('form-success-msg');
+      const errorMsg   = document.getElementById('form-error-msg');
+
+      // Loading state
+      submitBtn.disabled = true;
+      if (btnLabel)  btnLabel.style.display  = 'none';
+      if (btnSpinner) btnSpinner.style.display = 'inline-flex';
+      if (successMsg) successMsg.style.display = 'none';
+      if (errorMsg)   errorMsg.style.display   = 'none';
+
+      try {
+        const formData = new FormData(mainEnquiryForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          mainEnquiryForm.reset();
+          if (successMsg) successMsg.style.display = 'flex';
+        } else {
+          if (errorMsg) errorMsg.style.display = 'flex';
+        }
+      } catch (err) {
+        if (errorMsg) errorMsg.style.display = 'flex';
+      } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = prevText;
-        alert("Thank you. Your enquiry details have been recorded. Our team will contact you shortly.");
+        if (btnLabel)  btnLabel.style.display  = 'inline';
+        if (btnSpinner) btnSpinner.style.display = 'none';
+      }
+    });
+  }
+
+  // Legacy multi-form handler (for non-main-enquiry-form instances on other pages)
+  const legacyForms = document.querySelectorAll('.enquiry-form:not(#main-enquiry-form)');
+  legacyForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector("button[type='submit']");
+      const prevText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+      setTimeout(() => {
+        form.reset();
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = prevText; }
+        alert('Thank you. Your enquiry has been recorded. Our team will contact you shortly.');
       }, 1000);
     });
   });
@@ -560,138 +685,85 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCatalogGrid();
   }
 
-  // Interactive Application Switcher Handler for Section 3
+  // Interactive Application Switcher Handler for Section 3 — 10 catalogue application groups
   const appSwitcherBtns = document.querySelectorAll(".app-switcher-btn");
   const appHeroTitle = document.getElementById("app-hero-title");
-  const appHeroDesc = document.getElementById("app-hero-desc");
+  const appHeroDesc  = document.getElementById("app-hero-desc");
   const appCardsStack = document.getElementById("app-cards-stack");
 
   if (appSwitcherBtns.length > 0 && appHeroTitle && appHeroDesc && appCardsStack) {
+
     const appDataMap = {
       skin: {
-        title: `Skin Rejuvenation<br>& Resurfacing`,
-        desc: `Advanced laser technologies that rejuvenate skin, improve texture, reduce fine lines, and restore a more youthful, radiant appearance.`,
+        title: `Skin Rejuvenation<br>&amp; Resurfacing`,
+        desc:  `Equipment listed in the catalogue for skin rejuvenation and resurfacing applications.`,
         cards: [
-          { tag: "CO₂ LASER", spec: "JMCO-11", title: "Fractional CO₂ Laser — V2", desc: "Precision fractional resurfacing for dramatic skin renewal, texture refinement and collagen stimulation.", img: "assests/products/fractional-co2-v2-1.png", link: "product-detail.html?id=fractional-co2-v2" },
-          { tag: "HIFU SYSTEM", spec: "JMHF-3", title: "HIFU-12D Machine", desc: "Non-invasive high-intensity focused ultrasound for skin tightening, SMAS lifting, and contouring.", img: "assests/products/hifu-12d-1.png", link: "product-detail.html?id=hifu-12d" },
-          { tag: "DIODE LASER", spec: "JMMD-9", title: "Diode Laser Machine", desc: "Advanced triple wavelength broad-spectrum system for deep skin treatment and laser hair removal.", img: "assests/products/diode-laser-1.png", link: "product-detail.html?id=diode-laser" }
+          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/products/fractional-co2-v2-1.png",  link: "product-detail.html?id=fractional-co2-v2" },
+          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/products/fractional-co2-1.png",     link: "product-detail.html?id=fractional-co2" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/products/pico-laser-1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       hair: {
-        title: `Painless Laser<br>Hair Removal`,
-        desc: `Next-generation diode and alexandrite lasers providing fast, painless, and permanent hair reduction across all skin tones.`,
+        title: `Hair Removal`,
+        desc:  `Equipment listed in the catalogue for hair removal applications.`,
         cards: [
-          { tag: "DIODE LASER", spec: "JMMD-9", title: "Diode Laser Machine", desc: "High-speed diode laser with contact cooling sapphire tip for comfortable hair reduction.", img: "assests/products/diode-laser-1.png", link: "product-detail.html?id=diode-laser" },
-          { tag: "PICO LASER", spec: "JMPS1", title: "350PS TruePico Picosecond Laser", desc: "Multi-wavelength combination technology targeting fine, medium, and deep skin follicles.", img: "assests/products/pico-laser-1.png", link: "product-detail.html?id=truepico-laser" },
-          { tag: "PICO LASER V2", spec: "JMPS1-V2", title: "Picosecond Laser — V2", desc: "High-power picosecond laser engineered for rapid pigmentation and tattoo removal.", img: "assests/products/pico-laser-v2-1.png", link: "product-detail.html?id=picosecond-v2" }
+          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/diode-laser-1.png",        link: "product-detail.html?id=diode-laser" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/products/pico-laser-1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       body: {
-        title: `Body Contouring<br>& Fat Reduction`,
-        desc: `Targeted non-surgical body sculpting equipment that reduces localized stubborn fat and tightens body contours efficiently.`,
+        title: `Body Contouring<br>&amp; Fat Reduction`,
+        desc:  `Equipment listed in the catalogue for body contouring and fat reduction applications.`,
         cards: [
-          { tag: "HIFU SYSTEM", spec: "JMHF-3", title: "HIFU-12D Machine", desc: "Focused ultrasound targeting deep subcutaneous layers for targeted fat reduction and tightening.", img: "assests/products/hifu-12d-1.png", link: "product-detail.html?id=hifu-12d" },
-          { tag: "EMS FACE LIFT", spec: "JMHM-17", title: "Pulse Lift EMS Face Lift", desc: "EMS muscle stimulation and roller applicator for firming and contouring.", img: "assests/products/ems-roller-1.png", link: "product-detail.html?id=pulse-lift-ems" },
-          { tag: "O₂ HYDRAFACIAL", spec: "JMAL-7", title: "O₂ HydraFacial", desc: "Hydro-dermabrasion and oxygen spray infusion for tissue rejuvenation.", img: "assests/products/o2-hydrafacial-1.png", link: "product-detail.html?id=o2-hydrafacial" }
+          { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/products/hifu-12d-1.png",           link: "product-detail.html?id=hifu-12d" },
+          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/ems-roller-1.png",         link: "product-detail.html?id=pulse-lift-ems" }
         ]
       },
       peels: {
-        title: `Professional Medical<br>Facial Systems`,
-        desc: `Dermatologist-grade multi-step facial workstations engineered for controlled exfoliation and photodynamic therapy.`,
+        title: `Chemical Peels<br>&amp; Facial Workstations`,
+        desc:  `Equipment listed in the catalogue for facial treatments and chemical peel workflows.`,
         cards: [
-          { tag: "PDT HYDRAFACIAL", spec: "JMPD-14", title: "PDT HydraFacial", desc: "Multi-step facial system combining HydraFacial functions with photodynamic LED therapy.", img: "assests/products/pdt-hydrafacial-1.png", link: "product-detail.html?id=pdt-hydrafacial" },
-          { tag: "O₂ HYDRAFACIAL", spec: "JMAL-7", title: "O₂ HydraFacial", desc: "Multi-function hydro-dermabrasion and oxygen infusion system.", img: "assests/products/o2-hydrafacial-1.png", link: "product-detail.html?id=o2-hydrafacial" },
-          { tag: "EMS FACE LIFT", spec: "JMHM-17", title: "Pulse Lift EMS Face Lift", desc: "EMS-based facial stimulation and roller-assisted rejuvenation.", img: "assests/products/ems-roller-1.png", link: "product-detail.html?id=pulse-lift-ems" }
+          { tag: "FACIAL SYSTEM", spec: "JMAL-7",  title: "Alice Super Bubble Max",     desc: "A multi-function facial machine listed for cleansing, hydration and other catalogue-stated applications.",     img: "assests/products/o2-hydrafacial-1.png",    link: "product-detail.html?id=alice-super-bubble" },
+          { tag: "PDT HYDRAFACIAL",spec: "JMPD-14", title: "PDT HydraFacial",             desc: "A facial machine with PDT light therapy listed among catalogue-stated applications.",                          img: "assests/products/pdt-hydrafacial-1.png",   link: "product-detail.html?id=pdt-hydrafacial" }
         ]
       }
     };
 
+    const buildCard = (c) => `
+      <div class="app-equip-card">
+        <div class="equip-orange-bar"></div>
+        <div class="equip-card-info">
+          <div class="equip-tags-row">
+            <span class="equip-cat-tag">${c.tag}</span>
+            <span class="equip-spec-pill">${c.spec}</span>
+          </div>
+          <h4 class="equip-title">${c.title}</h4>
+          <p class="equip-desc">${c.desc}</p>
+          <a href="${c.link || 'products.html'}" class="equip-link">
+            View details
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+        <div class="equip-card-img-box">
+          <img src="${c.img}" alt="${c.title}">
+        </div>
+        <div class="equip-icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#015699" stroke-width="2"><path d="M12 3v3m0 12v3M3 12h3m12 0h3m-4.5-7.5l-2 2m-7 7l-2 2m0-11l2 2m7 7l2 2"/></svg>
+        </div>
+      </div>`;
+
     appSwitcherBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        appSwitcherBtns.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        const key = btn.getAttribute("data-app");
+      btn.addEventListener('click', () => {
+        appSwitcherBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const key  = btn.getAttribute('data-app');
         const data = appDataMap[key];
-
-        if (data) {
-          appHeroTitle.innerHTML = data.title;
-          appHeroDesc.textContent = data.desc;
-
-          appCardsStack.innerHTML = data.cards.map(c => `
-            <div class="app-equip-card">
-              <div class="equip-orange-bar"></div>
-              <div class="equip-card-info">
-                <div class="equip-tags-row">
-                  <span class="equip-cat-tag">${c.tag}</span>
-                  <span class="equip-spec-pill">${c.spec}</span>
-                </div>
-                <h4 class="equip-title">${c.title}</h4>
-                <p class="equip-desc">${c.desc}</p>
-                <a href="${c.link || 'products.html'}" class="equip-link">
-                  View details
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-              </div>
-              <div class="equip-card-img-box">
-                <img src="${c.img}" alt="${c.title}">
-              </div>
-              <div class="equip-icon-circle">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#015699" stroke-width="2"><path d="M12 3v3m0 12v3M3 12h3m12 0h3m-4.5-7.5l-2 2m-7 7l-2 2m0-11l2 2m7 7l2 2"/></svg>
-              </div>
-            </div>
-          `).join('');
-        }
+        if (!data) return;
+        appHeroTitle.innerHTML = data.title;
+        appHeroDesc.textContent = data.desc;
+        appCardsStack.innerHTML = data.cards.map(buildCard).join('');
       });
     });
   }
 
-  // Contact Form URL Pre-population Handler
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramProduct = urlParams.get('product');
-  const paramCategory = urlParams.get('category');
-  const formCatSelect = document.getElementById('form-cat');
-  const formProductSelect = document.getElementById('form-product');
-
-  if (paramCategory && formCatSelect) {
-    formCatSelect.value = paramCategory;
-  }
-
-  if (paramProduct && formProductSelect) {
-    setTimeout(() => {
-      for (let i = 0; i < formProductSelect.options.length; i++) {
-        if (formProductSelect.options[i].value.toLowerCase().includes(paramProduct.toLowerCase())) {
-          formProductSelect.selectedIndex = i;
-          break;
-        }
-      }
-    }, 150);
-  }
-
-  // Contact Page Form Submission Handler
-  const contactForm = document.getElementById('contact-page-form');
-  const feedbackMsg = document.getElementById('form-feedback-msg');
-  const submitBtn = document.getElementById('form-submit-btn');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending Enquiry...';
-      }
-      setTimeout(() => {
-        if (feedbackMsg) {
-          feedbackMsg.style.display = 'block';
-          feedbackMsg.style.color = '#15803d';
-          feedbackMsg.textContent = 'Thank you! Your enquiry has been received successfully. We will get back to you shortly.';
-        }
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Enquiry';
-        }
-        contactForm.reset();
-      }, 1200);
-    });
-  }
 });
-

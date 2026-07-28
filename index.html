@@ -48,14 +48,15 @@
 
   <!-- SECTION 1: HERO BANNER -->
   <section class="hero">
+    <img src="assests/hero section img (2).png" alt="JM Medicose Hero Background" class="hero-bg-img">
     <div class="hero-container">
       <div class="hero-content">
-        <span class="hero-eyebrow" style="font-size:13px; font-weight:800; color:#fe2523; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; display:block;">JM MEDICOSE PRODUCT RANGE</span>
-        <h1 class="hero-title" style="font-family:var(--font-title); font-size:42px; line-height:1.2; color:#ffffff; margin-bottom:16px;">Medical &amp; Aesthetic Machines, Meso Solutions and Chemical Peels</h1>
-        <p class="hero-subtitle" style="font-size:17px; line-height:1.6; color:#cbd5e1; margin-bottom:28px;">Explore products with clear catalogue-based descriptions, applications and technical information.</p>
+        <span class="hero-eyebrow">JM MEDICOSE PRODUCT RANGE</span>
+        <h1 class="hero-title">Medical &amp; Aesthetic Machines, Meso Solutions and Chemical Peels</h1>
+        <p class="hero-subtitle">Explore products with clear catalogue-based descriptions, applications and technical information.</p>
 
         <div class="hero-buttons">
-          <a href="products.html" class="btn-primary">
+          <a href="products.html" class="btn-primary hero-btn-primary">
             Explore Products
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -63,7 +64,7 @@
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
-          <a href="contact.html" class="btn-secondary">
+          <a href="contact.html" class="btn-secondary hero-btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -73,54 +74,99 @@
           </a>
         </div>
       </div>
-
-      <div class="hero-visual">
-        <div class="hero-bg-curve"></div>
-        <div class="hero-glow-platform"></div>
-        <img src="assests/hero section img.png" alt="JM Medicose Premium Devices" class="hero-machine-img">
-      </div>
     </div>
   </section>
+
+
 
   <!-- SECTION 2: OUR PRODUCT RANGE -->
   <section class="section-light">
     <div class="section-container">
       <div class="section-header">
         <span class="section-badge">OUR PRODUCT RANGE</span>
-        <h2 class="section-title">Organised Medical &amp; <span>Aesthetic Portfolio</span></h2>
+        <h2 class="section-title">Organised Medical &amp; Aesthetic Portfolio</h2>
         <div class="section-separator"></div>
         <p class="section-subtitle">Energy-based devices, Meso Solutions, and Chemical Peels structured around catalogue specifications.</p>
       </div>
 
-      <div class="product-range-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px;">
-        <!-- Machines -->
-        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
-          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Machines</h3>
-          <div class="orange-divider"></div>
-          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Explore the machines listed in the JM Medicose catalogue.</p>
-          <a href="products.html?category=machines" class="explore-link-blue">Explore Machines &rarr;</a>
+      <div class="product-range-grid">
+        <!-- Top Full Width: Machines -->
+        <div class="featured-card">
+          <div class="featured-info">
+            <div>
+              <span class="featured-badge">Featured</span>
+              <h3 class="featured-title">Machines</h3>
+              <div class="orange-divider"></div>
+              <p class="featured-desc">Advanced devices for every aesthetic need.</p>
+            </div>
+            <a href="products.html?category=machines" class="explore-link" aria-label="Explore Machines">
+              <span class="explore-arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+              Explore Machines
+            </a>
+          </div>
+          <div class="featured-image-container">
+            <img src="assests/cat-machines.png" alt="Machines Category">
+          </div>
         </div>
 
-        <!-- Meso Solutions -->
-        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
-          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Meso Solutions</h3>
-          <div class="orange-divider"></div>
-          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Browse Meso Solutions with listed indications and ingredients.</p>
-          <a href="products.html?category=meso" class="explore-link-blue">Explore Meso Solutions &rarr;</a>
+        <!-- Middle Row: 2 Columns (Chemical Peels & Meso) -->
+        <div class="range-card">
+          <div class="range-info">
+            <div>
+              <h3 class="range-title">Chemical Peels</h3>
+              <div class="orange-divider"></div>
+              <p class="range-desc">Effective peels for visible and lasting results.</p>
+            </div>
+            <a href="products.html?category=peels" class="explore-link-blue" aria-label="Explore Peels">
+              <span class="explore-arrow-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+              Explore Peels
+            </a>
+          </div>
+          <div class="range-image-container">
+            <img src="assests/cat-peels.png" alt="Chemical Peels Category">
+          </div>
         </div>
 
-        <!-- Chemical Peels -->
-        <div class="range-card" style="background:#ffffff; padding:28px; border-radius:16px; border:1px solid #e2e8f0;">
-          <h3 class="range-title" style="font-size:22px; color:#015699; margin-bottom:10px;">Chemical Peels</h3>
-          <div class="orange-divider"></div>
-          <p class="range-desc" style="font-size:15px; line-height:1.6; color:#475569; margin-bottom:16px;">Explore chemical peels with listed concentrations and directions.</p>
-          <a href="products.html?category=peels" class="explore-link-blue">Explore Chemical Peels &rarr;</a>
+        <div class="range-card">
+          <div class="range-info">
+            <div>
+              <h3 class="range-title">Meso Products</h3>
+              <div class="orange-divider"></div>
+              <p class="range-desc">Premium solutions for skin rejuvenation and repair.</p>
+            </div>
+            <a href="products.html?category=meso" class="explore-link-blue" aria-label="Explore Meso">
+              <span class="explore-arrow-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+              Explore Meso
+            </a>
+          </div>
+          <div class="range-image-container">
+            <img src="assests/cat-meso.png" alt="Meso Products Category">
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: FIND EQUIPMENT BY APPLICATION -->
+  <!-- SECTION 3: FIND EQUIPMENT BY APPLICATION (BLUEPRINT MOCKUP DESIGN) -->
   <section class="find-app-section">
     <div class="find-app-container">
 
@@ -137,17 +183,11 @@
           </div>
 
           <!-- Application Category Switcher Pills -->
-          <div class="app-switcher-pills" style="max-width:100%; overflow-x:auto;">
-            <button class="app-switcher-btn active" data-app="Skin Rejuvenation & Resurfacing">Skin Rejuvenation & Resurfacing</button>
-            <button class="app-switcher-btn" data-app="Hair Removal">Hair Removal</button>
-            <button class="app-switcher-btn" data-app="Hair Growth">Hair Growth</button>
-            <button class="app-switcher-btn" data-app="Pigmentation & Tattoo Removal">Pigmentation & Tattoo Removal</button>
-            <button class="app-switcher-btn" data-app="Skin Tightening & Lifting">Skin Tightening & Lifting</button>
-            <button class="app-switcher-btn" data-app="Scar, Wrinkle & Skin-Texture Applications">Scar, Wrinkle & Skin-Texture</button>
-            <button class="app-switcher-btn" data-app="Facial Cleansing & Hydration">Facial Cleansing & Hydration</button>
-            <button class="app-switcher-btn" data-app="Skin Analysis">Skin Analysis</button>
-            <button class="app-switcher-btn" data-app="Fat Reduction">Fat Reduction</button>
-            <button class="app-switcher-btn" data-app="Hemorrhoids, Fistulas & Sinus Pilonidalis">Hemorrhoids & Sinus Pilonidalis</button>
+          <div class="app-switcher-pills">
+            <button class="app-switcher-btn active" data-app="skin">Skin Rejuvenation</button>
+            <button class="app-switcher-btn" data-app="hair">Hair Removal</button>
+            <button class="app-switcher-btn" data-app="body">Body Contouring</button>
+            <button class="app-switcher-btn" data-app="peels">Chemical Peels</button>
           </div>
         </div>
       </div>
@@ -173,10 +213,11 @@
               <div class="hero-dash"></div>
               <h3 class="hero-title" id="app-hero-title">Skin Rejuvenation<br>& Resurfacing</h3>
               <p class="hero-desc" id="app-hero-desc">
-                Laser and energy-based equipment listed for skin rejuvenation, texture refinement, and skin resurfacing applications.
+                Advanced laser technologies that rejuvenate skin, improve texture, reduce fine lines, and restore a more
+                youthful, radiant appearance.
               </p>
               <a href="products.html?category=machines" class="hero-link">
-                View equipment for this application
+                Learn more about this application
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -197,7 +238,7 @@
                 <span class="equip-spec-pill">JMCO-11</span>
               </div>
               <h4 class="equip-title">Fractional CO₂ Laser — V2</h4>
-              <p class="equip-desc">Fractional CO₂ laser system listed for skin rejuvenation, scarring and catalogue-stated applications.</p>
+              <p class="equip-desc">A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.</p>
               <a href="product-detail.html?id=fractional-co2-v2" class="equip-link">
                 View details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -225,7 +266,7 @@
                 <span class="equip-spec-pill">JMHF-3</span>
               </div>
               <h4 class="equip-title">HIFU-12D Machine</h4>
-              <p class="equip-desc">High-intensity focused ultrasound system listed for face, neck and body applications.</p>
+              <p class="equip-desc">An ultrasound-based machine listed for skin tightening and other catalogue-stated applications.</p>
               <a href="product-detail.html?id=hifu-12d" class="equip-link">
                 View details
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -363,9 +404,9 @@
           <p>Our goal is to offer comprehensive product ranges that cover key therapeutic categories, facilitating
             patient care through reliable technologies and products.</p>
           <ul class="about-list">
-            <li>Aesthetic & Medical Equipment</li>
+            <li>Aesthetic &amp; Medical Equipment</li>
             <li>Complementary Skincare Formulations</li>
-            <li>Targeted Meso Solutions & Chemical Peels</li>
+            <li>Targeted Meso Solutions &amp; Chemical Peels</li>
           </ul>
           <a href="about.html" class="btn-primary" style="display: inline-flex; margin-top: 25px;">Read Full Story</a>
         </div>
@@ -402,30 +443,95 @@
       <div class="enquiry-card">
         <div class="enquiry-info">
           <h3>Request Information or Enquire</h3>
-          <p>Select a product from our range and fill in your contact information below. A representative will contact
-            you with specific product details and pricing.</p>
+          <p>Select a product from our range and fill in your contact details below. A representative will follow up with product information and pricing.</p>
+          <ul class="enquiry-checklist">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              All fields marked * are required
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              We respond within 1–2 business days
+            </li>
+          </ul>
         </div>
 
-        <form class="enquiry-form">
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="form-product">Product of Interest</label>
-              <select id="form-product" class="product-select" required>
-                <option value="">-- Select a Product / Machine --</option>
+        <form class="enquiry-form" id="main-enquiry-form" novalidate>
+          <!-- Web3Forms access key (replace YOUR_WEB3FORMS_ACCESS_KEY with your real key from web3forms.com) -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New Enquiry — JM Medicose Website">
+          <input type="hidden" name="from_name" value="JM Medicose Website">
+          <!-- Honeypot spam protection -->
+          <input type="text" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <!-- Inline messages -->
+          <div class="form-success-msg" id="form-success-msg" style="display:none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Thank you. Your enquiry has been sent. We will be in touch within 1–2 business days.
+          </div>
+          <div class="form-error-msg" id="form-error-msg" style="display:none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Something went wrong. Please try again or contact us directly.
+          </div>
+
+          <div class="form-grid-2col">
+            <!-- Row 1: Product (full width) -->
+            <div class="form-group form-col-full">
+              <label for="form-product">Product of Interest <span class="req">*</span></label>
+              <select id="form-product" name="product" class="product-select" required>
+                <option value="">— Select a Product / Machine —</option>
               </select>
+              <span class="field-error" data-for="form-product"></span>
+            </div>
+
+            <!-- Row 2: Name + Phone -->
+            <div class="form-group">
+              <label for="form-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="form-name" name="name" placeholder="e.g. Dr. Priya Sharma" required autocomplete="name">
+              <span class="field-error" data-for="form-name"></span>
             </div>
 
             <div class="form-group">
-              <label for="form-name">Your Full Name</label>
-              <input type="text" id="form-name" placeholder="John Doe" required>
+              <label for="form-phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="form-phone" name="phone" placeholder="e.g. +91 98765 43210" required autocomplete="tel">
+              <span class="field-error" data-for="form-phone"></span>
+            </div>
+
+            <!-- Row 3: Email + Clinic -->
+            <div class="form-group">
+              <label for="form-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="form-email" name="email" placeholder="e.g. clinic@example.com" required autocomplete="email">
+              <span class="field-error" data-for="form-email"></span>
             </div>
 
             <div class="form-group">
-              <label for="form-phone">Phone Number</label>
-              <input type="tel" id="form-phone" placeholder="e.g. +91 98765 43210" required>
+              <label for="form-clinic">Clinic / Company / Organisation <span class="req">*</span></label>
+              <input type="text" id="form-clinic" name="clinic" placeholder="e.g. Radiance Skin Clinic" required>
+              <span class="field-error" data-for="form-clinic"></span>
             </div>
 
-            <button type="submit" class="form-btn">Send Enquiry</button>
+            <!-- Row 4: City (half) -->
+            <div class="form-group">
+              <label for="form-city">City <span class="req">*</span></label>
+              <input type="text" id="form-city" name="city" placeholder="e.g. Mumbai" required autocomplete="address-level2">
+              <span class="field-error" data-for="form-city"></span>
+            </div>
+
+            <!-- Row 5: Message (full width) -->
+            <div class="form-group form-col-full">
+              <label for="form-message">Message <span class="req-opt">(optional)</span></label>
+              <textarea id="form-message" name="message" rows="3" placeholder="Any specific requirements, questions or preferred contact time…"></textarea>
+            </div>
+
+            <div class="form-col-full">
+              <button type="submit" class="form-btn" id="enquiry-submit-btn">
+                <span class="btn-label">Send Enquiry</span>
+                <span class="btn-spinner" style="display:none">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin-icon"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  Sending…
+                </span>
+              </button>
+            </div>
           </div>
         </form>
       </div>
@@ -447,19 +553,28 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Connect</h4>
         <ul class="footer-links-list">
-      <div class="footer-col">
-        <h4 class="footer-col-title">Connect</h4>
-        <ul class="footer-links-list">
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">LinkedIn</a></li>
         </ul>
+        <div class="footer-social-icons">
+          <a href="contact.html" aria-label="Instagram" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
+          </a>
+          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-col-title">Categories</h4>
+        <h4 class="footer-col-title">Services</h4>
         <ul class="footer-links-list">
-          <li><a href="products.html?category=machines">Machines</a></li>
-          <li><a href="products.html?category=meso">Meso Solutions</a></li>
+          <li><a href="products.html?category=machines">Aesthetic Equipment</a></li>
+          <li><a href="products.html?category=meso">Meso Products</a></li>
           <li><a href="products.html?category=peels">Chemical Peels</a></li>
         </ul>
       </div>
@@ -477,10 +592,16 @@
 
     <div class="footer-bottom-centered">
       <div class="footer-copyright">
-        &copy; JM MEDICOSE 2026
+        &copy; JM MEDICOSE 2026 | <a href="index.html">SITE DESIGN</a> | <a href="about.html">QUALITY ASSURED</a>
       </div>
       <div class="footer-italic-tagline">
         Professional Aesthetic &amp; Dermatology Equipment Solutions
+      </div>
+      <div class="footer-legal-links">
+        <a href="contact.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Disclosure</a>
+        <a href="contact.html">Privacy &amp; Disclaimer</a>
+        <a href="contact.html">Accessibility</a>
       </div>
     </div>
   </footer>
