@@ -911,9 +911,13 @@
     let currentTranslate = 0;
     let prevTranslate = 0;
 
-    // Render cards into horizontal slider
-    carouselEl.innerHTML = heroSlides.map((slide, index) => `
-      <div class="hero-showcase-card ${index === 0 ? 'active' : ''}" data-index="${index}">
+    // Render cards into horizontal slider with duplicate sets for infinite continuous looping
+    const totalSlidesCount = heroSlides.length;
+    const displaySlides = [...heroSlides, ...heroSlides, ...heroSlides];
+    currentIndex = totalSlidesCount; // Start in middle set
+
+    carouselEl.innerHTML = displaySlides.map((slide, index) => `
+      <div class="hero-showcase-card ${index === currentIndex ? 'active' : ''}" data-index="${index % totalSlidesCount}" data-virtual="${index}">
         <div class="hero-card-img-wrapper">
           <img src="${slide.image}" alt="${slide.title}" class="hero-card-img" />
         </div>
@@ -929,20 +933,20 @@
 
     // Set initial background & counter
     if (bgActive) bgActive.style.backgroundImage = `url('${heroSlides[0].image}')`;
-    if (counterTotal) counterTotal.textContent = String(heroSlides.length).padStart(2, '0');
+    if (counterTotal) counterTotal.textContent = String(totalSlidesCount).padStart(2, '0');
 
     const featuredImgEl = document.getElementById('hero-featured-img');
 
     let lastSlideTime = 0;
-    const updateSlide = (nextIndex) => {
+    const updateSlide = (nextVirtualIndex) => {
       const now = Date.now();
       if (now - lastSlideTime < 150) return;
       lastSlideTime = now;
 
-      if (nextIndex < 0 || nextIndex >= heroSlides.length) return;
-      
-      const nextSlide = heroSlides[nextIndex];
-      currentIndex = nextIndex;
+      let targetIndex = nextVirtualIndex;
+      const realIndex = (targetIndex % totalSlidesCount + totalSlidesCount) % totalSlidesCount;
+      const nextSlide = heroSlides[realIndex];
+      currentIndex = targetIndex;
 
       // 1. Instant & Direct Content Updates
       if (featuredImgEl) {
@@ -962,9 +966,9 @@
       if (secondaryLink) secondaryLink.href = nextSlide.enquireLink;
 
       // 2. Update Counter & Progress Bar
-      if (counterActive) counterActive.textContent = String(currentIndex + 1).padStart(2, '0');
+      if (counterActive) counterActive.textContent = String(realIndex + 1).padStart(2, '0');
       if (progressFill) {
-        const progressPercent = ((currentIndex + 1) / heroSlides.length) * 100;
+        const progressPercent = ((realIndex + 1) / totalSlidesCount) * 100;
         progressFill.style.width = `${progressPercent}%`;
       }
 
@@ -984,13 +988,54 @@
         prevTranslate = currentTranslate;
         carouselEl.style.transform = `translateX(${currentTranslate}px)`;
       }
+
+      // 4. Infinite Jump Normalization (seamless loop back to middle set)
+      if (currentIndex >= totalSlidesCount * 2) {
+        setTimeout(() => {
+          carouselEl.style.transition = 'none';
+          currentIndex = totalSlidesCount + realIndex;
+          const resetCard = cards[currentIndex];
+          if (resetCard) {
+            const cardWidth = resetCard.offsetWidth + 16;
+            currentTranslate = -(currentIndex * cardWidth);
+            prevTranslate = currentTranslate;
+            carouselEl.style.transform = `translateX(${currentTranslate}px)`;
+          }
+          cards.forEach((card, idx) => {
+            if (idx === currentIndex) card.classList.add('active');
+            else card.classList.remove('active');
+          });
+          carouselEl.offsetHeight;
+          carouselEl.style.transition = '';
+        }, 400);
+      } else if (currentIndex < totalSlidesCount) {
+        setTimeout(() => {
+          carouselEl.style.transition = 'none';
+          currentIndex = totalSlidesCount + realIndex;
+          const resetCard = cards[currentIndex];
+          if (resetCard) {
+            const cardWidth = resetCard.offsetWidth + 16;
+            currentTranslate = -(currentIndex * cardWidth);
+            prevTranslate = currentTranslate;
+            carouselEl.style.transform = `translateX(${currentTranslate}px)`;
+          }
+          cards.forEach((card, idx) => {
+            if (idx === currentIndex) card.classList.add('active');
+            else card.classList.remove('active');
+          });
+          carouselEl.offsetHeight;
+          carouselEl.style.transition = '';
+        }, 400);
+      }
     };
 
+    // Set initial position to middle set
+    updateSlide(totalSlidesCount);
+
     // Card click events
-    cards.forEach((card) => {
-      card.addEventListener('click', (e) => {
-        const index = parseInt(card.getAttribute('data-index'), 10);
-        updateSlide(index);
+    cards.forEach((card, vIdx) => {
+      card.addEventListener('click', () => {
+        updateSlide(vIdx);
         resetAutoPlay();
       });
     });
@@ -1001,8 +1046,7 @@
         e.preventDefault();
         e.stopPropagation();
       }
-      const prevIndex = (currentIndex - 1 + heroSlides.length) % heroSlides.length;
-      updateSlide(prevIndex);
+      updateSlide(currentIndex - 1);
       resetAutoPlay();
     };
 
@@ -1011,8 +1055,7 @@
         e.preventDefault();
         e.stopPropagation();
       }
-      const nextIndex = (currentIndex + 1) % heroSlides.length;
-      updateSlide(nextIndex);
+      updateSlide(currentIndex + 1);
       resetAutoPlay();
     };
 
@@ -1046,9 +1089,9 @@
         if (!isDragging) return;
         isDragging = false;
         const movedBy = currentTranslate - prevTranslate;
-        if (movedBy < -50 && currentIndex < heroSlides.length - 1) {
+        if (movedBy < -50) {
           updateSlide(currentIndex + 1);
-        } else if (movedBy > 50 && currentIndex > 0) {
+        } else if (movedBy > 50) {
           updateSlide(currentIndex - 1);
         } else {
           updateSlide(currentIndex);
@@ -1072,8 +1115,7 @@
     const startAutoPlay = () => {
       if (autoPlayTimer) clearInterval(autoPlayTimer);
       autoPlayTimer = setInterval(() => {
-        const nextIndex = (currentIndex + 1) % heroSlides.length;
-        updateSlide(nextIndex);
+        updateSlide(currentIndex + 1);
       }, 4500);
     };
 
