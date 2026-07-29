@@ -30,8 +30,11 @@
       </ul>
 
       <a href="contact.html" class="header-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-        Request Enquiry
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z" />
+        </svg>
+        Contact us
       </a>
     </div>
   </header>
@@ -67,12 +70,6 @@
       </div>
     </div>
 
-    <!-- CATALOG HEADER BAR -->
-    <div class="catalog-status-bar">
-      <div class="catalog-count-text" id="catalog-count-text">
-        Showing <strong>9 Products</strong>
-      </div>
-    </div>
 
     <!-- PRODUCT CARDS GRID (FULL WIDTH 3-COLUMN) -->
     <div class="products-cards-grid-3col" id="products-cards-grid-3col">
@@ -688,6 +685,60 @@
 
     </div>
 
+  <script src="products-data.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Category Filter for Static Cards -->
+  <script>
+    (function () {
+      const pills = document.querySelectorAll('.cat-pill-btn');
+      const cards = document.querySelectorAll('.prd-card');
+      const countEl = document.getElementById('catalog-count-text');
+      const searchInput = document.getElementById('global-search-input');
+
+      function filterCards() {
+        const activePill = document.querySelector('.cat-pill-btn.active');
+        const activeCat = activePill ? activePill.getAttribute('data-cat') : 'all';
+        const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+        let visible = 0;
+        cards.forEach(function (card) {
+          const cat = card.getAttribute('data-cat') || 'all';
+          const text = card.innerText.toLowerCase();
+          const catMatch = activeCat === 'all' || cat === activeCat;
+          const searchMatch = searchVal === '' || text.includes(searchVal);
+          if (catMatch && searchMatch) {
+            card.style.display = '';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+      }
+
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          pills.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          filterCards();
+        });
+      });
+
+      // Check URL search params (e.g. ?category=meso or ?category=peels)
+      const urlParams = new URLSearchParams(window.location.search);
+      const catParam = urlParams.get('category');
+      if (catParam) {
+        const matchingPill = document.querySelector(`.cat-pill-btn[data-cat="${catParam}"]`);
+        if (matchingPill) {
+          pills.forEach(p => p.classList.remove('active'));
+          matchingPill.classList.add('active');
+        }
+      }
+
+      filterCards();
+    })();
+  </script>
   <!-- FOOTER -->
   <footer>
     <div class="footer-container">
@@ -714,7 +765,7 @@
           <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
           </a>
-          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
+          <a href="https://wa.me/919389144288" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-circle-btn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </a>
         </div>
@@ -756,62 +807,12 @@
     </div>
   </footer>
 
-  <script src="products-data.js"></script>
-  <script src="script.js"></script>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919389144288" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.773L0 32l8.469-2.002A15.926 15.926 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.851l-.486-.289-4.984 1.177 1.237-4.851-.316-.499A13.277 13.277 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.273-9.92c-.397-.199-2.352-1.16-2.717-1.292-.365-.133-.63-.199-.895.199-.265.397-1.028 1.292-1.26 1.557-.231.265-.463.298-.86.1-.397-.2-1.677-.618-3.195-1.973-1.18-1.053-1.977-2.353-2.209-2.75-.232-.398-.025-.613.174-.811.179-.177.397-.463.596-.695.199-.231.265-.397.397-.662.133-.265.066-.497-.033-.695-.1-.199-.895-2.155-1.226-2.95-.323-.774-.65-.669-.895-.681-.232-.011-.497-.014-.762-.014-.265 0-.695.1-1.06.497-.364.397-1.39 1.358-1.39 3.314s1.423 3.846 1.622 4.11c.199.265 2.8 4.276 6.786 5.996.948.409 1.688.653 2.265.836.952.303 1.818.26 2.501.158.763-.114 2.352-.961 2.683-1.89.332-.928.332-1.723.232-1.89-.1-.166-.364-.265-.762-.464z" fill="currentColor"/>
+    </svg>
+  </a>
 
-  <!-- Category Filter for Static Cards -->
-  <script>
-    (function () {
-      const pills = document.querySelectorAll('.cat-pill-btn');
-      const cards = document.querySelectorAll('.prd-card');
-      const countEl = document.getElementById('catalog-count-text');
-      const searchInput = document.getElementById('global-search-input');
-
-      function filterCards() {
-        const activePill = document.querySelector('.cat-pill-btn.active');
-        const activeCat = activePill ? activePill.getAttribute('data-cat') : 'all';
-        const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-        let visible = 0;
-        cards.forEach(function (card) {
-          const cat = card.getAttribute('data-cat') || 'all';
-          const text = card.innerText.toLowerCase();
-          const catMatch = activeCat === 'all' || cat === activeCat;
-          const searchMatch = searchVal === '' || text.includes(searchVal);
-          if (catMatch && searchMatch) {
-            card.style.display = '';
-            visible++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-        if (countEl) {
-          countEl.innerHTML = 'Showing <strong>' + visible + ' Products</strong>';
-        }
-      }
-
-      pills.forEach(function (pill) {
-        pill.addEventListener('click', function () {
-          pills.forEach(function (p) { p.classList.remove('active'); });
-          pill.classList.add('active');
-          filterCards();
-        });
-      });
-
-      // Check URL search params (e.g. ?category=meso or ?category=peels)
-      const urlParams = new URLSearchParams(window.location.search);
-      const catParam = urlParams.get('category');
-      if (catParam) {
-        const matchingPill = document.querySelector(`.cat-pill-btn[data-cat="${catParam}"]`);
-        if (matchingPill) {
-          pills.forEach(p => p.classList.remove('active'));
-          matchingPill.classList.add('active');
-        }
-      }
-
-      filterCards();
-    })();
-  </script>
 </body>
 </html>

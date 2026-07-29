@@ -85,9 +85,12 @@
         <li class="active"><a href="products.html">Products</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
-      <a href="#pd-enquiry" class="header-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
-        Request Enquiry
+      <a href="contact.html" class="header-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z" />
+        </svg>
+        Contact us
       </a>
     </div>
   </header>
@@ -123,7 +126,7 @@
           <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
           </a>
-          <a href="contact.html" aria-label="WhatsApp" class="social-circle-btn">
+          <a href="https://wa.me/919389144288" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-circle-btn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </a>
         </div>
@@ -308,25 +311,6 @@
             </div>
           </section>
 
-          <!-- APPLICATIONS SECTION -->
-          ${p.applications ? `
-          <section style="background:#f8fafc; border-top:1px solid #e2e8f0;">
-            <div class="pd-section">
-              <span class="pd-section-tag">APPLICATIONS</span>
-              <h2 class="pd-section-heading">Clinical & Aesthetic Applications</h2>
-              <div class="pd-app-grid">
-                ${p.applications.map(app => `
-                  <div class="pd-app-card">
-                    <div class="pd-app-icon">
-                      <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <div class="pd-app-label">${app}</div>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </section>
-          ` : ''}
 
           <!-- FEATURES SECTION -->
           ${p.features ? `
@@ -510,10 +494,10 @@
           <!-- SECTION 3: INDICATION -->
           <section id="pd-indication-sec" style="background:#f8fafc; padding:60px 0; border-top:1px solid #e2e8f0;">
             <div style="max-width:650px; margin:0 auto; padding:0 24px;">
-              <span class="pd-section-tag">TARGET APPLICATION</span>
+              <span class="pd-section-tag">INDICATION &amp; EFFECT</span>
               <h2 class="pd-section-heading">Indication</h2>
               <div class="indication-highlight-card">
-                <div class="indication-highlight-title">RECOMMENDED APPLICATION / EFFECT</div>
+                <div class="indication-highlight-title">RECOMMENDED INDICATION / EFFECT</div>
                 <div class="indication-highlight-val">${p.indication || 'General Meso Application'}</div>
               </div>
             </div>
@@ -772,5 +756,12 @@
 
     })();
   </script>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919389144288" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.586A9.877 9.877 0 0 0 12.004 3C7.043 3 3.011 7.03 3.009 11.993c0 1.587.414 3.136 1.2 4.498L3 21l4.636-1.217a9.88 9.88 0 0 0 4.364 1.026h.004c4.96 0 8.993-4.032 8.995-8.995 0-2.404-.936-4.664-2.596-6.228zM12.004 19.21h-.003a8.212 8.212 0 0 1-4.187-1.152l-.3.178-3.111.816.83-3.033-.197-.314a8.204 8.204 0 0 1-1.258-4.327c.002-4.538 3.694-8.23 8.232-8.23 2.197 0 4.262.856 5.814 2.41 1.552 1.554 2.406 3.62 2.405 5.818-.002 4.539-3.694 8.23-8.225 8.23zm4.512-6.167c-.247-.124-1.463-.722-1.69-.805-.227-.082-.393-.124-.558.124-.165.248-.64.805-.784.97-.145.166-.29.186-.537.062-.247-.124-1.045-.385-1.99-1.228-.738-.658-1.236-1.47-1.38-1.718-.145-.248-.016-.382.108-.505.112-.112.248-.289.372-.434.124-.145.165-.248.247-.413.083-.165.042-.31-.02-.434-.063-.124-.559-1.349-.765-1.847-.201-.486-.406-.42-.559-.428l-.476-.008c-.165 0-.433.062-.66.31-.227.248-.867.847-.867 2.067 0 1.22.888 2.398 1.011 2.563.124.165 1.748 2.668 4.234 3.743.592.256 1.054.409 1.414.523.594.189 1.134.162 1.562.098.477-.071 1.463-.598 1.67-1.176.206-.578.206-1.073.144-1.176-.062-.103-.227-.165-.474-.289z" fill="currentColor"/>
+    </svg>
+  </a>
+
 </body>
 </html>

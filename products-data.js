@@ -461,7 +461,7 @@ const productsData = [
     categoryLabel: "MESO SOLUTION",
     description: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum penetration.",
     indication: "Hair Re-Growth Effect",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png"],
     ingredients: [
       "Aqua / Water",
       "Panthenol",
@@ -483,7 +483,7 @@ const productsData = [
     categoryLabel: "MESO SOLUTION",
     description: "A meso cocktail used topically with a nano roller for maximum penetration.",
     indication: "Glowing Effect / Lightening Effect",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png"],
     ingredients: [
       "Aqua / Water",
       "Dimethylaminoethanol Tartrate",
@@ -505,7 +505,7 @@ const productsData = [
     description: "A Deoxycholate + PPC PRO cocktail described for dissolving unwanted fat under the skin.",
     indication: "Double Chin, Love Handles, Inner Thighs and Underarms",
     detailNote: "The PDF states that the treatment involves multiple deeper injections on the targeted area and that the procedure is performed by an experienced professional.",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (3).png"],
     ingredients: [
       "Aqua / Water",
       "Sodium Phosphatidylcholine",
@@ -525,7 +525,7 @@ const productsData = [
     categoryLabel: "MESO SOLUTION",
     description: "A glutathion meso cocktail used topically with a nano roller on the desired area of the body.",
     indication: "Glowing Effect / Lightening Effect",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (4).png"],
     ingredients: [
       "Aqua / Water",
       "Glutathione",
@@ -545,7 +545,7 @@ const productsData = [
     categoryLabel: "MESO SOLUTION",
     description: "A meso cocktail described for stretch-mark and scar-reduction applications and topical use with a nano roller.",
     indication: "Anti-Stretch Mark / Anti-Scar Effect",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (5).png"],
     ingredients: [
       "Aqua / Water",
       "Panthenol",
@@ -569,7 +569,7 @@ const productsData = [
     categoryLabel: "MESO SOLUTION",
     description: "A growth-factor meso cocktail described for generating new cells and topical use on the skin and scalp.",
     indication: "Regenerating Effect",
-    images: ["assests/cat-meso.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (6).png"],
     ingredients: [
       "Aqua / Water",
       "Sodium Chloride",
@@ -597,7 +597,7 @@ const productsData = [
     description: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
     variants: ["Glycolic 20%", "Glycolic 40%", "Glycolic 60%"],
     directions: "Apply evenly to cleaned, dried skin. Leave for specified application duration according to skin sensitivity and neutralise thoroughly.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
     relatedIds: ["tca-peel", "lactic-peel", "salicylic-peel"]
@@ -611,7 +611,7 @@ const productsData = [
     description: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
     variants: ["TCA 10%", "TCA 20%", "TCA 40%", "TCA 70%"],
     directions: "Apply with precise technique to targeted facial zones. Monitor skin response carefully and neutralise per protocol.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
     relatedIds: ["glycolic-peel", "jessner-peel", "phenol-5-percent-peel"]
@@ -625,7 +625,7 @@ const productsData = [
     description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
     variants: ["Lactic 70%"],
     directions: "Apply gently across treatment area, monitor skin erythema, and neutralise thoroughly after target exposure time.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (3).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
     relatedIds: ["glycolic-peel", "salicylic-peel", "dark-circle-peel"]
@@ -639,7 +639,7 @@ const productsData = [
     description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
     variants: ["Salicylic 10%", "Salicylic 20%", "Salicylic 30%"],
     directions: "Apply evenly onto oily or acne-prone areas. Allow peel to self-neutralise or neutralise per catalogue guidance.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (4).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
     relatedIds: ["salicylic-mandelac-peel", "lactic-peel", "glycolic-peel"]
@@ -652,7 +652,7 @@ const productsData = [
     categoryLabel: "CHEMICAL PEEL",
     description: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
     directions: "Apply uniform layers with cotton applicator until frosting occurs. Follow post-peel recovery guidelines.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (5).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
     relatedIds: ["tca-peel", "retinol-yellow-peel", "phenol-5-percent-peel"]
@@ -665,7 +665,7 @@ const productsData = [
     categoryLabel: "CHEMICAL PEEL",
     description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
     directions: "Apply to clean facial skin. Leave for recommended exposure time before gentle neutralization.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (6).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
     relatedIds: ["salicylic-peel", "arginine-cocktail-peel", "dark-circle-peel"]
@@ -679,7 +679,7 @@ const productsData = [
     description: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
     applications: ["Acne scarring", "Skin discolouration", "Wrinkling", "Sun damage"],
     directions: "Apply by trained healthcare provider only. Monitor skin closely and neutralise accurately per protocol.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (7).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
     relatedIds: ["tca-peel", "jessner-peel", "retinol-yellow-peel"]
@@ -692,7 +692,7 @@ const productsData = [
     categoryLabel: "CHEMICAL PEEL",
     description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
     directions: "Apply carefully around peri-orbital contours. Neutralise promptly according to delicate skin protocols.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (8).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
     relatedIds: ["arginine-cocktail-peel", "lactic-peel", "salicylic-mandelac-peel"]
@@ -705,7 +705,7 @@ const productsData = [
     categoryLabel: "CHEMICAL PEEL",
     description: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
     directions: "Apply to delicate facial and eye areas. Allow gentle infusion before neutralising with cool water spray.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (9).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
     relatedIds: ["dark-circle-peel", "lactic-peel", "retinol-yellow-peel"]
@@ -718,7 +718,7 @@ const productsData = [
     categoryLabel: "CHEMICAL PEEL",
     description: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
     directions: "Apply evenly across facial skin. Leave on skin for recommended contact hours before washing off thoroughly.",
-    images: ["assests/cat-peels.png"],
+    images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (10).png"],
     overviewHeading: "About This Chemical Peel",
     overviewParagraph1: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
     relatedIds: ["jessner-peel", "phenol-5-percent-peel", "glycolic-peel"]

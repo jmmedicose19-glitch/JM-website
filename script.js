@@ -1,3 +1,47 @@
+  // =========================================================================
+  // SMART SCROLL NAVBAR — hide on scroll down, show on scroll up
+  // =========================================================================
+  (function () {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    // Set body padding-top to exact header height so nothing gets hidden behind it
+    function syncBodyPadding() {
+      const headerHeight = header.getBoundingClientRect().height;
+      document.body.style.paddingTop = headerHeight + 'px';
+    }
+    syncBodyPadding();
+    window.addEventListener('resize', syncBodyPadding);
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function onScroll() {
+      const currentScrollY = window.scrollY;
+
+      // Always show navbar when within 60px of top
+      if (currentScrollY <= 60) {
+        header.classList.remove('nav-hidden');
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling DOWN — hide navbar
+        header.classList.add('nav-hidden');
+      } else {
+        // Scrolling UP — show navbar
+        header.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
   // Site-wide Image Protection: prevent drag and right-click context menu on images
   document.addEventListener("contextmenu", (e) => {
     if (e.target.tagName === "IMG" || e.target.closest("img")) {
@@ -58,7 +102,7 @@
           optgroup.appendChild(option);
         });
         dropdown.appendChild(optgroup);
-      });
+      }
     });
   }
 
@@ -325,12 +369,12 @@
         card.innerHTML = `
           <div class="product-img-wrapper">
             <span class="product-category-tag">${p.categoryLabel}</span>
-            <img src="${p.image}" alt="${p.name}">
+            <img src="${(p.images && p.images.length > 0) ? p.images[0] : (p.image || 'assests/cat-machines.png')}" alt="${p.name}">
           </div>
           <div class="product-info">
             <span class="product-model">Model: ${p.model}</span>
             <h4 class="product-name">${p.name}</h4>
-            <p class="product-app-line">${p.primaryApplication}</p>
+            <p class="product-app-line">${p.primaryApplication || p.description || ''}</p>
             <a href="product-detail.html?id=${p.id}" class="card-btn">View Product →</a>
           </div>
         `;
@@ -594,10 +638,6 @@
         );
       }
 
-      const countText = document.getElementById("catalog-count-text");
-      if (countText) {
-        countText.innerHTML = `Showing <strong>${filtered.length} Products</strong>`;
-      }
 
       if (filtered.length === 0) {
         productsGrid3Col.innerHTML = `
@@ -624,10 +664,7 @@
 
         card.innerHTML = `
           <div class="card-top-image-box">
-            <button class="card-wishlist-btn" aria-label="Favorite">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </button>
-            <img src="${p.image}" alt="${p.name}">
+            <img src="${(p.images && p.images.length > 0) ? p.images[0] : (p.image || 'assests/cat-machines.png')}" alt="${p.name}">
           </div>
 
           <div class="card-info-content">
@@ -779,4 +816,343 @@
     });
   }
 
-});
+  // SYNCHRONIZED PRODUCT SHOWCASE HERO CAROUSEL
+  const initHeroShowcase = () => {
+    const heroSection = document.getElementById('hero-showcase');
+    if (!heroSection) return;
+
+    const bgActive = document.getElementById('hero-bg-active');
+    const bgNext = document.getElementById('hero-bg-next');
+    const eyebrowEl = document.getElementById('hero-eyebrow');
+    const modelPillEl = document.getElementById('hero-model-pill');
+    const titleEl = document.getElementById('hero-title');
+    const subtitleEl = document.getElementById('hero-subtitle');
+    const primaryLink = document.getElementById('hero-primary-link');
+    const secondaryLink = document.getElementById('hero-secondary-link');
+    const prevBtn = document.getElementById('hero-prev-btn');
+    const nextBtn = document.getElementById('hero-next-btn');
+    const progressFill = document.getElementById('hero-progress-fill');
+    const counterActive = document.getElementById('hero-counter-active');
+    const counterTotal = document.getElementById('hero-counter-total');
+    const carouselWrapper = document.getElementById('hero-carousel-wrapper');
+    const carouselEl = document.getElementById('hero-card-carousel');
+
+    // Products covering all 3 categories (Machines, Meso Solutions, Chemical Peels)
+    const heroSlides = [
+      {
+        id: "truepico-laser",
+        category: "MACHINES",
+        eyebrow: "PICOSECOND LASER PLATFORM",
+        title: "350PS TRUEPICO PICOSECOND LASER",
+        model: "JMPS1",
+        subtitle: "Ultra-short picosecond laser technology for high-efficiency multi-color tattoo removal and stubborn pigment treatments.",
+        image: "assests/products/pico-laser-1.png",
+        detailLink: "product-detail.html?id=truepico-laser",
+        enquireLink: "contact.html?product=350PS+TruePico+Picosecond+Laser"
+      },
+      {
+        id: "hair-re-growth",
+        category: "MESO SOLUTION",
+        eyebrow: "SCALP & HAIR REVITALIZATION",
+        title: "HAIR RE-GROWTH MESO COCKTAIL",
+        model: "JMM-01",
+        subtitle: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum follicle penetration and stimulation.",
+        image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png",
+        detailLink: "contact.html?product=Hair+Re-Growth",
+        enquireLink: "contact.html?product=Hair+Re-Growth"
+      },
+      {
+        id: "glycolic-peel",
+        category: "CHEMICAL PEEL",
+        eyebrow: "ALPHA HYDROXY ACID PEEL",
+        title: "GLYCOLIC PEEL SOLUTION",
+        model: "JMP-01",
+        subtitle: "A water-soluble sugar cane alpha hydroxy acid peel available in 20%, 40%, and 60% concentrations for smooth skin renewal.",
+        image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png",
+        detailLink: "contact.html?product=Glycolic+Peel",
+        enquireLink: "contact.html?product=Glycolic+Peel"
+      },
+      {
+        id: "pulse-lift-ems",
+        category: "MACHINES",
+        eyebrow: "RF & HIFES FACIAL SYSTEM",
+        title: "PULSE LIFT EMS FACE LIFT",
+        model: "JMHM-17",
+        subtitle: "A professional facial platform combining RF and HIFES technology for non-invasive forehead, cheek, and jawline lifting.",
+        image: "assests/products/ems-roller-1.png",
+        detailLink: "product-detail.html?id=pulse-lift-ems",
+        enquireLink: "contact.html?product=Pulse+Lift+EMS+Face+Lift"
+      },
+      {
+        id: "tca-peel",
+        category: "CHEMICAL PEEL",
+        eyebrow: "MEDIUM-DEPTH TRICHLOROACETIC PEEL",
+        title: "TCA PEEL SOLUTION",
+        model: "JMP-02",
+        subtitle: "A professional trichloroacetic acid peel for fine surface wrinkles, superficial blemishes, and targeted skin resurfacing.",
+        image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png",
+        detailLink: "contact.html?product=TCA+Peel",
+        enquireLink: "contact.html?product=TCA+Peel"
+      },
+      {
+        id: "glow-meso",
+        category: "MESO SOLUTION",
+        eyebrow: "GLOWING & LIGHTENING MESO",
+        title: "GLOW MESO SOLUTION",
+        model: "JMM-02",
+        subtitle: "Formulated with DMAE, Hyaluronate, and Ascorbic Acid for radiant skin brightening and intense hydration boost.",
+        image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png",
+        detailLink: "contact.html?product=Glow+Meso",
+        enquireLink: "contact.html?product=Glow+Meso"
+      }
+    ];
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+
+    // Render cards into horizontal slider
+    carouselEl.innerHTML = heroSlides.map((slide, index) => `
+      <div class="hero-showcase-card ${index === 0 ? 'active' : ''}" data-index="${index}">
+        <div class="hero-card-img-wrapper">
+          <img src="${slide.image}" alt="${slide.title}" class="hero-card-img" />
+        </div>
+        <div class="hero-card-overlay">
+          <span class="hero-card-category-badge">${slide.category}</span>
+          <span class="hero-card-model">${slide.model}</span>
+          <h3 class="hero-card-name">${slide.title}</h3>
+        </div>
+      </div>
+    `).join('');
+
+    const cards = carouselEl.querySelectorAll('.hero-showcase-card');
+
+    // Set initial background & counter
+    if (bgActive) bgActive.style.backgroundImage = `url('${heroSlides[0].image}')`;
+    if (counterTotal) counterTotal.textContent = String(heroSlides.length).padStart(2, '0');
+
+    const featuredImgEl = document.getElementById('hero-featured-img');
+
+    let lastSlideTime = 0;
+    const updateSlide = (nextIndex) => {
+      const now = Date.now();
+      if (now - lastSlideTime < 150) return;
+      lastSlideTime = now;
+
+      if (nextIndex < 0 || nextIndex >= heroSlides.length) return;
+      
+      const nextSlide = heroSlides[nextIndex];
+      currentIndex = nextIndex;
+
+      // 1. Instant & Direct Content Updates
+      if (featuredImgEl) {
+        featuredImgEl.src = nextSlide.image;
+        featuredImgEl.alt = nextSlide.title;
+      }
+
+      if (bgActive) {
+        bgActive.style.backgroundImage = `url('${nextSlide.image}')`;
+      }
+
+      if (eyebrowEl) eyebrowEl.textContent = `${nextSlide.category} • ${nextSlide.eyebrow}`;
+      if (modelPillEl) modelPillEl.textContent = nextSlide.model;
+      if (titleEl) titleEl.textContent = nextSlide.title;
+      if (subtitleEl) subtitleEl.textContent = nextSlide.subtitle;
+      if (primaryLink) primaryLink.href = nextSlide.detailLink;
+      if (secondaryLink) secondaryLink.href = nextSlide.enquireLink;
+
+      // 2. Update Counter & Progress Bar
+      if (counterActive) counterActive.textContent = String(currentIndex + 1).padStart(2, '0');
+      if (progressFill) {
+        const progressPercent = ((currentIndex + 1) / heroSlides.length) * 100;
+        progressFill.style.width = `${progressPercent}%`;
+      }
+
+      // 3. Update Active Card Class & Horizontal Scroll Position
+      cards.forEach((card, idx) => {
+        if (idx === currentIndex) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      });
+
+      const activeCard = cards[currentIndex];
+      if (activeCard) {
+        const cardWidth = activeCard.offsetWidth + 16;
+        currentTranslate = -(currentIndex * cardWidth);
+        prevTranslate = currentTranslate;
+        carouselEl.style.transform = `translateX(${currentTranslate}px)`;
+      }
+    };
+
+    // Card click events
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        const index = parseInt(card.getAttribute('data-index'), 10);
+        updateSlide(index);
+        resetAutoPlay();
+      });
+    });
+
+    // Expose Global Window Handlers for Single-Trigger Button Clicking
+    window.slideHeroPrev = (e) => {
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const prevIndex = (currentIndex - 1 + heroSlides.length) % heroSlides.length;
+      updateSlide(prevIndex);
+      resetAutoPlay();
+    };
+
+    window.slideHeroNext = (e) => {
+      if (e && typeof e.preventDefault === 'function') {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      const nextIndex = (currentIndex + 1) % heroSlides.length;
+      updateSlide(nextIndex);
+      resetAutoPlay();
+    };
+
+    // Attach SINGLE clean click event to Prev / Next buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', window.slideHeroPrev);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', window.slideHeroNext);
+    }
+
+    // Touch & Mouse Dragging handlers for Desktop & Mobile
+    if (carouselWrapper) {
+      const getPositionX = (e) => e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+
+      const touchStart = (e) => {
+        isDragging = true;
+        startX = getPositionX(e);
+        if (autoPlayTimer) clearInterval(autoPlayTimer);
+      };
+
+      const touchMove = (e) => {
+        if (!isDragging) return;
+        const currentX = getPositionX(e);
+        const diff = currentX - startX;
+        carouselEl.style.transform = `translateX(${prevTranslate + diff}px)`;
+      };
+
+      const touchEnd = (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const movedBy = currentTranslate - prevTranslate;
+        if (movedBy < -50 && currentIndex < heroSlides.length - 1) {
+          updateSlide(currentIndex + 1);
+        } else if (movedBy > 50 && currentIndex > 0) {
+          updateSlide(currentIndex - 1);
+        } else {
+          updateSlide(currentIndex);
+        }
+        startAutoPlay();
+      };
+
+      carouselWrapper.addEventListener('touchstart', touchStart, { passive: true });
+      carouselWrapper.addEventListener('touchmove', touchMove, { passive: true });
+      carouselWrapper.addEventListener('touchend', touchEnd);
+
+      carouselWrapper.addEventListener('mousedown', touchStart);
+      carouselWrapper.addEventListener('mousemove', touchMove);
+      carouselWrapper.addEventListener('mouseup', touchEnd);
+      carouselWrapper.addEventListener('mouseleave', () => {
+        if (isDragging) touchEnd();
+      });
+    }
+
+    // Auto Play functionality (every 4.5 seconds)
+    const startAutoPlay = () => {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+      autoPlayTimer = setInterval(() => {
+        const nextIndex = (currentIndex + 1) % heroSlides.length;
+        updateSlide(nextIndex);
+      }, 4500);
+    };
+
+    const resetAutoPlay = () => {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+      startAutoPlay();
+    };
+
+    heroSection.addEventListener('mouseenter', () => {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      startAutoPlay();
+    });
+
+    // Initialize initial progress & autoplay
+    if (progressFill) progressFill.style.width = `${(1 / heroSlides.length) * 100}%`;
+    startAutoPlay();
+  };
+
+  initHeroShowcase();
+
+  /* =========================================================================
+     TESTIMONIALS 2-CARD SLIDER
+     ========================================================================= */
+  const initTestimonialsSlider = () => {
+    const testiTrack = document.getElementById("testimonials-track");
+    const testiPrevBtn = document.getElementById("testi-prev-btn");
+    const testiNextBtn = document.getElementById("testi-next-btn");
+    const testiDots = document.querySelectorAll(".testi-dot");
+
+    if (!testiTrack || testiDots.length === 0) return;
+
+    let currentPage = 0;
+    const totalPages = testiDots.length;
+    let testiAutoTimer = null;
+
+    const goToPage = (page) => {
+      currentPage = (page + totalPages) % totalPages;
+      testiTrack.style.transform = `translateX(-${currentPage * 100}%)`;
+      testiDots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentPage);
+      });
+    };
+
+    const startTestiAutoPlay = () => {
+      if (testiAutoTimer) clearInterval(testiAutoTimer);
+      testiAutoTimer = setInterval(() => {
+        goToPage(currentPage + 1);
+      }, 5500);
+    };
+
+    if (testiPrevBtn) {
+      testiPrevBtn.addEventListener("click", () => {
+        goToPage(currentPage - 1);
+        startTestiAutoPlay();
+      });
+    }
+
+    if (testiNextBtn) {
+      testiNextBtn.addEventListener("click", () => {
+        goToPage(currentPage + 1);
+        startTestiAutoPlay();
+      });
+    }
+
+    testiDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const page = parseInt(dot.getAttribute("data-page"), 10);
+        goToPage(page);
+        startTestiAutoPlay();
+      });
+    });
+
+    startTestiAutoPlay();
+  };
+
+  initTestimonialsSlider();
