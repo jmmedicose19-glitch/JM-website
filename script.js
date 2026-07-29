@@ -797,9 +797,6 @@
         <div class="equip-card-img-box">
           <img src="${c.img}" alt="${c.title}">
         </div>
-        <div class="equip-icon-circle">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#015699" stroke-width="2"><path d="M12 3v3m0 12v3M3 12h3m12 0h3m-4.5-7.5l-2 2m-7 7l-2 2m0-11l2 2m7 7l2 2"/></svg>
-        </div>
       </div>`;
 
     appSwitcherBtns.forEach(btn => {
