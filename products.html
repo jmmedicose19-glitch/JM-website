@@ -51,22 +51,28 @@
   <!-- MAIN CATALOG CONTENT CONTAINER -->
   <main style="max-width: 1320px; margin: 0 auto; padding: 0 24px;">
 
-    <!-- TOP TOOLBAR: CATEGORY PILLS + GLOBAL SEARCH -->
+    <!-- TOP TOOLBAR: CATEGORY PILLS + GLOBAL SEARCH + COUNT -->
     <div class="catalog-toolbar-card">
       <!-- Category Pills -->
-      <div class="category-pills-row" id="top-category-pills">
-        <button class="cat-pill-btn active" data-cat="all">All Products</button>
-        <button class="cat-pill-btn" data-cat="machines">Machines & Lasers</button>
-        <button class="cat-pill-btn" data-cat="meso">Meso Solutions</button>
-        <button class="cat-pill-btn" data-cat="peels">Chemical Peels</button>
+      <div class="category-pills-row" id="top-category-pills" role="tablist" aria-label="Product Categories">
+        <button class="cat-pill-btn active" data-cat="all" role="tab" aria-selected="true">All Products</button>
+        <button class="cat-pill-btn" data-cat="machines" role="tab" aria-selected="false">Machines &amp; Lasers</button>
+        <button class="cat-pill-btn" data-cat="meso" role="tab" aria-selected="false">Meso Solutions</button>
+        <button class="cat-pill-btn" data-cat="peels" role="tab" aria-selected="false">Chemical Peels</button>
       </div>
 
-      <!-- Search Input Box -->
-      <div class="global-search-wrapper">
-        <input type="text" class="global-search-input" id="global-search-input" placeholder="Search products or models...">
-        <span class="global-search-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        </span>
+      <!-- Search & Count Wrapper -->
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <div class="product-count-badge" id="product-count-badge" style="font-size: 13px; font-weight: 700; color: #015699; background: #e0f2fe; padding: 6px 14px; border-radius: 20px; border: 1px solid #bae6fd;">
+          Showing <span id="current-count-num">19</span> Products
+        </div>
+
+        <div class="global-search-wrapper">
+          <input type="text" class="global-search-input" id="global-search-input" placeholder="Search products or models...">
+          <span class="global-search-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+        </div>
       </div>
     </div>
 
@@ -80,7 +86,7 @@
           <div class="prd-card-image">
             <span class="prd-cat-badge">FACIAL EQUIPMENT</span>
             <span class="prd-model-ref">JMHM-17</span>
-            <img src="assests/products/Ems + roller (1).png" alt="Pulse Lift EMS Face Lift">
+            <img src="assests/products/Pulse Lift EMS JMHM-17 (1).png" alt="Pulse Lift EMS Face Lift">
           </div>
         </a>
         <div class="prd-card-body">
@@ -116,23 +122,22 @@
         </div>
       </div>
 
-      <!-- Card 3: Fractional CO₂ Laser V2 -->
-      <div class="prd-card machine-card" data-cat="machines">
+      <!-- Card 3: Fractional CO₂ Laser (JMCO-11) -->
+      <div class="prd-card" data-cat="machines">
         <a href="product-detail.html?id=fractional-co2-v2" class="prd-card-image-link">
-          <div class="prd-card-image">
+          <div class="prd-card-img-area">
             <span class="prd-cat-badge">FRACTIONAL LASER</span>
-            <span class="prd-model-ref">JMCO-11</span>
-            <img src="assests/products/Fractional co2 laser v2 (1).png" alt="Fractional CO₂ Laser Machine V2">
+            <img src="assests/products/Fractional co2 laser v2 (1).png" alt="Fractional CO₂ Laser Machine (JMCO-11)">
           </div>
         </a>
         <div class="prd-card-body">
           <a href="product-detail.html?id=fractional-co2-v2" class="prd-name-link">
-            <h3 class="prd-name">Fractional CO₂ Laser Machine — V2</h3>
+            <h3 class="prd-name">Fractional CO₂ Laser Machine</h3>
           </a>
           <p class="prd-desc">A professional fractional CO₂ laser system for resurfacing, scar, wrinkle and skin-texture applications.</p>
           <div class="prd-card-actions">
             <a href="product-detail.html?id=fractional-co2-v2" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Fractional+CO2+Laser+Machine+V2" class="prd-btn-enquire">Enquire</a>
+            <a href="contact.html?product=Fractional+CO2+Laser+Machine+JMCO11" class="prd-btn-enquire">Enquire</a>
           </div>
         </div>
       </div>
@@ -164,7 +169,7 @@
           <div class="prd-card-image">
             <span class="prd-cat-badge">HAIR-REMOVAL LASER</span>
             <span class="prd-model-ref">JMMD-9</span>
-            <img src="assests/products/diode laser (1).png" alt="Diode Laser Machine">
+            <img src="assests/products/Diode laser JMMD-9 (1).png" alt="Diode Laser Machine">
           </div>
         </a>
         <div class="prd-card-body">
@@ -727,7 +732,7 @@
 
     <div class="footer-bottom-centered">
       <div class="footer-copyright">
-        &copy; JM MEDICOSE 2026 | <a href="index.html">SITE DESIGN</a> | <a href="about.html">QUALITY ASSURED</a>
+        &copy; JM MEDICOSE 2026 | SITE DESIGN | QUALITY ASSURED
       </div>
       <div class="footer-italic-tagline">
         Professional Aesthetic &amp; Dermatology Equipment Solutions

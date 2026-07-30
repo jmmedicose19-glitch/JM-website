@@ -309,13 +309,23 @@
         </div>
 
         <form class="cnt-form-grid" id="contact-page-form">
+          <!-- Hidden tracking fields & honeypot spam prevention -->
+          <input type="hidden" id="form-product-id" name="product_id" value="">
+          <input type="hidden" id="form-exact-product-name" name="exact_product_name" value="">
+          <input type="hidden" id="form-model-number" name="model_number" value="">
+          <input type="hidden" id="form-source-page" name="source_page" value="">
+          <input type="hidden" id="form-utm-source" name="utm_source" value="">
+          <input type="hidden" id="form-utm-medium" name="utm_medium" value="">
+          <input type="hidden" id="form-utm-campaign" name="utm_campaign" value="">
+          <input type="text" name="website_url_hp" id="website_url_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+
           <div class="cnt-form-group">
-            <label for="form-product">Product of Interest</label>
+            <label for="form-product">Product of Interest <span style="color:#fe2523;">*</span></label>
             <select id="form-product" name="product_of_interest" required>
               <option value="">-- Select a Product / Machine --</option>
               <option value="Pulse Lift EMS Face Lift (JMHM-17)">Pulse Lift EMS Face Lift (JMHM-17)</option>
               <option value="HIFU-12D Machine (JMHF-3)">HIFU-12D Machine (JMHF-3)</option>
-              <option value="Fractional CO2 Laser Machine V2 (JMCO-11)">Fractional CO₂ Laser Machine — V2 (JMCO-11)</option>
+              <option value="Fractional CO2 Laser Machine (JMCO-11)">Fractional CO₂ Laser Machine (JMCO-11)</option>
               <option value="Fractional CO2 Laser Machine (JMHF-4)">Fractional CO₂ Laser Machine (JMHF-4)</option>
               <option value="Diode Laser Machine (JMMD-9)">Diode Laser Machine (JMMD-9)</option>
               <option value="350PS TruePico Picosecond Laser (JMPS1)">350PS TruePico Picosecond Laser (JMPS1)</option>
@@ -324,21 +334,48 @@
           </div>
 
           <div class="cnt-form-group">
-            <label for="form-name">Your Full Name</label>
+            <label for="form-name">Full Name <span style="color:#fe2523;">*</span></label>
             <input type="text" id="form-name" name="full_name" placeholder="John Doe" required>
           </div>
 
           <div class="cnt-form-group">
-            <label for="form-phone">Phone Number</label>
+            <label for="form-phone">Phone Number <span style="color:#fe2523;">*</span></label>
             <input type="tel" id="form-phone" name="phone" placeholder="e.g. +91 98765 43210" required>
           </div>
 
           <div class="cnt-form-group">
-            <label for="form-msg">Optional Message / Requirements</label>
-            <textarea id="form-msg" name="message" rows="4" placeholder="Tell us more about your clinic's needs..."></textarea>
+            <label for="form-email">Email Address <span style="color:#fe2523;">*</span></label>
+            <input type="email" id="form-email" name="email" placeholder="name@clinic.com" required>
           </div>
 
-          <button type="submit" class="cnt-submit-btn">Submit Form</button>
+          <div class="cnt-form-group">
+            <label for="form-organisation">Clinic / Company / Organisation <span style="color:#fe2523;">*</span></label>
+            <input type="text" id="form-organisation" name="organisation" placeholder="e.g. Skin Care Clinic" required>
+          </div>
+
+          <div class="cnt-form-group">
+            <label for="form-city">City <span style="color:#fe2523;">*</span></label>
+            <input type="text" id="form-city" name="city" placeholder="e.g. Mumbai" required>
+          </div>
+
+          <div class="cnt-form-group" style="grid-column: 1 / -1;">
+            <label for="form-msg">Optional Message / Requirements</label>
+            <textarea id="form-msg" name="message" rows="4" placeholder="Tell us more about your clinic's requirements..."></textarea>
+          </div>
+
+          <div class="cnt-form-group" style="grid-column: 1 / -1;">
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:13px; color:#475569;">
+              <input type="checkbox" id="form-consent" name="consent" required style="width:16px; height:16px; margin-top:2px; accent-color:#015699;">
+              <span>I consent to JM Medicose contacting me regarding product information, pricing, and catalogue specifications. <span style="color:#fe2523;">*</span></span>
+            </label>
+          </div>
+
+          <!-- Status Alert Message Banner -->
+          <div id="form-status-banner" style="display:none; grid-column:1 / -1; padding:12px 16px; border-radius:10px; font-size:14px; font-weight:600; text-align:center;"></div>
+
+          <button type="submit" class="cnt-submit-btn" id="form-submit-btn" style="grid-column: 1 / -1;">
+            <span class="btn-text">Submit Product Enquiry</span>
+          </button>
         </form>
       </div>
 
@@ -346,7 +383,7 @@
 
     <!-- MAP CONTAINER -->
     <div class="cnt-map-card">
-      <iframe src="https://maps.google.com/maps?q=Florence%20height%20shop%20no%206%20ground%20floor%20near%20make%20my%20waffle%20malad%20west,%20Mumbai,%20Maharashtra%20400095&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe title="JM Medicose Location Map" src="https://maps.google.com/maps?q=Florence%20height%20shop%20no%206%20ground%20floor%20near%20make%20my%20waffle%20malad%20west,%20Mumbai,%20Maharashtra%20400095&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </main>
 
@@ -418,37 +455,118 @@
     </div>
   </footer>
 
+  <script src="products-data.js"></script>
   <script src="script.js"></script>
   <script>
     (function () {
-      // Auto-select product from URL parameters if passed e.g. contact.html?product=...
       const urlParams = new URLSearchParams(window.location.search);
-      const prd = urlParams.get('product');
-      if (prd) {
-        const selectEl = document.getElementById('form-product');
-        if (selectEl) {
-          for (let opt of selectEl.options) {
-            if (opt.value.toLowerCase().includes(prd.toLowerCase())) {
-              opt.selected = true;
-              break;
-            }
-          }
+      const prdParam = urlParams.get('product') || urlParams.get('product_name');
+      const prdIdParam = urlParams.get('product_id') || urlParams.get('id');
+
+      const selectEl = document.getElementById('form-product');
+      const hiddenIdInput = document.getElementById('form-product-id');
+      const hiddenExactNameInput = document.getElementById('form-exact-product-name');
+      const hiddenModelInput = document.getElementById('form-model-number');
+      const hiddenSourceInput = document.getElementById('form-source-page');
+      const hiddenUtmSource = document.getElementById('form-utm-source');
+      const hiddenUtmMedium = document.getElementById('form-utm-medium');
+      const hiddenUtmCampaign = document.getElementById('form-utm-campaign');
+
+      // Fill URL tracking parameters
+      if (hiddenSourceInput) hiddenSourceInput.value = document.referrer || window.location.href;
+      if (hiddenUtmSource) hiddenUtmSource.value = urlParams.get('utm_source') || '';
+      if (hiddenUtmMedium) hiddenUtmMedium.value = urlParams.get('utm_medium') || '';
+      if (hiddenUtmCampaign) hiddenUtmCampaign.value = urlParams.get('utm_campaign') || '';
+
+      // Match product in productsData if available
+      let matchedProduct = null;
+      if (typeof productsData !== 'undefined' && Array.isArray(productsData)) {
+        if (prdIdParam) {
+          matchedProduct = productsData.find(x => x.id.toLowerCase() === prdIdParam.toLowerCase());
+        }
+        if (!matchedProduct && prdParam) {
+          matchedProduct = productsData.find(x => x.name.toLowerCase().includes(prdParam.toLowerCase()) || prdParam.toLowerCase().includes(x.name.toLowerCase()));
         }
       }
 
-      // Form submission UI feedback
+      if (matchedProduct) {
+        if (hiddenIdInput) hiddenIdInput.value = matchedProduct.id;
+        if (hiddenExactNameInput) hiddenExactNameInput.value = matchedProduct.name;
+        if (hiddenModelInput) hiddenModelInput.value = matchedProduct.model || '';
+
+        const formattedLabel = `${matchedProduct.name}${matchedProduct.model ? ' (' + matchedProduct.model + ')' : ''}`;
+        
+        let found = false;
+        for (let opt of selectEl.options) {
+          if (opt.value.toLowerCase().includes(matchedProduct.id) || opt.value.toLowerCase().includes(matchedProduct.name.toLowerCase())) {
+            opt.selected = true;
+            found = true;
+            break;
+          }
+        }
+        if (!found && selectEl) {
+          const newOpt = document.createElement('option');
+          newOpt.value = formattedLabel;
+          newOpt.textContent = formattedLabel;
+          newOpt.selected = true;
+          selectEl.appendChild(newOpt);
+        }
+      } else if (prdParam && selectEl) {
+        if (hiddenExactNameInput) hiddenExactNameInput.value = prdParam;
+        let found = false;
+        for (let opt of selectEl.options) {
+          if (opt.value.toLowerCase().includes(prdParam.toLowerCase())) {
+            opt.selected = true;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          const newOpt = document.createElement('option');
+          newOpt.value = prdParam;
+          newOpt.textContent = prdParam;
+          newOpt.selected = true;
+          selectEl.appendChild(newOpt);
+        }
+      }
+
+      // Form submission UI feedback & validation
       const form = document.getElementById('contact-page-form');
+      const submitBtn = document.getElementById('form-submit-btn');
+      const statusBanner = document.getElementById('form-status-banner');
+      const hpInput = document.getElementById('website_url_hp');
+
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
-          const btn = form.querySelector('.cnt-submit-btn');
-          btn.textContent = 'Form Submitted Successfully!';
-          btn.style.background = '#0d9488';
+
+          // Honeypot spam check
+          if (hpInput && hpInput.value !== '') {
+            console.warn('Spam submission blocked');
+            return false;
+          }
+
+          // UI Loading State
+          submitBtn.disabled = true;
+          submitBtn.style.opacity = '0.7';
+          submitBtn.innerHTML = `Submitting Inquiry...`;
+
+          statusBanner.style.display = 'none';
+
+          // Simulate fast server response
           setTimeout(function () {
-            btn.textContent = 'Submit Form';
-            btn.style.background = '#fe2523';
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = `Submit Product Enquiry`;
+
+            statusBanner.style.display = 'block';
+            statusBanner.style.background = '#dcfce7';
+            statusBanner.style.color = '#15803d';
+            statusBanner.style.border = '1px solid #86efac';
+            statusBanner.innerHTML = `✔ Thank you! Your product enquiry has been received. Our clinical specialist will contact you shortly.`;
+
             form.reset();
-          }, 3000);
+          }, 800);
         });
       }
     })();

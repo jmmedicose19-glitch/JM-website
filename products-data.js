@@ -8,7 +8,7 @@ const productsData = [
     categoryLabel: "Facial Equipment",
     description: "A facial system using RF and HIFES technology for the forehead, eyebrows, cheeks and jawline.",
     images: [
-      "assests/products/Ems + roller (1).png",
+      "assests/products/Pulse Lift EMS JMHM-17 (1).png",
       "assests/products/Ems + roller (2).png",
       "assests/products/Ems + roller (3).png"
     ],
@@ -111,10 +111,10 @@ const productsData = [
     relatedIds: ["pulse-lift-ems", "fractional-co2-v2", "truepico-laser"]
   },
 
-  // 3. Fractional CO₂ Laser Machine — V2
+  // 3. Fractional CO₂ Laser Machine (JMCO-11)
   {
     id: "fractional-co2-v2",
-    name: "Fractional CO₂ Laser Machine — V2",
+    name: "Fractional CO₂ Laser Machine",
     model: "JMCO-11",
     category: "machines",
     categoryLabel: "Fractional Laser",
@@ -130,7 +130,7 @@ const productsData = [
       "Integrated display"
     ],
     overviewHeading: "Advanced Fractional CO₂ Laser System",
-    overviewParagraph1: "The Fractional CO₂ Laser Machine — V2 is a high-performance laser platform designed for intensive skin resurfacing, scar revision, and deep collagen remodeling.",
+    overviewParagraph1: "The Fractional CO₂ Laser Machine (JMCO-11) is a high-performance laser platform designed for intensive skin resurfacing, scar revision, and deep collagen remodeling.",
     overviewParagraph2: "Featuring an articulated optical arm and custom scanning patterns, this unit delivers precise micro-ablative thermal zones for comprehensive skin renewal.",
     applications: [
       "Skin resurfacing",
@@ -155,7 +155,7 @@ const productsData = [
       "Safety foot switch"
     ],
     infoTable: [
-      { field: "Product Name", value: "Fractional CO₂ Laser Machine — V2" },
+      { field: "Product Name", value: "Fractional CO₂ Laser Machine" },
       { field: "Product Category", value: "Fractional Laser" },
       { field: "Model Reference", value: "JMCO-11" },
       { field: "Technology Type", value: "Fractional CO₂ laser (10,600nm)" },
@@ -231,10 +231,10 @@ const productsData = [
     name: "Diode Laser Machine",
     model: "JMMD-9",
     category: "machines",
-    categoryLabel: "Hair-Removal Laser",
-    description: "A professional diode-laser system developed for catalogue-listed hair-removal applications.",
+    categoryLabel: "Laser Hair Removal",
+    description: "A diode laser system for catalogue-listed hair-removal applications.",
     images: [
-      "assests/products/diode laser (1).png",
+      "assests/products/Diode laser JMMD-9 (1).png",
       "assests/products/diode laser (2).png",
       "assests/products/diode laser (3).png"
     ],

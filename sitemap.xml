@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jmmedicose.com/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jmmedicose.com/about.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jmmedicose.com/products.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jmmedicose.com/contact.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Machines -->
+  <url><loc>https://jmmedicose.com/product-detail.html?id=pulse-lift-ems</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=hifu-12d</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=fractional-co2-v2</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=fractional-co2</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=diode-laser</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=truepico-laser</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=pdt-hydrafacial</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <!-- Meso Solutions -->
+  <url><loc>https://jmmedicose.com/product-detail.html?id=hair-re-growth</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=glow-meso</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=lipo-dissolve</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=whitening-glutathion-meso</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=stretch-mark-and-scars-meso</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=growth-factor-meso</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- Chemical Peels -->
+  <url><loc>https://jmmedicose.com/product-detail.html?id=glycolic-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=tca-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=lactic-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=salicylic-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=jessner-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=salicylic-mandelac-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=phenol-5-percent-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=dark-circle-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=arginine-cocktail-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://jmmedicose.com/product-detail.html?id=retinol-yellow-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+</urlset>

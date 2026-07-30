@@ -6692,24 +6692,28 @@ h3 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 8px;
+  margin-top: 24px;
 }
 
 .indicator-dot {
-  width: 12px;
-  height: 12px;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  min-height: 8px !important;
   border-radius: 50%;
   background: #cbd5e1;
   border: none;
   cursor: pointer;
+  padding: 0;
   transition: all 0.3s ease;
 }
 
 .indicator-dot.active {
   background: #fe2523;
-  width: 32px;
-  border-radius: 10px;
+  width: 20px !important;
+  min-width: 20px !important;
+  border-radius: 4px;
 }
 
 /* RESPONSIVE DESIGN */
@@ -7077,14 +7081,101 @@ h3 span {
   transform: translateX(4px);
 }
 
-/* Responsive design */
-@media (max-width: 991px) {
-  .beyond-dual-wrapper {
-    grid-template-columns: 1fr;
-    gap: 24px;
+/* =========================================================================
+   ACCESSIBILITY, FOCUS INDICATORS & PERFORMANCE STYLES
+   ========================================================================= */
+
+/* Skip to Content Link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: #015699;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skip-to-content:focus {
+  top: 16px;
+  outline: 3px solid #fe2523;
+}
+
+/* Keyboard Focus Indicators */
+:focus-visible {
+  outline: 3px solid #015699 !important;
+  outline-offset: 3px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #fe2523 !important;
+  outline-offset: 3px !important;
+}
+
+/* Touch Target Sizes (Minimum 44px) */
+button,
+a.btn-primary,
+a.btn-secondary,
+a.header-btn,
+.cat-pill-btn,
+.tab-btn,
+.spotlight-nav-btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Horizontally Scrollable Category Tabs on Mobile */
+.category-pills-row,
+.range-tabs,
+.app-switcher-pills {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.category-pills-row::-webkit-scrollbar,
+.range-tabs::-webkit-scrollbar,
+.app-switcher-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-pill-btn,
+.tab-btn,
+.app-switcher-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Prefers Reduced Motion Media Query */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 
-  .beyond-center-badge {
-    display: none;
+  .spotlight-track {
+    transition: none !important;
+  }
+
+  .float-anim-1,
+  .float-anim-2,
+  .float-anim-3 {
+    animation: none !important;
   }
 }

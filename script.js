@@ -303,7 +303,7 @@
 
       matches.forEach(p => {
         const card = document.createElement("a");
-        card.href = `product-detail.html?id=${p.id || 'jmfr2'}`;
+        card.href = `product-detail.html?id=${p.id}`;
         card.className = "app-product-card";
 
         const subText = meta.sub || (p.primaryApplication ? p.primaryApplication.toLowerCase() : "clinical application");
@@ -835,15 +835,15 @@
     // Products covering all 3 categories (Machines, Meso Solutions, Chemical Peels)
     const heroSlides = [
       {
-        id: "truepico-laser",
+        id: "hifu-12d",
         category: "MACHINES",
-        eyebrow: "PICOSECOND LASER PLATFORM",
-        title: "350PS TRUEPICO PICOSECOND LASER",
-        model: "JMPS1",
-        subtitle: "Ultra-short picosecond laser technology for high-efficiency multi-color tattoo removal and stubborn pigment treatments.",
-        image: "assests/products/Pico laser (1).png",
-        detailLink: "product-detail.html?id=truepico-laser",
-        enquireLink: "contact.html?product=350PS+TruePico+Picosecond+Laser"
+        eyebrow: "FOCUSED ULTRASOUND PLATFORM",
+        title: "HIFU-12D MACHINE",
+        model: "JMHF-3",
+        subtitle: "A focused-ultrasound clinical platform engineered for precision skin tightening, wrinkle removal, and body contouring applications.",
+        image: "assests/products/Hifu (1).png",
+        detailLink: "product-detail.html?id=hifu-12d",
+        enquireLink: "contact.html?product=HIFU-12D+Machine"
       },
       {
         id: "hair-re-growth",
@@ -1265,6 +1265,8 @@
     });
 
     const startAutoPlay = () => {
+      // Check prefers-reduced-motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (autoPlayTimer) clearInterval(autoPlayTimer);
       autoPlayTimer = setInterval(() => {
         goToNext();

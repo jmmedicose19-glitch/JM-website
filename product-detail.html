@@ -174,23 +174,120 @@
   <!-- Dynamic Product Detail Rendering Script -->
   <script>
     (function () {
-      // 1. Parse URL Parameter ?id=
+      // 1. Resolve Product ID from ?id= query param OR pathname slug (e.g., /products/meso/glow-meso or /products/hifu-12d)
       const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id') || 'hifu-12d';
+      let rawId = urlParams.get('id');
 
-      // 2. Find product in productsData
-      let p = typeof productsData !== 'undefined' ? productsData.find(x => x.id === productId) : null;
-      if (!p && typeof productsData !== 'undefined' && productsData.length > 0) {
-        p = productsData[0];
+      if (!rawId) {
+        // Try extracting slug from window.location.pathname
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        if (pathSegments.length > 0) {
+          const lastSegment = pathSegments[pathSegments.length - 1].replace(/\.html$/i, '');
+          if (lastSegment !== 'product-detail' && lastSegment !== 'products') {
+            rawId = lastSegment;
+          }
+        }
       }
 
-      if (!p) return;
+      const productId = rawId ? rawId.toLowerCase().trim() : null;
 
-      // Update Page Title
-      document.title = p.name + " — JM Medicose";
+      // 2. Find product in productsData with strict matching and case-insensitive fallback
+      let p = null;
+      if (typeof productsData !== 'undefined' && Array.isArray(productsData)) {
+        if (productId) {
+          p = productsData.find(x => x.id.toLowerCase() === productId);
+        }
+      }
 
       const app = document.getElementById('product-detail-app');
       if (!app) return;
+
+      // 3. Render 404 State if product not found
+      if (!p) {
+        document.title = "Product Not Found | JM Medicose";
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.content = "The requested medical aesthetic product could not be found. Explore the full JM Medicose product catalogue.";
+        let robotsMeta = document.querySelector('meta[name="robots"]');
+        if (!robotsMeta) {
+          robotsMeta = document.createElement('meta');
+          robotsMeta.name = 'robots';
+          document.head.appendChild(robotsMeta);
+        }
+        robotsMeta.content = 'noindex, follow';
+        renderNotFoundTemplate(app, rawId);
+        return;
+      }
+
+      // 4. Update Page Title and Meta Description for SEO
+      document.title = `${p.name} | JM Medicose`;
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.content = p.description ? `${p.name}: ${p.description.substring(0, 150)}...` : `Explore detailed product specifications and clinical applications for ${p.name} from JM Medicose.`;
+
+      // Canonical URL
+      let canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (!canonicalLink) {
+        canonicalLink = document.createElement('link');
+        canonicalLink.rel = 'canonical';
+        document.head.appendChild(canonicalLink);
+      }
+      canonicalLink.href = `https://jmmedicose.com/product-detail.html?id=${p.id}`;
+
+      // Open Graph Tags
+      let ogTitle = document.querySelector('meta[property="og:title"]');
+      if (!ogTitle) { ogTitle = document.createElement('meta'); ogTitle.setAttribute('property', 'og:title'); document.head.appendChild(ogTitle); }
+      ogTitle.content = `${p.name} | JM Medicose`;
+
+      let ogDesc = document.querySelector('meta[property="og:description"]');
+      if (!ogDesc) { ogDesc = document.createElement('meta'); ogDesc.setAttribute('property', 'og:description'); document.head.appendChild(ogDesc); }
+      ogDesc.content = metaDesc.content;
+
+      let ogImg = document.querySelector('meta[property="og:image"]');
+      if (!ogImg) { ogImg = document.createElement('meta'); ogImg.setAttribute('property', 'og:image'); document.head.appendChild(ogImg); }
+      ogImg.content = (p.images && p.images.length > 0) ? `https://jmmedicose.com/${p.images[0]}` : 'https://jmmedicose.com/assests/logo.png';
+
+      // Schema.org Product & Breadcrumb Structured Data
+      const existingSchema = document.getElementById('product-schema-json');
+      if (existingSchema) existingSchema.remove();
+
+      const schemaScript = document.createElement('script');
+      schemaScript.id = 'product-schema-json';
+      schemaScript.type = 'application/ld+json';
+      schemaScript.text = JSON.stringify([
+        {
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          "name": p.name,
+          "image": (p.images && p.images.length > 0) ? `https://jmmedicose.com/${p.images[0]}` : 'https://jmmedicose.com/assests/logo.png',
+          "description": p.description || p.name,
+          "sku": p.model || p.id,
+          "mpn": p.model || p.id,
+          "brand": {
+            "@type": "Brand",
+            "name": "JM Medicose"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": `https://jmmedicose.com/product-detail.html?id=${p.id}`,
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jmmedicose.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://jmmedicose.com/products.html" },
+            { "@type": "ListItem", "position": 3, "name": p.name, "item": `https://jmmedicose.com/product-detail.html?id=${p.id}` }
+          ]
+        }
+      ]);
+      document.head.appendChild(schemaScript);
 
       if (p.category === 'meso') {
         renderMesoTemplate(p, app);
@@ -214,6 +311,30 @@
             form.reset();
           }, 3000);
         });
+      }
+
+      // ----------------------------------------------------
+      // 0. PRODUCT NOT FOUND (404) TEMPLATE RENDERER
+      // ----------------------------------------------------
+      function renderNotFoundTemplate(app, invalidId) {
+        app.innerHTML = `
+          <section style="min-height:70vh; display:flex; align-items:center; justify-content:center; padding:80px 24px; background:linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);">
+            <div style="max-width:560px; text-align:center; background:#ffffff; padding:48px 36px; border-radius:24px; border:1.5px solid #cbd5e1; box-shadow:0 12px 35px rgba(1,86,153,0.1);">
+              <div style="width:80px; height:80px; margin:0 auto 20px; background:rgba(254,37,35,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fe2523;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <span class="pd-section-tag" style="background:rgba(254,37,35,0.08); color:#fe2523; border-color:rgba(254,37,35,0.2);">PAGE NOT FOUND</span>
+              <h1 style="font-family:var(--font-title); font-size:32px; font-weight:800; color:#0f294a; margin:12px 0 10px;">Product Not Found</h1>
+              <p style="font-size:15px; color:#64748b; line-height:1.6; margin-bottom:28px;">
+                ${invalidId ? `We couldn't find a product matching identifier "<strong>${invalidId}</strong>".` : 'No product identifier was provided.'} Please explore our catalogue to find what you're looking for.
+              </p>
+              <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <a href="products.html" class="pd-hero-btn-enquire" style="background:#015699;">Explore All Products</a>
+                <a href="contact.html" class="pd-hero-btn-enquire" style="background:transparent; color:#015699; border:1.5px solid #015699;">Contact Sales</a>
+              </div>
+            </div>
+          </section>
+        `;
       }
 
       // Helper function for thumbnail gallery interactive clicks
@@ -253,12 +374,17 @@
       function renderMachineTemplate(p, app) {
         const related = typeof productsData !== 'undefined' ? productsData.filter(x => x.category === 'machines' && x.id !== p.id).slice(0, 3) : [];
         app.innerHTML = `
-          <!-- HERO SECTION -->
+          <!-- BREADCRUMBS & HERO SECTION -->
           <section class="pd-hero" id="pd-overview-anchor">
             <div style="max-width: 1280px; margin: 0 auto 20px auto; padding: 0 24px;">
-              <a href="products.html" class="pd-back-btn">
+              <nav aria-label="Breadcrumb" style="font-size:13px; font-weight:600; color:#64748b; margin-bottom:12px;">
+                <a href="index.html" style="color:#015699; text-decoration:none;">Home</a> &nbsp;/&nbsp;
+                <a href="products.html?category=${p.category}" style="color:#015699; text-decoration:none;">${p.categoryLabel || 'Products'}</a> &nbsp;/&nbsp;
+                <span style="color:#334155;">${p.name}</span>
+              </nav>
+              <a href="products.html?category=${p.category}" class="pd-back-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-                Back to All Products
+                Back to ${p.categoryLabel || 'Products'}
               </a>
             </div>
 
@@ -302,11 +428,20 @@
               <div class="pd-overview-text">
                 <span class="pd-section-tag">PRODUCT OVERVIEW</span>
                 <h2 class="pd-section-heading">${p.overviewHeading || p.name}</h2>
-                <p>${p.overviewParagraph1 || p.description}</p>
-                <p>${p.overviewParagraph2 || ''}</p>
+                <p style="font-size:16px; line-height:1.7; color:#334155; margin-bottom:12px;">${p.overviewParagraph1 || p.description}</p>
+                <p style="font-size:15px; line-height:1.6; color:#64748b;">${p.overviewParagraph2 || ''}</p>
+                
+                ${p.applications ? `
+                <div style="margin-top:24px;">
+                  <div style="font-size:12px; font-weight:800; color:#015699; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">CLINICAL APPLICATIONS</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    ${p.applications.map(appItem => `<span style="background:#f0f7ff; color:#015699; border:1px solid #bae6fd; font-size:13px; font-weight:700; padding:6px 14px; border-radius:20px;">${appItem}</span>`).join('')}
+                  </div>
+                </div>
+                ` : ''}
               </div>
               <div class="pd-overview-img-box">
-                <img src="${(p.images && p.images.length > 1) ? p.images[1] : (p.images ? p.images[0] : '')}" alt="${p.name} Detail" style="width:100%;display:block;padding:24px;box-sizing:border-box;background:#f0f7ff;max-height:340px;object-fit:contain;">
+                <img src="${(p.images && p.images.length > 1) ? p.images[1] : (p.images ? p.images[0] : '')}" alt="${p.name} Detail" style="width:100%;display:block;padding:24px;box-sizing:border-box;background:#f0f7ff;max-height:340px;object-fit:contain;border-radius:16px;">
               </div>
             </div>
           </section>
@@ -651,6 +786,14 @@
               <p style="font-size:17px; line-height:1.7; color:#334155;">
                 ${p.overviewParagraph1 || p.description}
               </p>
+              ${p.applications ? `
+              <div style="margin-top:24px;">
+                <div style="font-size:12px; font-weight:800; color:#015699; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">CLINICAL APPLICATIONS</div>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                  ${p.applications.map(appItem => `<span style="background:#f0f7ff; color:#015699; border:1px solid #bae6fd; font-size:13px; font-weight:700; padding:6px 14px; border-radius:20px;">${appItem}</span>`).join('')}
+                </div>
+              </div>
+              ` : ''}
             </div>
           </section>
 
