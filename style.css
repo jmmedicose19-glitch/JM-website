@@ -4929,7 +4929,7 @@ footer {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #fe2523;
+  color: #015699;
   margin-bottom: 10px;
 }
 
@@ -5622,8 +5622,9 @@ footer {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 3px 8px;
-  border-radius: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(1, 86, 153, 0.2);
 }
 
 .meso-card .prd-name,
@@ -6205,6 +6206,12 @@ h3 span {
 }
 
 /* Slide Viewport & Track */
+.spotlight-stage {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+}
+
 .spotlight-track-viewport {
   overflow: hidden;
   width: 100%;
@@ -6213,12 +6220,12 @@ h3 span {
 
 .spotlight-track {
   display: flex;
-  width: 300%;
+  width: 100%;
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .spotlight-slide-item {
-  width: 33.333333%;
+  width: 100%;
   flex-shrink: 0;
   padding: 10px 20px;
 }
@@ -6238,7 +6245,7 @@ h3 span {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .spotlight-cat-badge.machine {
@@ -6370,6 +6377,7 @@ h3 span {
   width: 85px;
   right: -85px;
 }
+
 .orbital-feature-node.left-node.float-anim-1::after {
   right: -93px;
   top: calc(50% + 26px);
@@ -6380,6 +6388,7 @@ h3 span {
   width: 85px;
   right: -85px;
 }
+
 .orbital-feature-node.left-node.float-anim-3::after {
   right: -93px;
   top: calc(50% - 26px);
@@ -6406,6 +6415,7 @@ h3 span {
   width: 85px;
   left: -85px;
 }
+
 .orbital-feature-node.right-node.float-anim-1::after {
   left: -93px;
   top: calc(50% + 26px);
@@ -6416,6 +6426,7 @@ h3 span {
   width: 85px;
   left: -85px;
 }
+
 .orbital-feature-node.right-node.float-anim-3::after {
   left: -93px;
   top: calc(50% - 26px);
@@ -6426,6 +6437,7 @@ h3 span {
 .spotlight-slide-item:nth-child(2) .orbital-feature-node::before {
   border-top-color: #fe2523;
 }
+
 .spotlight-slide-item:nth-child(2) .orbital-feature-node::after {
   background-color: #fe2523;
   box-shadow: 0 0 6px rgba(254, 37, 35, 0.4);
@@ -6435,6 +6447,7 @@ h3 span {
 .spotlight-slide-item:nth-child(3) .orbital-feature-node::before {
   border-top-color: #0f294a;
 }
+
 .spotlight-slide-item:nth-child(3) .orbital-feature-node::after {
   background-color: #0f294a;
   box-shadow: 0 0 6px rgba(15, 41, 74, 0.4);
@@ -6581,22 +6594,51 @@ h3 span {
 
 /* Floating Animations */
 @keyframes floatHub {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulseGlow {
-  0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
-  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
 }
 
-.float-anim-1 { animation: floatSlow 4s infinite ease-in-out 0s; }
-.float-anim-2 { animation: floatSlow 4s infinite ease-in-out 1.2s; }
-.float-anim-3 { animation: floatSlow 4s infinite ease-in-out 2.4s; }
+.float-anim-1 {
+  animation: floatSlow 4s infinite ease-in-out 0s;
+}
+
+.float-anim-2 {
+  animation: floatSlow 4s infinite ease-in-out 1.2s;
+}
+
+.float-anim-3 {
+  animation: floatSlow 4s infinite ease-in-out 2.4s;
+}
 
 @keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* Bottom Actions Row */
@@ -6687,8 +6729,13 @@ h3 span {
     display: none;
   }
 
-  .node-title { font-size: 13px; }
-  .node-desc { font-size: 11px; }
+  .node-title {
+    font-size: 13px;
+  }
+
+  .node-desc {
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 868px) {
@@ -6698,8 +6745,14 @@ h3 span {
     width: 44px;
     height: 44px;
   }
-  .spotlight-nav-btn.prev-btn { left: 0px; }
-  .spotlight-nav-btn.next-btn { right: 0px; }
+
+  .spotlight-nav-btn.prev-btn {
+    left: 0px;
+  }
+
+  .spotlight-nav-btn.next-btn {
+    right: 0px;
+  }
 
   .spotlight-orbital-layout {
     grid-template-columns: 1fr;
@@ -6733,6 +6786,7 @@ h3 span {
     flex-direction: column;
     width: 100%;
   }
+
   .spotlight-btn-primary,
   .spotlight-btn-secondary {
     width: 100%;
@@ -6802,38 +6856,70 @@ h3 span {
 
 /* Chamfered Glass Cards */
 .beyond-card {
-  background: #ffffff;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
   border: 1.5px solid #d2e4f7;
-  border-radius: 36px;
-  padding: 40px 36px 36px;
+  border-radius: 32px;
+  padding: 38px 32px 32px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 12px 35px rgba(1, 86, 153, 0.06);
+  box-shadow: 0 14px 40px rgba(1, 86, 153, 0.07), 0 2px 10px rgba(0, 0, 0, 0.02);
   position: relative;
-  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-  clip-path: polygon(
-    0 0, 
-    calc(100% - 30px) 0, 
-    100% 30px, 
-    100% 100%, 
-    30px 100%, 
-    0 calc(100% - 30px)
-  );
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+}
+
+.beyond-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #015699 0%, #fe2523 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
 }
 
 .beyond-card:hover {
-  transform: translateY(-5px);
-  border-color: #015699;
-  box-shadow: 0 18px 45px rgba(1, 86, 153, 0.14);
+  transform: translateY(-8px);
+  border-color: rgba(1, 86, 153, 0.4);
+  box-shadow: 0 22px 50px rgba(1, 86, 153, 0.16), 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.beyond-card:hover::before {
+  opacity: 1;
 }
 
 .beyond-card-header {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+.beyond-card-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.beyond-card-tag.meso-tag {
+  background: rgba(1, 86, 153, 0.1);
+  color: #015699;
+  border: 1px solid rgba(1, 86, 153, 0.2);
+}
+
+.beyond-card-tag.peel-tag {
+  background: rgba(254, 37, 35, 0.08);
+  color: #fe2523;
+  border: 1px solid rgba(254, 37, 35, 0.2);
 }
 
 .beyond-card-title {
   font-family: var(--font-title);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   color: #0f294a;
   margin-bottom: 8px;
@@ -6842,46 +6928,99 @@ h3 span {
 .beyond-card-desc {
   font-size: 14.5px;
   color: #64748b;
-  line-height: 1.5;
-  max-width: 320px;
+  line-height: 1.55;
+  max-width: 340px;
 }
 
-/* 3 Product Vials Row */
+/* 3 Product Vials Showcase Grid */
 .beyond-vials-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
   align-items: flex-end;
   justify-items: center;
-  margin: 20px 0 35px;
-  min-height: 250px;
-  background: radial-gradient(ellipse at bottom, rgba(1, 86, 153, 0.04) 0%, transparent 70%);
-  border-radius: 20px;
-  padding: 15px 10px;
+  margin: 18px 0 24px;
+  min-height: 240px;
+  background: radial-gradient(ellipse at bottom, rgba(1, 86, 153, 0.06) 0%, rgba(241, 245, 249, 0.4) 60%, transparent 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 24px 14px 18px;
 }
 
 .beyond-vial-item {
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  transition: transform 0.35s ease;
-  height: 230px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  height: 200px;
+  cursor: pointer;
+}
+
+.vial-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.beyond-vial-item:hover .vial-label {
+  background: #015699;
+  color: #ffffff;
+  border-color: #015699;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 86, 153, 0.25);
+}
+
+.beyond-vial-item.featured-vial {
+  transform: translateY(-8px);
 }
 
 .beyond-vial-item img {
   height: 100%;
-  max-height: 230px;
+  max-height: 165px;
   max-width: 100%;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 12px 22px rgba(15, 41, 74, 0.16));
-  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 10px 18px rgba(15, 41, 74, 0.14));
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
 }
 
 .beyond-vial-item:hover img {
-  transform: translateY(-10px) scale(1.08);
-  filter: drop-shadow(0 18px 28px rgba(1, 86, 153, 0.22));
+  transform: translateY(-8px) scale(1.12);
+  filter: drop-shadow(0 16px 26px rgba(1, 86, 153, 0.28));
+}
+
+/* Feature Pills */
+.beyond-features-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.beyond-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.beyond-card:hover .beyond-pill {
+  background: #ffffff;
+  border-color: #cbd5e1;
 }
 
 /* Buttons */
@@ -6904,15 +7043,15 @@ h3 span {
 }
 
 .beyond-btn.btn-blue {
-  background: #015699;
+  background: linear-gradient(135deg, #015699 0%, #003a69 100%);
   color: #ffffff;
   box-shadow: 0 6px 20px rgba(1, 86, 153, 0.25);
 }
 
 .beyond-btn.btn-blue:hover {
-  background: #003a69;
+  background: linear-gradient(135deg, #fe2523 0%, #d41715 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(1, 86, 153, 0.35);
+  box-shadow: 0 10px 25px rgba(254, 37, 35, 0.35);
   color: #ffffff;
 }
 
@@ -6927,6 +7066,7 @@ h3 span {
   background: #015699;
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(1, 86, 153, 0.25);
 }
 
 .beyond-btn svg {
@@ -6943,6 +7083,7 @@ h3 span {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
   .beyond-center-badge {
     display: none;
   }

@@ -1197,57 +1197,102 @@
   // Product Spotlight Interactive Sliding Orbital Carousel
   const initProductSpotlightSlider = () => {
     const track = document.getElementById("spotlight-track");
-    const slides = document.querySelectorAll(".spotlight-slide-item");
+    let slides = document.querySelectorAll(".spotlight-slide-item");
     const prevBtn = document.getElementById("spotlight-prev");
     const nextBtn = document.getElementById("spotlight-next");
     const dots = document.querySelectorAll(".indicator-dot");
 
     if (!track || !slides.length) return;
 
+    const originalCount = slides.length;
+
+    // Clone first slide and append to the end for seamless infinite loop (1 -> 2 -> 3 -> 1...)
+    const firstClone = slides[0].cloneNode(true);
+    firstClone.classList.add("is-clone");
+    track.appendChild(firstClone);
+
     let currentIndex = 0;
-    const totalSlides = slides.length;
+    let isTransitioning = false;
     let autoPlayTimer = null;
 
-    const updateSliderPosition = (index) => {
-      currentIndex = (index + totalSlides) % totalSlides;
-      
-      // Slide track horizontally
-      const translatePercentage = (currentIndex * 100) / totalSlides;
-      track.style.transform = `translateX(-${translatePercentage}%)`;
+    const setTrackPosition = (index, animated = true) => {
+      if (animated) {
+        track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
+      } else {
+        track.style.transition = "none";
+      }
+      track.style.transform = `translateX(-${index * 100}%)`;
+    };
 
-      // Update indicator dots
+    const updateDots = (realIndex) => {
       dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === currentIndex);
+        dot.classList.toggle("active", idx === realIndex);
       });
     };
+
+    const goToNext = () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentIndex++;
+      setTrackPosition(currentIndex, true);
+      updateDots(currentIndex % originalCount);
+    };
+
+    const goToPrev = () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      if (currentIndex === 0) {
+        // Jump to clone position instantly, then animate to last original slide
+        setTrackPosition(originalCount, false);
+        // Force reflow
+        track.offsetHeight;
+        currentIndex = originalCount - 1;
+        setTrackPosition(currentIndex, true);
+      } else {
+        currentIndex--;
+        setTrackPosition(currentIndex, true);
+      }
+      updateDots(currentIndex % originalCount);
+    };
+
+    track.addEventListener("transitionend", () => {
+      isTransitioning = false;
+      // If reached the clone after the last slide, snap back to first slide seamlessly
+      if (currentIndex === originalCount) {
+        setTrackPosition(0, false);
+        currentIndex = 0;
+      }
+    });
 
     const startAutoPlay = () => {
       if (autoPlayTimer) clearInterval(autoPlayTimer);
       autoPlayTimer = setInterval(() => {
-        updateSliderPosition(currentIndex + 1);
+        goToNext();
       }, 6000);
     };
 
-    // Right Arrow clicked -> Current product slides left to show next product
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
-        updateSliderPosition(currentIndex + 1);
+        goToNext();
         startAutoPlay();
       });
     }
 
-    // Left Arrow clicked -> Current product slides right to show previous product
     if (prevBtn) {
       prevBtn.addEventListener("click", () => {
-        updateSliderPosition(currentIndex - 1);
+        goToPrev();
         startAutoPlay();
       });
     }
 
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
+        if (isTransitioning) return;
         const slideIdx = parseInt(dot.getAttribute("data-slide"), 10);
-        updateSliderPosition(slideIdx);
+        isTransitioning = true;
+        currentIndex = slideIdx;
+        setTrackPosition(currentIndex, true);
+        updateDots(currentIndex);
         startAutoPlay();
       });
     });
@@ -1265,10 +1310,10 @@
       stage.addEventListener("touchend", (e) => {
         touchEndX = e.changedTouches[0].screenX;
         if (touchStartX - touchEndX > 50) {
-          updateSliderPosition(currentIndex + 1);
+          goToNext();
           startAutoPlay();
         } else if (touchEndX - touchStartX > 50) {
-          updateSliderPosition(currentIndex - 1);
+          goToPrev();
           startAutoPlay();
         }
       }, { passive: true });
