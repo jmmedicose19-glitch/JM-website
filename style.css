@@ -883,20 +883,286 @@ header.nav-hidden {
 }
 
 /* Mobile & Tablet Responsive Adaptability */
-@media (max-width: 860px) {
+@media (max-width: 860px) {  /* Featured Products Showcase Section Mobile Optimization */
   .hero-showcase {
-    min-height: auto;
-    height: auto;
-    padding: 40px 0;
+    min-height: auto !important;
+    padding: 40px 0 !important;
   }
 
   .hero-showcase-container {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 10px 16px !important;
+    text-align: center !important;
+  }
+
+  .hero-master-content {
+    max-width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-eyebrow-wrapper {
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-eyebrow-text {
+    font-size: 11px !important;
+    color: #ff4d4d !important;
+  }
+
+  .hero-title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-subtitle {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+  }
+
+  .hero-nav-footer {
+    justify-content: center !important;
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-display-stage {
+    width: 100% !important;
+    gap: 16px !important;
+  }
+
+  .hero-featured-stage {
+    height: 220px !important;
+    max-height: 220px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-featured-img {
+    max-height: 200px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-master-content {
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+
+  /* Section 3: Find Equipment by Application */
+  .find-app-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .find-app-hero-card {
+    min-height: 280px !important;
+  }
+
+  .app-switcher-pills {
+    justify-content: flex-start !important;
+    padding-bottom: 8px !important;
+  }
+
+  /* Section 4: Product Spotlight Showcase Mobile Optimization */
+  .spotlight-showcase-section {
+    padding: 40px 0 !important;
+  }
+
+  .spotlight-stage {
+    padding: 0 10px !important;
+  }
+
+  .spotlight-nav-btn {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    z-index: 10 !important;
+  }
+
+  .spotlight-nav-btn.prev-btn {
+    left: 0px !important;
+  }
+
+  .spotlight-nav-btn.next-btn {
+    right: 0px !important;
+  }
+
+  .spotlight-orbital-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    align-items: center !important;
+    margin-top: 15px !important;
+  }
+
+  .spotlight-center-hub {
+    order: 1 !important;
+    width: 100% !important;
+    height: 240px !important;
+    margin: 0 auto !important;
+  }
+
+  .hub-glow-ring {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .hub-pedestal-platform {
+    width: 220px !important;
+    height: 36px !important;
+  }
+
+  .hub-prd-img {
+    max-height: 210px !important;
+  }
+
+  .hub-prd-img.meso-img,
+  .hub-prd-img.peel-img {
+    max-height: 200px !important;
+  }
+
+  .spotlight-features-col.left-col {
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .spotlight-features-col.right-col {
+    order: 3 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .orbital-feature-node {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 14px 16px !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 14px rgba(1, 86, 153, 0.06) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    text-align: left !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .orbital-feature-node::before,
+  .orbital-feature-node::after {
+    display: none !important;
+  }
+
+  .node-icon-circle {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .node-text-box {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+  }
+
+  .node-title {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    color: #0f294a !important;
+    margin-bottom: 2px !important;
+  }
+
+  .node-desc {
+    font-size: 12px !important;
+    color: #64748b !important;
+    line-height: 1.35 !important;
+  }
+
+  .spotlight-action-row {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+    margin-top: 24px !important;
+  }
+
+  .spotlight-btn-primary,
+  .spotlight-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+  }
+
+  /* Section 5 & 6: Application Grids & Beyond Vials */
+  .app-grid,
+  .beyond-grid,
+  .categories-grid,
+  .features-grid,
+  .products-grid,
+  .peels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Section 7: Video Showcase */
+  .video-showcase-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .video-embed-wrapper {
+    height: 240px !important;
+  }
+
+  /* Section 8: Interactive Product Finder */
+  .finder-grid {
+    grid-template-columns: 1fr !important;;
     gap: 30px;
     padding: 0 20px;
   }
 
-  .hero-master-content {
     max-width: 100%;
   }
 
@@ -1017,10 +1283,9 @@ section {
   color: var(--text-light);
 }
 
-/* PREMIUM PRODUCT RANGE SECTION */
 .product-range-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   margin-top: 40px;
 }
@@ -3580,6 +3845,7 @@ footer {
   padding: 0 20px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .products-hero-title {
@@ -3588,6 +3854,7 @@ footer {
   color: #0f294a;
   margin-bottom: 8px;
   letter-spacing: -0.5px;
+  text-align: center;
 }
 
 .products-hero-subtitle {
@@ -3595,6 +3862,8 @@ footer {
   color: #475569;
   font-weight: 400;
   max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .products-hero-bg-graphic {
@@ -4574,7 +4843,7 @@ footer {
 
 .why-cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   width: 100%;
   box-sizing: border-box;
@@ -7177,5 +7446,867 @@ a.header-btn,
   .float-anim-2,
   .float-anim-3 {
     animation: none !important;
+  }
+}
+
+/* =========================================================================
+   COMPREHENSIVE MOBILE & TABLET RESPONSIVE STYLES (MAX-WIDTH: 991px & 576px)
+   Strictly scoped inside media queries - desktop view remains untouched.
+   ========================================================================= */
+
+@media (max-width: 991px) {
+  /* 1. Global & Header Adjustments */
+  body {
+    padding-top: 76px !important;
+  }
+
+  .nav-container {
+    padding: 10px 16px !important;
+  }
+
+  .logo-container {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .logo-img {
+    height: 56px !important;
+    max-height: 60px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 8px !important;
+    background: rgba(1, 86, 153, 0.08) !important;
+    padding: 9px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-container .header-btn {
+    display: none !important;
+  }
+
+  .nav-links {
+    position: fixed !important;
+    top: 76px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 12px 20px 24px !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18) !important;
+    border-bottom: 3px solid var(--primary-color) !important;
+    display: none !important;
+    max-height: calc(100vh - 76px) !important;
+    overflow-y: auto !important;
+    z-index: 9999 !important;
+  }
+
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    width: 100% !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none !important;
+  }
+
+  .nav-links a {
+    padding: 14px 8px !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    color: #0f294a !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .nav-links li::after {
+    display: none !important;
+  }
+
+  .nav-links li.active > a {
+    color: var(--secondary-color) !important;
+  }
+
+  /* Section 1: Hero Banner */
+  .hero {
+    min-height: auto !important;
+    padding: 40px 0 !important;
+    background-position: center !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+    text-align: center !important;
+    padding-right: 0 !important;
+  }
+
+  .hero-title {
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 15px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Hero Showcase Slider Section (if used) */
+  .hero-showcase {
+    min-height: auto !important;
+    padding: 30px 0 !important;
+  }
+
+  .hero-showcase-container {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 10px 16px !important;
+    text-align: center !important;
+  }
+
+    gap: 20px !important;
+  }
+
+  .finder-steps-col {
+    order: 1;
+  }
+
+  .finder-preview-card {
+    order: 2;
+  }
+
+  /* Section 9: Clinical Compare Table */
+  .clinical-compare-table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .clinical-compare-table {
+    min-width: 650px !important;
+  }
+
+  /* Section 10 & 11: Testimonials & Trust Stats */
+  .stats-grid,
+  .trust-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section 12: CTA Banner */
+  .cta-banner-content {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+
+  .cta-banner-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .cta-banner-buttons a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* -----------------------------------------------------------------------
+     4. ABOUT US PAGE (ABOUT.HTML) MOBILE STYLES
+     ----------------------------------------------------------------------- */
+  .about-hero-grid,
+  .about-pillars-grid,
+  .about-mission-grid,
+  .about-values-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .about-page-hero {
+    padding: 40px 0 !important;
+    text-align: center !important;
+  }
+
+  .about-hero-buttons {
+    justify-content: center !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .about-hero-buttons a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .about-hero-visual-wrapper {
+    margin-top: 20px !important;
+    height: 280px !important;
+  }
+
+  /* -----------------------------------------------------------------------
+     5. PRODUCTS CATALOGUE PAGE (PRODUCTS.HTML) MOBILE STYLES
+     ----------------------------------------------------------------------- */
+  .products-hero-section {
+    padding: 40px 16px !important;
+    text-align: center !important;
+  }
+
+  .products-hero-title {
+    font-size: 32px !important;
+  }
+
+  .catalog-toolbar-card {
+    padding: 16px !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .search-box-input {
+    width: 100% !important;
+  }
+
+  .catalog-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .catalog-sidebar {
+    position: static !important;
+    width: 100% !important;
+  }
+
+  /* -----------------------------------------------------------------------
+     6. PRODUCT DETAIL PAGE (PRODUCT-DETAIL.HTML) MOBILE STYLES
+     ----------------------------------------------------------------------- */
+  .pd-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .pd-main-img-box {
+    height: 280px !important;
+  }
+
+  .pd-thumbs-row {
+    gap: 8px !important;
+  }
+
+  .pd-thumb-btn {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .pd-action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .pd-action-buttons a,
+  .pd-action-buttons button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .pd-specs-table-wrapper {
+    overflow-x: auto !important;
+  }
+
+  .pd-specs-table {
+    min-width: 500px !important;
+  }
+
+  /* -----------------------------------------------------------------------
+     7. CONTACT US PAGE (CONTACT.HTML) MOBILE STYLES
+     ----------------------------------------------------------------------- */
+  .cnt-hero-section {
+    padding: 50px 16px 70px !important;
+  }
+
+  .cnt-hero-title {
+    font-size: 32px !important;
+  }
+
+  .cnt-main-wrapper {
+    margin-top: -30px !important;
+    padding: 0 16px !important;
+  }
+
+  .cnt-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .cnt-form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .cnt-form-card {
+    padding: 20px 16px !important;
+  }
+
+  .cnt-form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .cnt-map-box iframe {
+    height: 300px !important;
+  }
+
+  /* -----------------------------------------------------------------------
+     8. FOOTER MOBILE RESPONSIVE
+     ----------------------------------------------------------------------- */
+  footer .footer-grid,
+  .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+
+  footer .footer-brand-col {
+    align-items: center !important;
+  }
+  .section-title-main {
+    font-size: 26px !important;
+  }
+
+  .stats-grid,
+  .trust-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .whatsapp-float {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   WHY JM MEDICOSE MOBILE FIX (MAX-WIDTH: 991px & 576px)
+   ----------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .why-choose-section {
+    padding: 40px 0 !important;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .why-feature-card {
+    padding: 24px 20px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-shadow: 0 4px 16px rgba(1, 86, 153, 0.08) !important;
+  }
+
+  .why-card-top {
+    margin-bottom: 16px !important;
+  }
+
+  .why-number {
+    font-size: 32px !important;
+  }
+
+  .why-title {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 10px !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  .why-desc {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    color: #475569 !important;
+  }
+}
+
+/* BEYOND EQUIPMENT (PROFESSIONAL CARE) MOBILE FIX */
+@media (max-width: 991px) {
+  .beyond-equipment-section {
+    padding: 40px 0 !important;
+  }
+  .beyond-dual-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 20px !important;
+  }
+  .beyond-center-badge {
+    display: none !important;
+  }
+  .beyond-card {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .beyond-card-header {
+    text-align: center !important;
+    margin-bottom: 16px !important;
+  }
+  .beyond-card-desc {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .beyond-vials-row {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    padding: 14px 6px 12px !important;
+    min-height: auto !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    justify-items: center !important;
+  }
+  .beyond-vial-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 135px !important;
+  }
+  .beyond-vial-item.featured-vial {
+    transform: none !important;
+  }
+  .beyond-vial-item img {
+    max-height: 90px !important;
+    object-fit: contain !important;
+  }
+  .vial-label {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .beyond-features-pills {
+    justify-content: center !important;
+    gap: 6px !important;
+    margin-bottom: 20px !important;
+  }
+  .beyond-pill {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+  .beyond-action-row {
+    width: 100% !important;
+  }
+  .beyond-btn {
+    width: 100% !important;
+    padding: 12px 18px !important;
+    font-size: 13.5px !important;
+  }
+}
+
+/* ABOUT JM MEDICOSE SECTION MOBILE FIX */
+@media (max-width: 991px) {
+  .about-section-split {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    text-align: center !important;
+  }
+  .about-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .about-content h3 {
+    font-size: 26px !important;
+    margin-bottom: 14px !important;
+  }
+  .about-content p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+  }
+  .about-list {
+    text-align: left !important;
+    display: inline-block !important;
+    margin: 10px auto 20px !important;
+  }
+  .about-list li {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+  }
+  .about-visual {
+    width: 100% !important;
+    padding: 30px 20px !important;
+  }
+}
+
+/* ENQUIRY CARD MOBILE RESPONSIVE FIX */
+@media (max-width: 991px) {
+  .enquiry-card {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 24px 16px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+  .enquiry-info {
+    text-align: center !important;
+  }
+  .enquiry-info h3 {
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+    word-wrap: break-word !important;
+  }
+  .enquiry-info p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #dbeafe !important;
+  }
+  .enquiry-checklist {
+    align-items: center !important;
+    margin-top: 14px !important;
+  }
+  .enquiry-form {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+  }
+  .form-grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+  .form-btn {
+    width: 100% !important;
+    padding: 14px !important;
+  }
+}
+
+/* FOOTER MOBILE RESPONSIVE OPTIMIZATION */
+@media (max-width: 991px) {
+  footer {
+    padding: 40px 0 30px !important;
+  }
+  .footer-container {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
+    padding: 0 20px !important;
+  }
+  .footer-brand-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .footer-brand-desc {
+    max-width: 100% !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    color: #cbd5e1 !important;
+    margin: 0 auto !important;
+  }
+  .footer-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .footer-col-title {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+    color: #fe2523 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+  }
+  .footer-links-list {
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .footer-links-list li a {
+    font-size: 14.5px !important;
+    text-decoration: none !important;
+    color: #e2e8f0 !important;
+    transition: color 0.2s ease !important;
+  }
+  .footer-links-list li a:hover {
+    color: #fe2523 !important;
+  }
+  .footer-social-icons {
+    justify-content: center !important;
+    margin-top: 14px !important;
+  }
+  .footer-bottom-centered {
+    padding: 24px 16px 0 !important;
+    gap: 10px !important;
+  }
+  .footer-copyright {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+  .footer-italic-tagline {
+    font-size: 13px !important;
+  }
+  .footer-legal-links {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px 18px !important;
+    margin-top: 6px !important;
+  }
+  .footer-legal-links a {
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    color: #94a3b8 !important;
+  }
+}
+
+/* ABOUT US - OUR CORE PRODUCT PILLARS MOBILE RESPONSIVE FIX */
+@media (max-width: 991px) {
+  .product-range-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+  }
+  .range-card {
+    padding: 24px 20px !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* FIND EQUIPMENT BY APPLICATION PITCHER PILLS MOBILE FIX */
+@media (max-width: 991px) {
+  .app-switcher-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 10px !important;
+    overflow-x: visible !important;
+    margin-bottom: 20px !important;
+    padding: 0 10px !important;
+  }
+  .app-switcher-pills .app-switcher-btn {
+    flex: 0 0 calc(50% - 10px) !important;
+    max-width: calc(50% - 10px) !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* PRODUCT SPOTLIGHT MOBILE FEATURE CARDS FIX */
+@media (max-width: 991px) {
+  .spotlight-orbital-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .spotlight-center-hub {
+    order: 1 !important;
+    height: 220px !important;
+    margin-bottom: 10px !important;
+  }
+  .spotlight-center-hub .hub-prd-img {
+    max-height: 200px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+  .spotlight-features-col.left-col,
+  .spotlight-features-col.right-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .spotlight-features-col.left-col {
+    order: 2 !important;
+  }
+  .spotlight-features-col.right-col {
+    order: 3 !important;
+  }
+  .orbital-feature-node.left-node,
+  .orbital-feature-node.right-node {
+    display: flex !important;
+    flex-direction: row !important;
+    text-align: left !important;
+    align-items: center !important;
+    padding: 14px 16px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: 0 4px 16px rgba(1, 86, 153, 0.08) !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    gap: 14px !important;
+  }
+  .node-icon-circle {
+    margin-bottom: 0 !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    flex-shrink: 0 !important;
+  }
+  .node-text-box {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+  .node-title {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    color: #0f294a !important;
+  }
+  .node-desc {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    color: #64748b !important;
+  }
+}
+
+/* PRODUCTS CATALOG TOOLBAR & CATEGORY PILLS MOBILE FIX */
+@media (max-width: 991px) {
+  .catalog-toolbar-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 16px 14px !important;
+    gap: 14px !important;
+    margin-top: 15px !important;
+  }
+  .category-pills-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    overflow-x: visible !important;
+  }
+  .category-pills-row .cat-pill-btn {
+    flex: 0 0 calc(50% - 6px) !important;
+    max-width: calc(50% - 6px) !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 10px 8px !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+  }
+  .catalog-toolbar-card > div {
+    width: 100% !important;
+  }
+  .global-search-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* PRODUCT CARD ACTION BUTTON & PRODUCT DETAIL PAGE MOBILE FIX */
+@media (max-width: 991px) {
+  .prd-btn-primary {
+    white-space: nowrap !important;
+    font-size: 12.5px !important;
+    padding: 10px 8px !important;
+    gap: 4px !important;
+    letter-spacing: -0.2px !important;
+  }
+  .prd-card-actions {
+    gap: 6px !important;
+  }
+  .pd-hero {
+    padding: 30px 0 !important;
+  }
+  .pd-hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 0 16px !important;
+  }
+  .pd-gallery-container {
+    width: 100% !important;
+  }
+  .pd-main-img-box {
+    height: 260px !important;
+    padding: 14px !important;
+  }
+  .pd-thumbs-row {
+    gap: 8px !important;
+  }
+  .pd-thumb-btn {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 4px !important;
+  }
+  .pd-sticky-nav {
+    top: 76px !important;
+  }
+  .pd-sticky-nav-inner {
+    padding: 10px 16px !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pd-nav-link {
+    white-space: nowrap !important;
+    font-size: 13px !important;
+  }
+  .pd-section {
+    padding: 35px 16px !important;
+  }
+  .pd-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .pd-enquiry-card {
+    padding: 24px 16px !important;
+    border-radius: 18px !important;
+  }
+  .pd-enquiry-inner {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .pd-enquiry-form-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .pd-enquiry-submit {
+    width: 100% !important;
+    text-align: center !important;
   }
 }

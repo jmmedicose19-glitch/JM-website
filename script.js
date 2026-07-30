@@ -756,7 +756,7 @@
         title: `Hair Removal`,
         desc:  `Equipment listed in the catalogue for hair removal applications.`,
         cards: [
-          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/diode laser (1).png",        link: "product-detail.html?id=diode-laser" },
+          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/Diode laser JMMD-9 (1).png",        link: "product-detail.html?id=diode-laser" },
           { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/products/Pico laser (1).png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
@@ -765,7 +765,7 @@
         desc:  `Equipment listed in the catalogue for body contouring and fat reduction applications.`,
         cards: [
           { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/products/Hifu (1).png",           link: "product-detail.html?id=hifu-12d" },
-          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/Ems + roller (1).png",         link: "product-detail.html?id=pulse-lift-ems" }
+          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/Pulse Lift EMS JMHM-17 (1).png",         link: "product-detail.html?id=pulse-lift-ems" }
         ]
       },
       peels: {
@@ -868,15 +868,15 @@
         enquireLink: "contact.html?product=Glycolic+Peel"
       },
       {
-        id: "pulse-lift-ems",
+        id: "hifu-12d",
         category: "MACHINES",
-        eyebrow: "RF & HIFES FACIAL SYSTEM",
-        title: "PULSE LIFT EMS FACE LIFT",
-        model: "JMHM-17",
-        subtitle: "A professional facial platform combining RF and HIFES technology for non-invasive forehead, cheek, and jawline lifting.",
-        image: "assests/products/Ems + roller (1).png",
-        detailLink: "product-detail.html?id=pulse-lift-ems",
-        enquireLink: "contact.html?product=Pulse+Lift+EMS+Face+Lift"
+        eyebrow: "FOCUSED ULTRASOUND PLATFORM",
+        title: "HIFU-12D MACHINE",
+        model: "JMHF-3",
+        subtitle: "A professional focused-ultrasound platform for skin tightening, fat reduction, and facial lifting applications.",
+        image: "assests/products/Hifu (1).png",
+        detailLink: "product-detail.html?id=hifu-12d",
+        enquireLink: "contact.html?product=HIFU-12D+Machine"
       },
       {
         id: "tca-peel",
