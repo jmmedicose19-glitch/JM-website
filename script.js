@@ -129,100 +129,99 @@
         desc: "High-power diode and Alexandrite laser systems offering targeted, pain-free hair reduction across all skin phototypes with integrated contact cooling.",
         sub: "Permanent hair reduction",
         products: [
-          { name: "Diode Laser System 808nm", id: "diode-laser-808", image: "assests/image.png" },
-          { name: "Triple Wavelength Diode Laser", id: "diode-laser-808", image: "assests/image.png" },
-          { name: "IPL & SHR Hair Removal Workstation", id: "diode-laser-808", image: "assests/image.png" },
-          { name: "Long Pulse Nd:YAG Laser System", id: "diode-laser-808", image: "assests/image.png" }
+          { name: "Diode Laser System 808nm", id: "diode-laser-808", image: "assests/products/diode laser (1).png" },
+          { name: "Triple Wavelength Diode Laser", id: "diode-laser-808", image: "assests/products/diode laser (2).png" },
+          { name: "IPL & SHR Hair Removal Workstation", id: "diode-laser-808", image: "assests/products/diode laser (3).png" },
+          { name: "Long Pulse Nd:YAG Laser System", id: "diode-laser-808", image: "assests/products/diode laser (1).png" }
         ]
       },
       "Hair Growth": {
         desc: "Low-level laser therapy (LLLT) and specialized scalp stimulation devices engineered to reactivate follicles and support hair restoration.",
         sub: "Scalp therapy & hair regeneration",
         products: [
-          { name: "LLLT Hair Growth Laser System", id: "lllt-hair-growth", image: "assests/image.png" },
-          { name: "Hair Restoring Meso Cocktail", id: "meso-hair-growth", image: "assests/image.png" },
-          { name: "Scalp Micro-Needling & Serum Injector", id: "lllt-hair-growth", image: "assests/image.png" },
-          { name: "Photodynamic Scalp Therapy Canopy", id: "lllt-hair-growth", image: "assests/image.png" }
+          { name: "LLLT Hair Growth Laser System", id: "lllt-hair-growth", image: "assests/products/LLLT laser (1).png" },
+          { name: "Hair Restoring Meso Cocktail", id: "meso-hair-growth", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png" },
+          { name: "Scalp Micro-Needling & Serum Injector", id: "lllt-hair-growth", image: "assests/products/LLLT laser (2).png" },
+          { name: "Photodynamic Scalp Therapy Canopy", id: "lllt-hair-growth", image: "assests/products/LLLT laser (3).png" }
         ]
       },
       "Pigmentation & Tattoo Removal": {
         desc: "Ultra-short pulse Q-Switched and Picosecond laser systems for precise breakdown of benign pigmented lesions, epidermal spots, and multi-color tattoo inks.",
         sub: "Pigment & tattoo clearance",
         products: [
-          { name: "Q-Switched Nd:YAG Laser", id: "q-switch-nd-yag", image: "assests/image.png" },
-          { name: "1927nm Thulium Laser System", id: "thulium-laser-1927", image: "assests/image.png" },
-          { name: "Vitamin C Glowing Serum", id: "glowing-serum", image: "assests/image.png" },
-          { name: "TCA Peel Formulation", id: "tca-peel", image: "assests/image.png" }
+          { name: "Q-Switched Nd:YAG Laser", id: "q-switch-nd-yag", image: "assests/products/Pico laser (1).png" },
+          { name: "1927nm Thulium Laser System", id: "thulium-laser-1927", image: "assests/products/1927nm thulium laser (1).png" },
+          { name: "Vitamin C Glowing Serum", id: "glowing-serum", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png" },
+          { name: "TCA Peel Formulation", id: "tca-peel", image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png" }
         ]
       },
       "Skin Rejuvenation & Resurfacing": {
         desc: "Advanced laser technologies that rejuvenate skin, improve texture, reduce fine lines, and restore a more youthful, radiant appearance.",
         sub: "Rejuvenation & resurfacing",
         products: [
-          { name: "1550nm Erbium Glass Fiber Laser", id: "erbium-glass-1550", image: "assests/image.png" },
-          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/image.png" },
-          { name: "1927nm Thulium Laser System", id: "thulium-laser-1927", image: "assests/image.png" },
-          { name: "1550nm 10600nm Laser Machine", id: "laser-machine-dual", image: "assests/image.png" }
+          { name: "1550nm Erbium Glass Fiber Laser", id: "erbium-glass-1550", image: "assests/products/1550 nm (1).png" },
+          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/products/Fractional co2 laser (1).png" },
+          { name: "1927nm Thulium Laser System", id: "thulium-laser-1927", image: "assests/products/1927nm thulium laser (2).png" },
+          { name: "1550nm 10600nm Laser Machine", id: "laser-machine-dual", image: "assests/products/1550 nm + 10600nm (1).png" }
         ]
       },
       "Skin Tightening & Lifting": {
         desc: "High-Intensity Focused Ultrasound (HIFU) and multipolar radiofrequency platforms designed to stimulate deep collagen remodeling and face-lifting.",
         sub: "Non-surgical skin lifting",
         products: [
-          { name: "HIFU Lifting System 4D", id: "hifu-system", image: "assests/image.png" },
-          { name: "Fractional RF System", id: "fractional-rf", image: "assests/image.png" },
-          { name: "Monopolar RF Skin Tightening Platform", id: "fractional-rf", image: "assests/image.png" },
-          { name: "Thermal Ultrasound Contouring Device", id: "hifu-system", image: "assests/image.png" }
+          { name: "HIFU Lifting System 4D", id: "hifu-system", image: "assests/products/Hifu (1).png" },
+          { name: "Fractional RF System", id: "fractional-rf", image: "assests/products/Ems + roller (1).png" },
+          { name: "Monopolar RF Skin Tightening Platform", id: "fractional-rf", image: "assests/products/Hifu (2).png" },
+          { name: "Thermal Ultrasound Contouring Device", id: "hifu-system", image: "assests/products/Hifu (3).png" }
         ]
       },
       "Scar, Wrinkle & Skin-Texture Applications": {
         desc: "Targeted fractional resurfacing and sub-dermal remodeling devices for acne scar correction, deep wrinkle smoothing, and overall skin refinement.",
         sub: "Scar & wrinkle remodeling",
         products: [
-          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/image.png" },
-          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/image.png" },
-          { name: "Scar & Stretch Mark Repair Meso Cocktail", id: "meso-scar-stretch", image: "assests/image.png" },
-          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/image.png" }
+          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/products/Fractional co2 laser v2 (1).png" },
+          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/products/Fractional co2 laser v2 (2).png" },
+          { name: "Scar & Stretch Mark Repair Meso Cocktail", id: "meso-scar-stretch", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (2).png" },
+          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png" }
         ]
       },
       "HydraFacial, Hydration & Deep Cleansing": {
         desc: "Multi-functional hydro-dermabrasion platforms combining vortex extraction, chemical exfoliation, and deep hyaluronic infusion for clinical facial hydration.",
         sub: "Hydro-cleansing & infusion",
         products: [
-          { name: "Super Bubble Max", id: "alice-super-bubble", image: "assests/image.png" },
-          { name: "HydraFacial PDT Therapy Station", id: "pdt-hydrafacial", image: "assests/image.png" },
-          { name: "Hydra Cleansing & Facial System", id: "hydra-cleansing", image: "assests/image.png" },
-          { name: "Gentle Hydrating Face Wash", id: "hydrating-facewash", image: "assests/image.png" }
+          { name: "HydraFacial PDT Therapy Station", id: "pdt-hydrafacial", image: "assests/products/Pdt + hydra facial (1).png" },
+          { name: "Hydra Cleansing & Facial System", id: "hydra-cleansing", image: "assests/products/Pdt + hydra facial (2).png" },
+          { name: "Gentle Hydrating Face Wash", id: "hydrating-facewash", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (1).png" }
         ]
       },
       "Skin Analysis": {
         desc: "High-definition 3D multi-spectral facial diagnostic systems that analyze sub-surface pigmentation, pore depth, UV damage, and moisture balance.",
         sub: "Digital diagnostic imaging",
         products: [
-          { name: "3D Diagnostic Skin Analyzer", id: "skin-analyzer-3d", image: "assests/image.png" },
-          { name: "AI Skin Scanner & Moisture Analyzer", id: "skin-analyzer-3d", image: "assests/image.png" },
-          { name: "Digital Dermatoscope Imaging System", id: "skin-analyzer-3d", image: "assests/image.png" },
-          { name: "High-Res UV Facial Camera Station", id: "skin-analyzer-3d", image: "assests/image.png" }
+          { name: "3D Diagnostic Skin Analyzer", id: "skin-analyzer-3d", image: "assests/products/skin analyzer (1).png" },
+          { name: "AI Skin Scanner & Moisture Analyzer", id: "skin-analyzer-3d", image: "assests/products/skin analyzer (2).png" },
+          { name: "Digital Dermatoscope Imaging System", id: "skin-analyzer-3d", image: "assests/products/skin analyzer (3).png" },
+          { name: "High-Res UV Facial Camera Station", id: "skin-analyzer-3d", image: "assests/products/skin analyzer (1).png" }
         ]
       },
       "Fat Reduction & Cellulite Applications": {
         desc: "Non-invasive body contouring platforms utilizing ultrasonic cavitation, multi-polar radiofrequency, and cryolipolysis to sculpt targeted fat deposits.",
         sub: "Body sculpting & cellulite",
         products: [
-          { name: "Ultrasonic Cavitation & RF System", id: "cavitation-rf-body", image: "assests/image.png" },
-          { name: "Lipolysis Contouring Meso Solution", id: "meso-lipolysis", image: "assests/image.png" },
-          { name: "360 Cryolipolysis Fat Freezing System", id: "cavitation-rf-body", image: "assests/image.png" },
-          { name: "EMS Muscle Stimulator & Sculptor", id: "cavitation-rf-body", image: "assests/image.png" }
+          { name: "Ultrasonic Cavitation & RF System", id: "cavitation-rf-body", image: "assests/products/Ems + roller (2).png" },
+          { name: "Lipolysis Contouring Meso Solution", id: "meso-lipolysis", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (3).png" },
+          { name: "360 Cryolipolysis Fat Freezing System", id: "cavitation-rf-body", image: "assests/products/Ems + roller (3).png" },
+          { name: "EMS Muscle Stimulator & Sculptor", id: "cavitation-rf-body", image: "assests/products/Ems + roller (1).png" }
         ]
       },
       "Hemorrhoids, Fistulas & Sinus Pilonidalis": {
         desc: "Precision 980nm/1470nm surgical diode laser platforms providing minimally invasive, bloodless proctological and vascular treatments.",
         sub: "Proctology surgical lasers",
         products: [
-          { name: "Surgical Laser System", id: "surgical-laser-pro", image: "assests/image.png" },
-          { name: "Dual 980nm + 1470nm Surgical Laser", id: "surgical-laser-pro", image: "assests/image.png" },
-          { name: "Fiber-Guided Micro-Laser Probe Kit", id: "surgical-laser-pro", image: "assests/image.png" },
-          { name: "Precision Surgical Laser Generator", id: "surgical-laser-pro", image: "assests/image.png" }
+          { name: "Surgical Laser System", id: "surgical-laser-pro", image: "assests/products/surgical laser (1).png" },
+          { name: "Dual 980nm + 1470nm Surgical Laser", id: "surgical-laser-pro", image: "assests/products/surgical laser (2).png" },
+          { name: "Fiber-Guided Micro-Laser Probe Kit", id: "surgical-laser-pro", image: "assests/products/surgical laser (3).png" },
+          { name: "Precision Surgical Laser Generator", id: "surgical-laser-pro", image: "assests/products/surgical laser (1).png" }
         ]
       }
     };
@@ -669,7 +668,7 @@
 
           <div class="card-info-content">
             <span class="card-category-badge ${categoryClass}">${p.categoryLabel}</span>
-            <div class="card-model-code">${p.model}</div>
+            ${(categoryClass !== 'meso' && categoryClass !== 'peels') ? `<div class="card-model-code">${p.model}</div>` : ''}
             <h3 class="card-product-title">${p.name}</h3>
             <p class="card-product-desc">${p.description}</p>
 
@@ -748,32 +747,31 @@
         title: `Skin Rejuvenation<br>&amp; Resurfacing`,
         desc:  `Equipment listed in the catalogue for skin rejuvenation and resurfacing applications.`,
         cards: [
-          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/products/fractional-co2-v2-1.png",  link: "product-detail.html?id=fractional-co2-v2" },
-          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/products/fractional-co2-1.png",     link: "product-detail.html?id=fractional-co2" },
-          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/products/pico-laser-1.png",         link: "product-detail.html?id=truepico-laser" }
+          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/products/Fractional co2 laser v2 (1).png",  link: "product-detail.html?id=fractional-co2-v2" },
+          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/products/Fractional co2 laser (1).png",     link: "product-detail.html?id=fractional-co2" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/products/Pico laser (1).png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       hair: {
         title: `Hair Removal`,
         desc:  `Equipment listed in the catalogue for hair removal applications.`,
         cards: [
-          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/diode-laser-1.png",        link: "product-detail.html?id=diode-laser" },
-          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/products/pico-laser-1.png",         link: "product-detail.html?id=truepico-laser" }
+          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/diode laser (1).png",        link: "product-detail.html?id=diode-laser" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/products/Pico laser (1).png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       body: {
         title: `Body Contouring<br>&amp; Fat Reduction`,
         desc:  `Equipment listed in the catalogue for body contouring and fat reduction applications.`,
         cards: [
-          { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/products/hifu-12d-1.png",           link: "product-detail.html?id=hifu-12d" },
-          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/ems-roller-1.png",         link: "product-detail.html?id=pulse-lift-ems" }
+          { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/products/Hifu (1).png",           link: "product-detail.html?id=hifu-12d" },
+          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/Ems + roller (1).png",         link: "product-detail.html?id=pulse-lift-ems" }
         ]
       },
       peels: {
         title: `Chemical Peels<br>&amp; Facial Workstations`,
         desc:  `Equipment listed in the catalogue for facial treatments and chemical peel workflows.`,
         cards: [
-          { tag: "FACIAL SYSTEM", spec: "JMAL-7",  title: "Alice Super Bubble Max",     desc: "A multi-function facial machine listed for cleansing, hydration and other catalogue-stated applications.",     img: "assests/products/o2-hydrafacial-1.png",    link: "product-detail.html?id=alice-super-bubble" },
           { tag: "PDT HYDRAFACIAL",spec: "JMPD-14", title: "PDT HydraFacial",             desc: "A facial machine with PDT light therapy listed among catalogue-stated applications.",                          img: "assests/products/pdt-hydrafacial-1.png",   link: "product-detail.html?id=pdt-hydrafacial" }
         ]
       }
@@ -843,7 +841,7 @@
         title: "350PS TRUEPICO PICOSECOND LASER",
         model: "JMPS1",
         subtitle: "Ultra-short picosecond laser technology for high-efficiency multi-color tattoo removal and stubborn pigment treatments.",
-        image: "assests/products/pico-laser-1.png",
+        image: "assests/products/Pico laser (1).png",
         detailLink: "product-detail.html?id=truepico-laser",
         enquireLink: "contact.html?product=350PS+TruePico+Picosecond+Laser"
       },
@@ -853,7 +851,7 @@
         eyebrow: "SCALP & HAIR REVITALIZATION",
         title: "HAIR RE-GROWTH MESO COCKTAIL",
         model: "JMM-01",
-        subtitle: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum follicle penetration and stimulation.",
+        subtitle: "Hair Re-Growth Meso Cocktail helps in hair re-growth in a few treatments. It is used topically on the scalp with a nano roller for maximum penetration.",
         image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png",
         detailLink: "contact.html?product=Hair+Re-Growth",
         enquireLink: "contact.html?product=Hair+Re-Growth"
@@ -876,7 +874,7 @@
         title: "PULSE LIFT EMS FACE LIFT",
         model: "JMHM-17",
         subtitle: "A professional facial platform combining RF and HIFES technology for non-invasive forehead, cheek, and jawline lifting.",
-        image: "assests/products/ems-roller-1.png",
+        image: "assests/products/Ems + roller (1).png",
         detailLink: "product-detail.html?id=pulse-lift-ems",
         enquireLink: "contact.html?product=Pulse+Lift+EMS+Face+Lift"
       },
@@ -897,7 +895,7 @@
         eyebrow: "GLOWING & LIGHTENING MESO",
         title: "GLOW MESO SOLUTION",
         model: "JMM-02",
-        subtitle: "Formulated with DMAE, Hyaluronate, and Ascorbic Acid for radiant skin brightening and intense hydration boost.",
+        subtitle: "Glow Meso Cocktail gives you glowing skin in a few treatments. It is used topically with a nano roller for maximum penetration.",
         image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png",
         detailLink: "contact.html?product=Glow+Meso",
         enquireLink: "contact.html?product=Glow+Meso"
@@ -1195,3 +1193,90 @@
   };
 
   initTestimonialsSlider();
+
+  // Product Spotlight Interactive Sliding Orbital Carousel
+  const initProductSpotlightSlider = () => {
+    const track = document.getElementById("spotlight-track");
+    const slides = document.querySelectorAll(".spotlight-slide-item");
+    const prevBtn = document.getElementById("spotlight-prev");
+    const nextBtn = document.getElementById("spotlight-next");
+    const dots = document.querySelectorAll(".indicator-dot");
+
+    if (!track || !slides.length) return;
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoPlayTimer = null;
+
+    const updateSliderPosition = (index) => {
+      currentIndex = (index + totalSlides) % totalSlides;
+      
+      // Slide track horizontally
+      const translatePercentage = (currentIndex * 100) / totalSlides;
+      track.style.transform = `translateX(-${translatePercentage}%)`;
+
+      // Update indicator dots
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle("active", idx === currentIndex);
+      });
+    };
+
+    const startAutoPlay = () => {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+      autoPlayTimer = setInterval(() => {
+        updateSliderPosition(currentIndex + 1);
+      }, 6000);
+    };
+
+    // Right Arrow clicked -> Current product slides left to show next product
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        updateSliderPosition(currentIndex + 1);
+        startAutoPlay();
+      });
+    }
+
+    // Left Arrow clicked -> Current product slides right to show previous product
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        updateSliderPosition(currentIndex - 1);
+        startAutoPlay();
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const slideIdx = parseInt(dot.getAttribute("data-slide"), 10);
+        updateSliderPosition(slideIdx);
+        startAutoPlay();
+      });
+    });
+
+    // Touch / Swipe Support
+    const stage = document.querySelector(".spotlight-stage");
+    if (stage) {
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      stage.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      stage.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          updateSliderPosition(currentIndex + 1);
+          startAutoPlay();
+        } else if (touchEndX - touchStartX > 50) {
+          updateSliderPosition(currentIndex - 1);
+          startAutoPlay();
+        }
+      }, { passive: true });
+    }
+
+    startAutoPlay();
+  };
+
+  initProductSpotlightSlider();
+
+

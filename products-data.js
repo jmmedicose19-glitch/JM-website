@@ -8,9 +8,9 @@ const productsData = [
     categoryLabel: "Facial Equipment",
     description: "A facial system using RF and HIFES technology for the forehead, eyebrows, cheeks and jawline.",
     images: [
-      "assests/products/ems-roller-1.png",
-      "assests/products/ems-roller-2.png",
-      "assests/products/ems-roller-3.png"
+      "assests/products/Ems + roller (1).png",
+      "assests/products/Ems + roller (2).png",
+      "assests/products/Ems + roller (3).png"
     ],
     highlights: [
       "RF and HIFES technology",
@@ -51,7 +51,7 @@ const productsData = [
       { field: "Treatment Areas", value: "Forehead, eyebrows, cheeks, jawline" },
       { field: "Exact Configuration", value: "Available on enquiry" }
     ],
-    relatedIds: ["hifu-12d", "alice-super-bubble", "pdt-hydrafacial"]
+    relatedIds: ["hifu-12d", "truepico-laser", "pdt-hydrafacial"]
   },
 
   // 2. HIFU-12D Machine
@@ -63,9 +63,9 @@ const productsData = [
     categoryLabel: "HIFU System",
     description: "A focused-ultrasound system for catalogue-listed skin-tightening, wrinkle-removal and fat-reduction applications.",
     images: [
-      "assests/products/hifu-12d-1.png",
-      "assests/products/hifu-12d-2.png",
-      "assests/products/hifu-12d-3.png"
+      "assests/products/Hifu (1).png",
+      "assests/products/Hifu (2).png",
+      "assests/products/Hifu (3).png"
     ],
     highlights: [
       "Focused ultrasound technology",
@@ -108,7 +108,7 @@ const productsData = [
       { field: "Mobility", value: "Wheeled console" },
       { field: "Exact Configuration", value: "Available on enquiry" }
     ],
-    relatedIds: ["pulse-lift-ems", "fractional-co2-v2", "alice-super-bubble"]
+    relatedIds: ["pulse-lift-ems", "fractional-co2-v2", "truepico-laser"]
   },
 
   // 3. Fractional CO₂ Laser Machine — V2
@@ -120,9 +120,9 @@ const productsData = [
     categoryLabel: "Fractional Laser",
     description: "A professional fractional CO₂ laser system for resurfacing, scar, wrinkle and skin-texture applications.",
     images: [
-      "assests/products/fractional-co2-v2-1.png",
-      "assests/products/fractional-co2-v2-2.png",
-      "assests/products/fractional-co2-v2-3.png"
+      "assests/products/Fractional co2 laser v2 (1).png",
+      "assests/products/Fractional co2 laser v2 (2).png",
+      "assests/products/Fractional co2 laser v2 (3).png"
     ],
     highlights: [
       "Fractional CO₂ technology",
@@ -177,10 +177,9 @@ const productsData = [
     categoryLabel: "Fractional Laser",
     description: "A console-based fractional CO₂ laser system designed for catalogue-listed resurfacing and skin-texture applications.",
     images: [
-      "assests/products/fractional-co2-1.png",
-      "assests/products/fractional-co2-2.png",
-      "assests/products/fractional-co2-3.png",
-      "assests/products/fractional-co2-4.png"
+      "assests/products/Fractional co2 laser (1).png",
+      "assests/products/Fractional co2 laser (2).png",
+      "assests/products/Fractional co2 laser (3).png"
     ],
     highlights: [
       "Fractional laser delivery",
@@ -235,9 +234,9 @@ const productsData = [
     categoryLabel: "Hair-Removal Laser",
     description: "A professional diode-laser system developed for catalogue-listed hair-removal applications.",
     images: [
-      "assests/products/diode-laser-1.png",
-      "assests/products/diode-laser-2.png",
-      "assests/products/diode-laser-3.png"
+      "assests/products/diode laser (1).png",
+      "assests/products/diode laser (2).png",
+      "assests/products/diode laser (3).png"
     ],
     highlights: [
       "Diode-laser technology",
@@ -289,9 +288,9 @@ const productsData = [
     categoryLabel: "Picosecond Laser",
     description: "A picosecond-laser system for catalogue-listed tattoo-removal, pigmentation-correction and skin-rejuvenation applications.",
     images: [
-      "assests/products/pico-laser-1.png",
-      "assests/products/pico-laser-2.png",
-      "assests/products/pico-laser-3.png"
+      "assests/products/Pico laser (1).png",
+      "assests/products/Pico laser (2).png",
+      "assests/products/Pico laser (3).png"
     ],
     highlights: [
       "Picosecond pulse technology",
@@ -334,64 +333,6 @@ const productsData = [
       { field: "Exact Configuration", value: "Available on enquiry" }
     ],
     relatedIds: ["fractional-co2-v2", "diode-laser"]
-  },
-
-  // 7. Alice Super Bubble Max (JMAL-7)
-  // Note: The PDF lists this product as "Alice Super Bubble Max". JMAL-7 does not appear as "O₂ HydraFacial" in the supplied catalogue.
-  {
-    id: "alice-super-bubble",
-    name: "Alice Super Bubble Max",
-    model: "JMAL-7",
-    category: "machines",
-    categoryLabel: "Facial System",
-    description: "A multi-function facial system for deep cleansing, exfoliation, hydration and skin-rejuvenation workflows.",
-    images: [
-      "assests/products/o2-hydrafacial-1.png",
-      "assests/products/o2-hydrafacial-2.png",
-      "assests/products/o2-hydrafacial-3.png"
-    ],
-    highlights: [
-      "Multi-function facial system",
-      "Multiple facial handpieces",
-      "Solution-container system"
-    ],
-    overviewHeading: "Alice Super Bubble Max — Multi-Function Facial System",
-    overviewParagraph1: "The Alice Super Bubble Max (JMAL-7) is a multi-function professional facial system listed in the JM Medicose catalogue for deep cleansing, exfoliation, hydration and skin-rejuvenation workflows.",
-    overviewParagraph2: "Equipped with multiple handpieces and a solution-container system, it supports complete deep-cleansing, exfoliation and hydration routines in a single workstation.",
-    applications: [
-      "Deep cleansing",
-      "Exfoliation",
-      "Hydration",
-      "Skin rejuvenation"
-    ],
-    features: [
-      { title: "Integrated Control Interface", text: "Digital control screen for adjusting liquid flow rates, vacuum suction power, and probe selection." },
-      { title: "Multiple Facial Handpieces", text: "Includes hydro-peel wand, spray applicator and connected facial probes for multi-step treatments." },
-      { title: "Solution-Container System", text: "Integrated multi-bottle container rack for quick switching between cleansing and nutrient solutions." },
-      { title: "Product-Specific Configuration", text: "Handpiece set and solution bottle configuration available on enquiry." }
-    ],
-    techHeading: "Multi-Step Facial Workflow",
-    techCopy: "The Alice Super Bubble Max combines professional facial functions associated with cleansing, exfoliation, hydration and skin rejuvenation. Its configuration includes multiple applicators and solution containers for organised facial-care workflows.",
-    systemItems: [
-      "Control display screen",
-      "Main facial workstation console",
-      "Hydro-dermabrasion wand",
-      "Spray applicator",
-      "Facial probe set",
-      "Solution container rack"
-    ],
-    infoTable: [
-      { field: "Product Name", value: "Alice Super Bubble Max" },
-      { field: "Product Category", value: "Facial System" },
-      { field: "Model Reference", value: "JMAL-7" },
-      { field: "Technology Type", value: "Hydro-dermabrasion & multi-step facial" },
-      { field: "System Format", value: "Multi-function workstation" },
-      { field: "Control Interface", value: "Integrated digital interface" },
-      { field: "Applicators", value: "Multiple connected facial probes" },
-      { field: "Mobility", value: "Mobile trolley format" },
-      { field: "Exact Configuration", value: "Available on enquiry" }
-    ],
-    relatedIds: ["pdt-hydrafacial", "pulse-lift-ems", "hifu-12d"]
   },
 
   // 9. PDT HydraFacial
@@ -447,7 +388,7 @@ const productsData = [
       { field: "Mobility", value: "Wheeled workstation" },
       { field: "Exact Configuration", value: "Available on enquiry" }
     ],
-    relatedIds: ["alice-super-bubble", "pulse-lift-ems", "fractional-co2"]
+    relatedIds: ["truepico-laser", "pulse-lift-ems", "fractional-co2"]
   },
 
   // ==========================================
@@ -459,7 +400,7 @@ const productsData = [
     model: "JMM-01",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum penetration.",
+    description: "Hair Re-Growth Meso Cocktail helps in hair re-growth in a few treatments. It is used topically on the scalp with a nano roller for maximum penetration.",
     indication: "Hair Re-Growth Effect",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png"],
     ingredients: [
@@ -472,7 +413,7 @@ const productsData = [
       "Sodium Benzoate"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A hair re-growth meso cocktail used topically on the scalp with a nano roller for maximum penetration.",
+    overviewParagraph1: "Hair Re-Growth Meso Cocktail helps in hair re-growth in a few treatments. It is used topically on the scalp with a nano roller for maximum penetration.",
     relatedIds: ["glow-meso", "growth-factor-meso", "stretch-mark-and-scars-meso"]
   },
   {
@@ -481,7 +422,7 @@ const productsData = [
     model: "JMM-02",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A meso cocktail used topically with a nano roller for maximum penetration.",
+    description: "Glow Meso Cocktail gives you glowing skin in a few treatments. It is used topically with a nano roller for maximum penetration.",
     indication: "Glowing Effect / Lightening Effect",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png"],
     ingredients: [
@@ -493,7 +434,7 @@ const productsData = [
       "Sodium Benzoate"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A meso cocktail used topically with a nano roller for maximum penetration.",
+    overviewParagraph1: "Glow Meso Cocktail gives you glowing skin in a few treatments. It is used topically with a nano roller for maximum penetration.",
     relatedIds: ["hair-re-growth", "whitening-glutathion-meso", "growth-factor-meso"]
   },
   {
@@ -502,9 +443,8 @@ const productsData = [
     model: "JMM-03",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A Deoxycholate + PPC PRO cocktail described for dissolving unwanted fat under the skin.",
-    indication: "Double Chin, Love Handles, Inner Thighs and Underarms",
-    detailNote: "The PDF states that the treatment involves multiple deeper injections on the targeted area and that the procedure is performed by an experienced professional.",
+    description: "Lipo Dissolve Deoxycholate + PPC PRO is a ready-made cocktail that helps dissolve unwanted fat under the skin. The treatment involves multiple deeper injections on the targeted area. The procedure is performed by an experienced professional.",
+    indication: "Double Chin, Love Handle, Inner Thighs, Underarms",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (3).png"],
     ingredients: [
       "Aqua / Water",
@@ -514,7 +454,7 @@ const productsData = [
       "Sodium Hydroxide"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A Deoxycholate + PPC PRO cocktail described for dissolving unwanted fat under the skin.",
+    overviewParagraph1: "Lipo Dissolve Deoxycholate + PPC PRO is a ready-made cocktail that helps dissolve unwanted fat under the skin. The treatment involves multiple deeper injections on the targeted area. The procedure is performed by an experienced professional.",
     relatedIds: ["glow-meso", "stretch-mark-and-scars-meso", "whitening-glutathion-meso"]
   },
   {
@@ -523,7 +463,7 @@ const productsData = [
     model: "JMM-04",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A glutathion meso cocktail used topically with a nano roller on the desired area of the body.",
+    description: "Glutathion Meso Cocktail helps to whiten the desired area of the body. It is used topically with a nano roller for maximum penetration.",
     indication: "Glowing Effect / Lightening Effect",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (4).png"],
     ingredients: [
@@ -534,7 +474,7 @@ const productsData = [
       "Sodium Hydroxide"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A glutathion meso cocktail used topically with a nano roller on the desired area of the body.",
+    overviewParagraph1: "Glutathion Meso Cocktail helps to whiten the desired area of the body. It is used topically with a nano roller for maximum penetration.",
     relatedIds: ["glow-meso", "hair-re-growth", "growth-factor-meso"]
   },
   {
@@ -543,7 +483,7 @@ const productsData = [
     model: "JMM-05",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A meso cocktail described for stretch-mark and scar-reduction applications and topical use with a nano roller.",
+    description: "Stretch Mark & Scars Meso Cocktail helps renew cells and supports new collagen formation, resulting in stretch-mark and scar reduction. It is used topically with a nano roller for maximum penetration.",
     indication: "Anti-Stretch Mark / Anti-Scar Effect",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (5).png"],
     ingredients: [
@@ -558,7 +498,7 @@ const productsData = [
       "Sodium Benzoate"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A meso cocktail described for stretch-mark and scar-reduction applications and topical use with a nano roller.",
+    overviewParagraph1: "Stretch Mark & Scars Meso Cocktail helps renew cells and supports new collagen formation, resulting in stretch-mark and scar reduction. It is used topically with a nano roller for maximum penetration.",
     relatedIds: ["lipo-dissolve", "growth-factor-meso", "glow-meso"]
   },
   {
@@ -567,7 +507,7 @@ const productsData = [
     model: "JMM-06",
     category: "meso",
     categoryLabel: "MESO SOLUTION",
-    description: "A growth-factor meso cocktail described for generating new cells and topical use on the skin and scalp.",
+    description: "Growth Factor Meso Cocktail is helpful in generating new cells. It can be used on the skin as well as on the scalp. It is used topically with a nano roller for maximum penetration.",
     indication: "Regenerating Effect",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (6).png"],
     ingredients: [
@@ -581,7 +521,7 @@ const productsData = [
       "Phytosterols"
     ],
     overviewHeading: "About This Meso Solution",
-    overviewParagraph1: "A growth-factor meso cocktail described for generating new cells and topical use on the skin and scalp.",
+    overviewParagraph1: "Growth Factor Meso Cocktail is helpful in generating new cells. It can be used on the skin as well as on the scalp. It is used topically with a nano roller for maximum penetration.",
     relatedIds: ["hair-re-growth", "glow-meso", "stretch-mark-and-scars-meso"]
   },
 
@@ -594,12 +534,12 @@ const productsData = [
     model: "JMP-01",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
-    variants: ["Glycolic 20%", "Glycolic 40%", "Glycolic 60%"],
-    directions: "Apply evenly to cleaned, dried skin. Leave for specified application duration according to skin sensitivity and neutralise thoroughly.",
+    description: "Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products. AHAs are natural acids that come from plants and consist of small molecules that are easily absorbed by the skin.",
+    variants: ["Glycolic 25%", "Glycolic 35%", "Glycolic 50%"],
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A water-soluble alpha hydroxy acid peel made from sugar cane.",
+    overviewParagraph1: "Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products. AHAs are natural acids that come from plants and consist of small molecules that are easily absorbed by the skin.",
     relatedIds: ["tca-peel", "lactic-peel", "salicylic-peel"]
   },
   {
@@ -608,12 +548,12 @@ const productsData = [
     model: "JMP-02",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
-    variants: ["TCA 10%", "TCA 20%", "TCA 40%", "TCA 70%"],
-    directions: "Apply with precise technique to targeted facial zones. Monitor skin response carefully and neutralise per protocol.",
+    description: "TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.",
+    variants: ["TCA 15%", "TCA 25%", "TCA 50%", "TCA 70%"],
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A medium-depth peel described for fine surface wrinkles, superficial blemishes and pigment problems.",
+    overviewParagraph1: "TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.",
     relatedIds: ["glycolic-peel", "jessner-peel", "phenol-5-percent-peel"]
   },
   {
@@ -622,12 +562,12 @@ const productsData = [
     model: "JMP-03",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    description: "A lactic acid chemical peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
     variants: ["Lactic 70%"],
-    directions: "Apply gently across treatment area, monitor skin erythema, and neutralise thoroughly after target exposure time.",
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (3).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    overviewParagraph1: "A lactic acid chemical peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
     relatedIds: ["glycolic-peel", "salicylic-peel", "dark-circle-peel"]
   },
   {
@@ -636,12 +576,12 @@ const productsData = [
     model: "JMP-04",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
-    variants: ["Salicylic 10%", "Salicylic 20%", "Salicylic 30%"],
-    directions: "Apply evenly onto oily or acne-prone areas. Allow peel to self-neutralise or neutralise per catalogue guidance.",
+    description: "Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation. It clears the face in a few treatments and leaves the skin clearer, brighter and more youthful. It is described as suitable for all skin types.",
+    variants: ["Salicylic 15%", "Salicylic 25%", "Salicylic 30%"],
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes or until a white mask appears. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (4).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    overviewParagraph1: "Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation. It clears the face in a few treatments and leaves the skin clearer, brighter and more youthful. It is described as suitable for all skin types.",
     relatedIds: ["salicylic-mandelac-peel", "lactic-peel", "glycolic-peel"]
   },
   {
@@ -650,11 +590,11 @@ const productsData = [
     model: "JMP-05",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
-    directions: "Apply uniform layers with cotton applicator until frosting occurs. Follow post-peel recovery guidelines.",
+    description: "Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 2–8 minutes. Apply Retinol cream over the nanopeel to seal the treatment area. Leave it for 6–8 hours. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (5).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A peel that works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
+    overviewParagraph1: "Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
     relatedIds: ["tca-peel", "retinol-yellow-peel", "phenol-5-percent-peel"]
   },
   {
@@ -663,11 +603,12 @@ const productsData = [
     model: "JMP-06",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
-    directions: "Apply to clean facial skin. Leave for recommended exposure time before gentle neutralization.",
+    description: "Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs. It is described as effective for hydration, moisturising, glow and skin rejuvenation. It clears the face in a few treatments.",
+    variants: ["Salisalic 20% + Mandelac 10%"],
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (6).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A salicylic nanopeel described for mild-to-severe acne and skin-rejuvenation applications.",
+    overviewParagraph1: "Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs. It is described as effective for hydration, moisturising, glow and skin rejuvenation. It clears the face in a few treatments.",
     relatedIds: ["salicylic-peel", "arginine-cocktail-peel", "dark-circle-peel"]
   },
   {
@@ -676,12 +617,13 @@ const productsData = [
     model: "JMP-07",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
+    description: "Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation. The PDF lists it for acne scarring, skin discolouration, wrinkling and sun damage.",
+    variants: ["Phenol 5%"],
     applications: ["Acne scarring", "Skin discolouration", "Wrinkling", "Sun damage"],
-    directions: "Apply by trained healthcare provider only. Monitor skin closely and neutralise accurately per protocol.",
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 2–8 minutes. Apply Retinol cream over the nanopeel to seal the treatment area. Leave it for 6–8 hours. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (7).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A deep peel described as penetrating further into the skin for substantial exfoliation.",
+    overviewParagraph1: "Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation. The PDF lists it for acne scarring, skin discolouration, wrinkling and sun damage.",
     relatedIds: ["tca-peel", "jessner-peel", "retinol-yellow-peel"]
   },
   {
@@ -690,11 +632,11 @@ const productsData = [
     model: "JMP-08",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
-    directions: "Apply carefully around peri-orbital contours. Neutralise promptly according to delicate skin protocols.",
+    description: "Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (8).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A chemical peel described for improving and smoothing skin texture by removing damaged upper layers.",
+    overviewParagraph1: "Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
     relatedIds: ["arginine-cocktail-peel", "lactic-peel", "salicylic-mandelac-peel"]
   },
   {
@@ -703,11 +645,11 @@ const productsData = [
     model: "JMP-09",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
-    directions: "Apply to delicate facial and eye areas. Allow gentle infusion before neutralising with cool water spray.",
+    description: "Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation. It clears the face in a few treatments, leaving the skin clearer, brighter and more youthful.",
+    directions: "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes or until a white mask appears. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (9).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "An arginine combination nanopeel formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.",
+    overviewParagraph1: "Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation. It clears the face in a few treatments, leaving the skin clearer, brighter and more youthful.",
     relatedIds: ["dark-circle-peel", "lactic-peel", "retinol-yellow-peel"]
   },
   {
@@ -716,11 +658,11 @@ const productsData = [
     model: "JMP-10",
     category: "peels",
     categoryLabel: "CHEMICAL PEEL",
-    description: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
-    directions: "Apply evenly across facial skin. Leave on skin for recommended contact hours before washing off thoroughly.",
+    description: "Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.",
+    directions: "Apply the single-dose Vitamin C serum and gently massage until penetration. Wait 5–10 minutes before the next step. Apply the single-dose Retinol cream and gently massage until penetration to seal the treatment. Leave it on for a minimum of eight hours. If irritation occurs, rinse immediately with plenty of cold water.",
     images: ["assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (10).png"],
     overviewHeading: "About This Chemical Peel",
-    overviewParagraph1: "A retinol chemical peel described for exfoliating dead skin cells and improving skin texture.",
+    overviewParagraph1: "Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.",
     relatedIds: ["jessner-peel", "phenol-5-percent-peel", "glycolic-peel"]
   }
 ];

@@ -204,8 +204,323 @@
     </div>
   </section>
 
+  <!-- SECTION: FEATURED PRODUCT SHOWCASE (INTERACTIVE ORBITAL SPOTLIGHT) -->
+  <section class="spotlight-showcase-section">
+    <div class="spotlight-container">
+      
+      <div class="section-header-center">
+        <span class="section-tag-pill">PRODUCT SPOTLIGHT</span>
+        <h2 class="section-title-main">Key Features &amp; <span>Formulations</span></h2>
+        <p class="section-subtitle">Explore highlighted clinical features orbiting our flagship Machine, Meso Solution, and Chemical Peel offerings.</p>
+        <div class="section-divider-line"></div>
+      </div>
 
+      <!-- Main Showcase Container (Slide Track Carousel with SVG Dotted Pointer Connectors) -->
+      <div class="spotlight-stage">
+        
+        <!-- Left Navigation Button -->
+        <button class="spotlight-nav-btn prev-btn" id="spotlight-prev" aria-label="Previous Product">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
 
+        <!-- Right Navigation Button -->
+        <button class="spotlight-nav-btn next-btn" id="spotlight-next" aria-label="Next Product">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Slide Track viewport -->
+        <div class="spotlight-track-viewport">
+          <div class="spotlight-track" id="spotlight-track">
+            
+            <!-- SLIDE 1: MACHINE (Pulse Lift EMS) -->
+            <div class="spotlight-slide-item">
+              <div class="spotlight-badge-header">
+                <span class="spotlight-cat-badge machine">EQUIPMENT SPOTLIGHT</span>
+                <h3 class="spotlight-prd-title">Pulse Lift EMS Face Lift</h3>
+                <p class="spotlight-prd-subtitle">Advanced RF &amp; HIFES Non-Invasive Facial Contouring Workstation</p>
+              </div>
+
+              <div class="spotlight-orbital-layout">
+
+                <!-- Left Orbit Features -->
+                <div class="spotlight-features-col left-col">
+                  <div class="orbital-feature-node left-node float-anim-1">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">RF &amp; HIFES Energy</span>
+                      <span class="node-desc">Dual muscle-stimulation &amp; thermal heating</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-2">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Non-Invasive Lifting</span>
+                      <span class="node-desc">Targeted cheek, forehead &amp; jawline lift</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-3">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Seven Applicator Pads</span>
+                      <span class="node-desc">Multi-zone synchronous treatment pads</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Center Product Photo Hub -->
+                <div class="spotlight-center-hub">
+                  <div class="hub-glow-ring machine-ring"></div>
+                  <div class="hub-pedestal-platform"></div>
+                  <img src="assests/products/Ems + roller (1).png" alt="Pulse Lift EMS Face Lift" class="hub-prd-img machine-img">
+                </div>
+
+                <!-- Right Orbit Features -->
+                <div class="spotlight-features-col right-col">
+                  <div class="orbital-feature-node right-node float-anim-1">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">12.1" Touch Display</span>
+                      <span class="node-desc">Intuitive clinical touchscreen interface</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-2">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Collagen Remodeling</span>
+                      <span class="node-desc">Restores facial contouring &amp; volume</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-3">
+                    <div class="node-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Zero Downtime</span>
+                      <span class="node-desc">Painless procedure with immediate results</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="spotlight-action-row">
+                <a href="product-detail.html?id=pulse-lift-ems" class="spotlight-btn-primary">View Product Details →</a>
+                <a href="contact.html?product=Pulse+Lift+EMS+Face+Lift" class="spotlight-btn-secondary">Request Machine Enquiry</a>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: MESO SOLUTION (Glow Meso) -->
+            <div class="spotlight-slide-item">
+              <div class="spotlight-badge-header">
+                <span class="spotlight-cat-badge meso">MESO SOLUTION SPOTLIGHT</span>
+                <h3 class="spotlight-prd-title">Glow Meso Cocktail</h3>
+                <p class="spotlight-prd-subtitle">Topical Skin Lightening &amp; Radiance Formulation</p>
+              </div>
+
+              <div class="spotlight-orbital-layout">
+
+                <!-- Left Orbit Features -->
+                <div class="spotlight-features-col left-col">
+                  <div class="orbital-feature-node left-node float-anim-1">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Glowing Effect</span>
+                      <span class="node-desc">Gives radiant, glowing skin in a few sessions</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-2">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Nano Roller Application</span>
+                      <span class="node-desc">Topical micro-needling for maximum absorption</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-3">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Sodium Hyaluronate</span>
+                      <span class="node-desc">Deep epidermal hydration &amp; plumping</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Center Product Photo Hub -->
+                <div class="spotlight-center-hub">
+                  <div class="hub-glow-ring meso-ring"></div>
+                  <div class="hub-pedestal-platform"></div>
+                  <img src="assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png" alt="Glow Meso Cocktail" class="hub-prd-img meso-img">
+                </div>
+
+                <!-- Right Orbit Features -->
+                <div class="spotlight-features-col right-col">
+                  <div class="orbital-feature-node right-node float-anim-1">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Ascorbic Acid (Vit C)</span>
+                      <span class="node-desc">Powerful antioxidant tone brightening</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-2">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">DMAE Tartrate</span>
+                      <span class="node-desc">Tightens skin matrix &amp; improves elasticity</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-3">
+                    <div class="node-icon-circle meso-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Pure Formulation</span>
+                      <span class="node-desc">Aqua base with Potassium Sorbate &amp; Benzoate</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="spotlight-action-row">
+                <a href="product-detail.html?id=glow-meso" class="spotlight-btn-primary">View Meso Details →</a>
+                <a href="contact.html?product=Glow+Meso" class="spotlight-btn-secondary">Request Solution Enquiry</a>
+              </div>
+            </div>
+
+            <!-- SLIDE 3: CHEMICAL PEEL (Glycolic Peel) -->
+            <div class="spotlight-slide-item">
+              <div class="spotlight-badge-header">
+                <span class="spotlight-cat-badge peel">CHEMICAL PEEL SPOTLIGHT</span>
+                <h3 class="spotlight-prd-title">Glycolic Nanopeel</h3>
+                <p class="spotlight-prd-subtitle">Sugar Cane Alpha Hydroxy Acid (AHA) Exfoliation System</p>
+              </div>
+
+              <div class="spotlight-orbital-layout">
+
+                <!-- Left Orbit Features -->
+                <div class="spotlight-features-col left-col">
+                  <div class="orbital-feature-node left-node float-anim-1">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Sugar Cane AHA Base</span>
+                      <span class="node-desc">Small molecular size for deep penetration</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-2">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Multiple Strengths</span>
+                      <span class="node-desc">Available in Glycolic 25%, 35% &amp; 50%</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node left-node float-anim-3">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Pre-Treatment Protocol</span>
+                      <span class="node-desc">Prepped with Activator Gel degreaser</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Center Product Photo Hub -->
+                <div class="spotlight-center-hub">
+                  <div class="hub-glow-ring peel-ring"></div>
+                  <div class="hub-pedestal-platform"></div>
+                  <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png" alt="Glycolic Nanopeel" class="hub-prd-img peel-img">
+                </div>
+
+                <!-- Right Orbit Features -->
+                <div class="spotlight-features-col right-col">
+                  <div class="orbital-feature-node right-node float-anim-1">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">3–5 Min Exposure</span>
+                      <span class="node-desc">Controlled, short exposure application</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-2">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Neutralizing System</span>
+                      <span class="node-desc">Stopped with Neutralising Lotion</span>
+                    </div>
+                  </div>
+
+                  <div class="orbital-feature-node right-node float-anim-3">
+                    <div class="node-icon-circle peel-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="node-text-box">
+                      <span class="node-title">Smooth Texture Renewal</span>
+                      <span class="node-desc">Exfoliates damaged upper skin layers</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="spotlight-action-row">
+                <a href="product-detail.html?id=glycolic-peel" class="spotlight-btn-primary">View Peel Details →</a>
+                <a href="contact.html?product=Glycolic+Peel" class="spotlight-btn-secondary">Request Peel Enquiry</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide Indicators / Pagination Dots -->
+        <div class="spotlight-indicators" id="spotlight-indicators">
+          <button class="indicator-dot active" data-slide="0" aria-label="Machine Spotlight"></button>
+          <button class="indicator-dot" data-slide="1" aria-label="Meso Solution Spotlight"></button>
+          <button class="indicator-dot" data-slide="2" aria-label="Chemical Peel Spotlight"></button>
+      </div>
+
+    </div>
+  </section>
 
   <!-- SECTION: WHY JM MEDICOSE -->
   <section class="why-choose-section">
