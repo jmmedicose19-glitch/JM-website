@@ -4995,17 +4995,17 @@ footer {
 .prd-card-img-area {
   position: relative;
   background: linear-gradient(160deg, #e8f2fc 0%, #f4f8fd 100%);
-  height: 230px;
+  height: 255px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 22px;
+  padding: 12px;
   overflow: hidden;
 }
 
 .prd-card-img-area img {
-  max-height: 175px;
-  max-width: 85%;
+  max-height: 215px;
+  max-width: 92%;
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
@@ -5772,8 +5772,8 @@ footer {
 /* Image Blend & Fit Fixes */
 .prd-card-img-area img {
   mix-blend-mode: multiply;
-  max-height: 150px !important;
-  max-width: 80% !important;
+  max-height: 225px !important;
+  max-width: 92% !important;
 }
 
 .pd-main-img-box img {
