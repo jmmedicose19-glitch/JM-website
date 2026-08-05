@@ -2,11 +2,408 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=products.html?category=peels">
-  <script>window.location.replace('products.html?category=peels');</script>
-  <title>Redirecting to Chemical Peels...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemical Peels - JM Medicose</title>
+  <meta name="description" content="Discover our advanced range of professional-grade AHA, BHA, TCA and specialty chemical peels.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Redirecting to <a href="products.html?category=peels">Chemical Peels</a>...</p>
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-container">
+        <img src="assests/logo.png" alt="JM Medicose Logo" class="logo-img">
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-dropdown active">
+          <a href="products-peels.html">
+            Products
+            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="products-machines.html">Machines &amp; Lasers</a></li>
+            <li><a href="products-meso.html">Meso Solutions</a></li>
+            <li><a href="products-peels.html">Chemical Peels</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <a href="contact.html" class="header-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z" />
+        </svg>
+        Contact us
+      </a>
+    </div>
+  </header>
+
+  <!-- PRODUCTS HERO SECTION -->
+  <section class="products-hero-section">
+    <div class="products-hero-container">
+      <!-- Breadcrumb -->
+      <nav class="products-breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:18px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Home</a>
+        <span style="color:rgba(255,255,255,0.35);">›</span>
+        <a href="products-peels.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Products</a>
+        <span style="color:rgba(255,255,255,0.35);">›</span>
+        <span style="color:#fff;">Chemical Peels</span>
+      </nav>
+      <h1 class="products-hero-title">Chemical Peels</h1>
+      <p class="products-hero-subtitle">Professional-grade AHA, BHA, TCA and specialty peels with catalogue-stated concentrations and protocols.</p>
+    </div>
+    <div class="products-hero-bg-graphic"></div>
+  </section>
+
+  <!-- MAIN CATALOG CONTENT CONTAINER -->
+  <main style="max-width: 1320px; margin: 0 auto; padding: 0 24px;">
+
+    <!-- TOP TOOLBAR: SEARCH -->
+    <div class="catalog-toolbar-card" style="justify-content: flex-end;">
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <div class="global-search-wrapper">
+          <input type="text" class="global-search-input" id="global-search-input" placeholder="Search Chemical Peels...">
+          <span class="global-search-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT CARDS GRID (10 CHEMICAL PEEL CARDS ONLY) -->
+    <div class="products-cards-grid-3col" id="products-cards-grid-3col">
+
+      <!-- Peel Card 1: Glycolic Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=glycolic-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Glycolic%2025%25%20Pure%20Peel_nobg.png" alt="Glycolic Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=glycolic-peel" class="prd-name-link">
+            <h3 class="prd-name">Glycolic Peel</h3>
+          </a>
+          <p class="prd-desc">Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products.</p>
+          <div class="variants-row">
+            <span class="variant-tag">Glycolic 25%</span>
+            <span class="variant-tag">Glycolic 35%</span>
+            <span class="variant-tag">Glycolic 50%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=glycolic-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Glycolic+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 2: TCA Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=tca-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/TCA%2025%25%20Pure%20Peel_nobg.png" alt="TCA Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=tca-peel" class="prd-name-link">
+            <h3 class="prd-name">TCA Peel</h3>
+          </a>
+          <p class="prd-desc">TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.</p>
+          <div class="variants-row">
+            <span class="variant-tag">TCA 15%</span>
+            <span class="variant-tag">TCA 25%</span>
+            <span class="variant-tag">TCA 50%</span>
+            <span class="variant-tag">TCA 70%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=tca-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=TCA+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 3: Lactic Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=lactic-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Lactic%20Cocktail%20Peel_nobg.png" alt="Lactic Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=lactic-peel" class="prd-name-link">
+            <h3 class="prd-name">Lactic Peel</h3>
+          </a>
+          <p class="prd-desc">A lactic acid chemical peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers.</p>
+          <div class="variants-row">
+            <span class="variant-tag">Lactic 70%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=lactic-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Lactic+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 4: Salicylic Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=salicylic-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Salisalic%2025%25%20Pure%20Peel_nobg.png" alt="Salicylic Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=salicylic-peel" class="prd-name-link">
+            <h3 class="prd-name">Salicylic Peel</h3>
+          </a>
+          <p class="prd-desc">Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation.</p>
+          <div class="variants-row">
+            <span class="variant-tag">Salicylic 15%</span>
+            <span class="variant-tag">Salicylic 25%</span>
+            <span class="variant-tag">Salicylic 30%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=salicylic-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Salicylic+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 5: Jessner Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=jessner-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Jessner%20Peel%20Cocktail%20Peel_nobg.png" alt="Jessner Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=jessner-peel" class="prd-name-link">
+            <h3 class="prd-name">Jessner Peel</h3>
+          </a>
+          <p class="prd-desc">Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.</p>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=jessner-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Jessner+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 6: Salicylic Mandelac Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Salisalic%2020%25%20Mandelac%2010%25%20Cocktail%20Peel_nobg.png" alt="Salicylic Mandelac Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-name-link">
+            <h3 class="prd-name">Salicylic Mandelac Peel</h3>
+          </a>
+          <p class="prd-desc">Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs.</p>
+          <div class="variants-row">
+            <span class="variant-tag">Salisalic 20% + Mandelac 10%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Salicylic+Mandelac+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 7: Phenol 5% Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Phenol%205%25%20Mild%20Pure%20Peel_nobg.png" alt="Phenol 5% Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-name-link">
+            <h3 class="prd-name">Phenol 5% Peel</h3>
+          </a>
+          <p class="prd-desc">Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation.</p>
+          <div class="variants-row">
+            <span class="variant-tag">Phenol 5%</span>
+          </div>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Phenol+5%25+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 8: Dark Circle Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=dark-circle-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Dark%20Circle%20Cocktail%20Peel_nobg.png" alt="Dark Circle Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=dark-circle-peel" class="prd-name-link">
+            <h3 class="prd-name">Dark Circle Peel</h3>
+          </a>
+          <p class="prd-desc">Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers.</p>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=dark-circle-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Dark+Circle+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 9: Arginine Cocktail Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Whitening%20Peel%20Cocktail%20Peel_nobg.png" alt="Arginine Cocktail Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-name-link">
+            <h3 class="prd-name">Arginine Cocktail Peel</h3>
+          </a>
+          <p class="prd-desc">Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.</p>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Arginine+Cocktail+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peel Card 10: Retinol Yellow Peel -->
+      <div class="prd-card peel-card" data-cat="peels">
+        <a href="product-detail.html?id=retinol-yellow-peel" class="prd-card-image-link">
+          <div class="peel-img-area">
+            <span class="prd-cat-badge">CHEMICAL PEEL</span>
+            <img src="assests/products/Party%20Peel%20Cocktail%20Peel_nobg.png" alt="Retinol Yellow Peel" class="bottle-img">
+          </div>
+        </a>
+        <div class="prd-card-body">
+          <a href="product-detail.html?id=retinol-yellow-peel" class="prd-name-link">
+            <h3 class="prd-name">Retinol Yellow Peel</h3>
+          </a>
+          <p class="prd-desc">Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.</p>
+          <div class="prd-card-actions">
+            <a href="product-detail.html?id=retinol-yellow-peel" class="prd-btn-primary">View Details</a>
+            <a href="contact.html?product=Retinol+Yellow+Peel" class="prd-btn-enquire">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Search Filter Script -->
+  <script>
+    (function () {
+      var searchInput = document.getElementById('global-search-input');
+      var cards = document.querySelectorAll('#products-cards-grid-3col .prd-card');
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          var q = searchInput.value.toLowerCase().trim();
+          cards.forEach(function (card) {
+            var text = card.innerText.toLowerCase();
+            card.style.display = (!q || text.includes(q)) ? '' : 'none';
+          });
+        });
+      }
+    })();
+  </script>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo-box">
+          <span class="footer-logo-text">JM MEDICOSE</span>
+        </a>
+        <p class="footer-brand-desc">
+          Professional aesthetic, dermatology and medical equipment, meso products &amp; chemical peels presented through one organised product range.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Connect</h4>
+        <ul class="footer-links-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">LinkedIn</a></li>
+        </ul>
+        <div class="footer-social-icons">
+          <a href="contact.html" aria-label="Instagram" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="contact.html" aria-label="LinkedIn" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/></svg>
+          </a>
+          <a href="https://wa.me/919389144288" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-circle-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="products-machines.html">Aesthetic Equipment</a></li>
+          <li><a href="products-meso.html">Meso Products</a></li>
+          <li><a href="products-peels.html">Chemical Peels</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Useful Links</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products-machines.html">All Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-centered">
+      <div class="footer-copyright">
+        &copy; JM MEDICOSE 2026 | SITE DESIGN | QUALITY ASSURED
+      </div>
+      <div class="footer-italic-tagline">
+        Professional Aesthetic &amp; Dermatology Equipment Solutions
+      </div>
+      <div class="footer-legal-links">
+        <a href="contact.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Disclosure</a>
+        <a href="contact.html">Privacy &amp; Disclaimer</a>
+        <a href="contact.html">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919389144288" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.025 7.773L0 32l8.469-2.002A15.926 15.926 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.77-1.851l-.486-.289-4.984 1.177 1.237-4.851-.316-.499A13.277 13.277 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.273-9.92c-.397-.199-2.352-1.16-2.717-1.292-.365-.133-.63-.199-.895.199-.265.397-1.028 1.292-1.26 1.557-.231.265-.463.298-.86.1-.397-.2-1.677-.618-3.195-1.973-1.18-1.053-1.977-2.353-2.209-2.75-.232-.398-.025-.613.174-.811.179-.177.397-.463.596-.695.199-.231.265-.397.397-.662.133-.265.066-.497-.033-.695-.1-.199-.895-2.155-1.226-2.95-.323-.774-.65-.669-.895-.681-.232-.011-.497-.014-.762-.014-.265 0-.695.1-1.06.497-.364.397-1.39 1.358-1.39 3.314s1.423 3.846 1.622 4.11c.199.265 2.8 4.276 6.786 5.996.948.409 1.688.653 2.265.836.952.303 1.818.26 2.501.158.763-.114 2.352-.961 2.683-1.89.332-.928.332-1.723.232-1.89-.1-.166-.364-.265-.762-.464z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>

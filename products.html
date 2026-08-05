@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore Products - JM Medicose</title>
-  <meta name="description" content="Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.">
+  <title>Machines &amp; Lasers - JM Medicose</title>
+  <meta name="description" content="Discover our advanced range of aesthetic laser systems, HIFU, EMS, and facial equipment.">
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var cat = params.get('category');
+      if (cat === 'meso') { window.location.replace('products-meso.html'); }
+      else if (cat === 'peels') { window.location.replace('products-peels.html'); }
+      else if (cat === 'machines') { window.location.replace('products-machines.html'); }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,14 +35,14 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li class="has-dropdown active">
-          <a href="products.html">
+          <a href="products-machines.html">
             Products
             <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="products.html?category=machines">Machines &amp; Lasers</a></li>
-            <li><a href="products.html?category=meso">Meso Solutions</a></li>
-            <li><a href="products.html?category=peels">Chemical Peels</a></li>
+            <li><a href="products-machines.html">Machines &amp; Lasers</a></li>
+            <li><a href="products-meso.html">Meso Solutions</a></li>
+            <li><a href="products-peels.html">Chemical Peels</a></li>
           </ul>
         </li>
         <li><a href="contact.html">Contact Us</a></li>
@@ -56,12 +65,12 @@
       <nav class="products-breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:18px;">
         <a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Home</a>
         <span style="color:rgba(255,255,255,0.35);">›</span>
-        <a href="products.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Products</a>
-        <span id="breadcrumb-sep" style="color:rgba(255,255,255,0.35);display:none;">›</span>
-        <span id="breadcrumb-cat" style="color:#fff;display:none;"></span>
+        <a href="products-machines.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Products</a>
+        <span style="color:rgba(255,255,255,0.35);">›</span>
+        <span style="color:#fff;">Machines &amp; Lasers</span>
       </nav>
-      <h1 class="products-hero-title" id="products-hero-title">Explore Products</h1>
-      <p class="products-hero-subtitle" id="products-hero-subtitle">Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.</p>
+      <h1 class="products-hero-title">Machines &amp; Lasers</h1>
+      <p class="products-hero-subtitle">Professional aesthetic laser systems, HIFU, EMS, and facial equipment for clinical use.</p>
     </div>
     <div class="products-hero-bg-graphic"></div>
   </section>
@@ -69,20 +78,11 @@
   <!-- MAIN CATALOG CONTENT CONTAINER -->
   <main style="max-width: 1320px; margin: 0 auto; padding: 0 24px;">
 
-    <!-- TOP TOOLBAR: GLOBAL SEARCH ONLY -->
+    <!-- TOP TOOLBAR: SEARCH -->
     <div class="catalog-toolbar-card" style="justify-content: flex-end;">
-      <!-- Hidden category pills used by script only (not rendered) -->
-      <div id="top-category-pills" style="display:none;">
-        <button class="cat-pill-btn active" data-cat="all"></button>
-        <button class="cat-pill-btn" data-cat="machines"></button>
-        <button class="cat-pill-btn" data-cat="meso"></button>
-        <button class="cat-pill-btn" data-cat="peels"></button>
-      </div>
-
-      <!-- Search Wrapper -->
       <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
         <div class="global-search-wrapper">
-          <input type="text" class="global-search-input" id="global-search-input" placeholder="Search products or models...">
+          <input type="text" class="global-search-input" id="global-search-input" placeholder="Search machines or models...">
           <span class="global-search-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </span>
@@ -90,8 +90,7 @@
       </div>
     </div>
 
-
-    <!-- PRODUCT CARDS GRID (FULL WIDTH 3-COLUMN) -->
+    <!-- PRODUCT CARDS GRID (7 MACHINES & LASERS CARDS ONLY) -->
     <div class="products-cards-grid-3col" id="products-cards-grid-3col">
 
       <!-- Card 1: Pulse Lift EMS -->
@@ -121,7 +120,7 @@
           <div class="prd-card-image">
             <span class="prd-cat-badge">HIFU SYSTEM</span>
             <span class="prd-model-ref">JMHF-3</span>
-            <img src="assests/products/Hifu (1).png" alt="HIFU-12D Machine">
+            <img src="assests/new%20products%20img/High-Intensity-Focused-Ultrasound-HIFU-12D_JMHF-3.png" alt="HIFU-12D Machine">
           </div>
         </a>
         <div class="prd-card-body">
@@ -141,12 +140,12 @@
         <a href="product-detail.html?id=fractional-co2-v2" class="prd-card-image-link">
           <div class="prd-card-img-area">
             <span class="prd-cat-badge">FRACTIONAL LASER</span>
-            <img src="assests/products/Fractional co2 laser v2 (1).png" alt="Fractional CO₂ Laser Machine (JMCO-11)">
+            <img src="assests/new%20products%20img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png" alt="Fractional CO₂ Laser Machine (JMCO-11)">
           </div>
         </a>
         <div class="prd-card-body">
           <a href="product-detail.html?id=fractional-co2-v2" class="prd-name-link">
-            <h3 class="prd-name">Fractional CO₂ Laser Machine</h3>
+            <h3 class="prd-name">Fractional CO₂ Laser Machine — V2</h3>
           </a>
           <p class="prd-desc">A professional fractional CO₂ laser system for resurfacing, scar, wrinkle and skin-texture applications.</p>
           <div class="prd-card-actions">
@@ -222,7 +221,7 @@
         </div>
       </div>
 
-      <!-- Card 9: PDT HydraFacial -->
+      <!-- Card 7: PDT HydraFacial -->
       <div class="prd-card" data-cat="machines">
         <a href="product-detail.html?id=pdt-hydrafacial" class="prd-card-image-link">
           <div class="prd-card-img-area">
@@ -251,481 +250,25 @@
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- MESO SOLUTIONS CARDS (6 PRODUCTS) -->
-      <!-- ========================================== -->
-
-      <!-- Meso Card 1: Hair Re-Growth -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=hair-re-growth" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Hair Re-Growth" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=hair-re-growth" class="prd-name-link">
-            <h3 class="prd-name">Hair Re-Growth</h3>
-          </a>
-          <p class="prd-desc">Hair Re-Growth Meso Cocktail helps in hair re-growth in a few treatments. It is used topically on the scalp with a nano roller for maximum penetration.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Hair Re-Growth Effect</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=hair-re-growth" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Hair+Re-Growth" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Meso Card 2: Glow Meso -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=glow-meso" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Glow Meso" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=glow-meso" class="prd-name-link">
-            <h3 class="prd-name">Glow Meso</h3>
-          </a>
-          <p class="prd-desc">Glow Meso Cocktail gives you glowing skin in a few treatments. It is used topically with a nano roller for maximum penetration.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Glowing Effect / Lightening Effect</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=glow-meso" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Glow+Meso" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Meso Card 3: Lipo Dissolve -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=lipo-dissolve" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Lipo Dissolve" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=lipo-dissolve" class="prd-name-link">
-            <h3 class="prd-name">Lipo Dissolve</h3>
-          </a>
-          <p class="prd-desc">Lipo Dissolve Deoxycholate + PPC PRO is a ready-made cocktail that helps dissolve unwanted fat under the skin. The treatment involves multiple deeper injections on the targeted area. The procedure is performed by an experienced professional.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Double Chin, Love Handle, Inner Thighs, Underarms</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=lipo-dissolve" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Lipo+Dissolve" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Meso Card 4: Whitening Glutathion Meso -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=whitening-glutathion-meso" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Whitening Glutathion Meso" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=whitening-glutathion-meso" class="prd-name-link">
-            <h3 class="prd-name">Whitening Glutathion Meso</h3>
-          </a>
-          <p class="prd-desc">Glutathion Meso Cocktail helps to whiten the desired area of the body. It is used topically with a nano roller for maximum penetration.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Glowing Effect / Lightening Effect</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=whitening-glutathion-meso" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Whitening+Glutathion+Meso" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Meso Card 5: Stretch Mark & Scars Meso -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=stretch-mark-and-scars-meso" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Stretch Mark & Scars Meso" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=stretch-mark-and-scars-meso" class="prd-name-link">
-            <h3 class="prd-name">Stretch Mark & Scars Meso</h3>
-          </a>
-          <p class="prd-desc">Stretch Mark & Scars Meso Cocktail helps renew cells and supports new collagen formation, resulting in stretch-mark and scar reduction. It is used topically with a nano roller for maximum penetration.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Anti-Stretch Mark / Anti-Scar Effect</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=stretch-mark-and-scars-meso" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Stretch+Mark+and+Scars+Meso" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Meso Card 6: Growth Factor Meso -->
-      <div class="prd-card meso-card" data-cat="meso">
-        <a href="product-detail.html?id=growth-factor-meso" class="prd-card-image-link">
-          <div class="meso-img-area">
-            <div class="vial-circle-bg"></div>
-            <span class="prd-cat-badge">MESO SOLUTION</span>
-            <img src="assests/cat-meso.png" alt="Growth Factor Meso" class="vial-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=growth-factor-meso" class="prd-name-link">
-            <h3 class="prd-name">Growth Factor Meso</h3>
-          </a>
-          <p class="prd-desc">Growth Factor Meso Cocktail is helpful in generating new cells. It can be used on the skin as well as on the scalp. It is used topically with a nano roller for maximum penetration.</p>
-          <div class="indication-box">
-            <span class="indication-label">Indication</span>
-            <span class="indication-val">Regenerating Effect</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=growth-factor-meso" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Growth+Factor+Meso" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ========================================== -->
-      <!-- CHEMICAL PEEL CARDS (10 PRODUCTS) -->
-      <!-- ========================================== -->
-
-      <!-- Peel Card 1: Glycolic Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=glycolic-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png" alt="Glycolic Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=glycolic-peel" class="prd-name-link">
-            <h3 class="prd-name">Glycolic Peel</h3>
-          </a>
-          <p class="prd-desc">Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products.</p>
-          <div class="variants-row">
-            <span class="variant-tag">Glycolic 25%</span>
-            <span class="variant-tag">Glycolic 35%</span>
-            <span class="variant-tag">Glycolic 50%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=glycolic-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Glycolic+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 2: TCA Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=tca-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png" alt="TCA Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=tca-peel" class="prd-name-link">
-            <h3 class="prd-name">TCA Peel</h3>
-          </a>
-          <p class="prd-desc">TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.</p>
-          <div class="variants-row">
-            <span class="variant-tag">TCA 15%</span>
-            <span class="variant-tag">TCA 25%</span>
-            <span class="variant-tag">TCA 50%</span>
-            <span class="variant-tag">TCA 70%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=tca-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=TCA+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 3: Lactic Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=lactic-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (3).png" alt="Lactic Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=lactic-peel" class="prd-name-link">
-            <h3 class="prd-name">Lactic Peel</h3>
-          </a>
-          <p class="prd-desc">A lactic acid chemical peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers.</p>
-          <div class="variants-row">
-            <span class="variant-tag">Lactic 70%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=lactic-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Lactic+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 4: Salicylic Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=salicylic-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (4).png" alt="Salicylic Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=salicylic-peel" class="prd-name-link">
-            <h3 class="prd-name">Salicylic Peel</h3>
-          </a>
-          <p class="prd-desc">Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation.</p>
-          <div class="variants-row">
-            <span class="variant-tag">Salicylic 15%</span>
-            <span class="variant-tag">Salicylic 25%</span>
-            <span class="variant-tag">Salicylic 30%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=salicylic-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Salicylic+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 5: Jessner Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=jessner-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (5).png" alt="Jessner Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=jessner-peel" class="prd-name-link">
-            <h3 class="prd-name">Jessner Peel</h3>
-          </a>
-          <p class="prd-desc">Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.</p>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=jessner-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Jessner+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 6: Salicylic Mandelac Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (6).png" alt="Salicylic Mandelac Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-name-link">
-            <h3 class="prd-name">Salicylic Mandelac Peel</h3>
-          </a>
-          <p class="prd-desc">Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs.</p>
-          <div class="variants-row">
-            <span class="variant-tag">Salisalic 20% + Mandelac 10%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=salicylic-mandelac-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Salicylic+Mandelac+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 7: Phenol 5% Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (7).png" alt="Phenol 5% Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-name-link">
-            <h3 class="prd-name">Phenol 5% Peel</h3>
-          </a>
-          <p class="prd-desc">Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation.</p>
-          <div class="variants-row">
-            <span class="variant-tag">Phenol 5%</span>
-          </div>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=phenol-5-percent-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Phenol+5%25+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 8: Dark Circle Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=dark-circle-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (8).png" alt="Dark Circle Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=dark-circle-peel" class="prd-name-link">
-            <h3 class="prd-name">Dark Circle Peel</h3>
-          </a>
-          <p class="prd-desc">Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers.</p>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=dark-circle-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Dark+Circle+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 9: Arginine Cocktail Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (9).png" alt="Arginine Cocktail Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-name-link">
-            <h3 class="prd-name">Arginine Cocktail Peel</h3>
-          </a>
-          <p class="prd-desc">Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation.</p>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=arginine-cocktail-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Arginine+Cocktail+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Peel Card 10: Retinol Yellow Peel -->
-      <div class="prd-card peel-card" data-cat="peels">
-        <a href="product-detail.html?id=retinol-yellow-peel" class="prd-card-image-link">
-          <div class="peel-img-area">
-            <span class="prd-cat-badge">CHEMICAL PEEL</span>
-            <img src="assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (10).png" alt="Retinol Yellow Peel" class="bottle-img">
-          </div>
-        </a>
-        <div class="prd-card-body">
-          <a href="product-detail.html?id=retinol-yellow-peel" class="prd-name-link">
-            <h3 class="prd-name">Retinol Yellow Peel</h3>
-          </a>
-          <p class="prd-desc">Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.</p>
-          <div class="prd-card-actions">
-            <a href="product-detail.html?id=retinol-yellow-peel" class="prd-btn-primary">View Details</a>
-            <a href="contact.html?product=Retinol+Yellow+Peel" class="prd-btn-enquire">Enquire</a>
-          </div>
-        </div>
-      </div>
-
     </div>
+  </main>
 
-  <script src="products-data.js"></script>
-  <script src="script.js"></script>
-
-  <!-- Category Filtering Script -->
+  <!-- Search Filter Script -->
   <script>
     (function () {
-      const pills       = document.querySelectorAll('.cat-pill-btn');
-      const cards       = document.querySelectorAll('.prd-card');
-      const searchInput = document.getElementById('global-search-input');
-      const heroTitle   = document.getElementById('products-hero-title');
-      const heroSub     = document.getElementById('products-hero-subtitle');
-      const breadSep    = document.getElementById('breadcrumb-sep');
-      const breadCat    = document.getElementById('breadcrumb-cat');
-
-      // Category meta — labels, hero copy, breadcrumb text
-      const catMeta = {
-        all:      { label: 'All Products',     title: 'Explore Products',          subtitle: 'Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.' },
-        machines: { label: 'Machines & Lasers', title: 'Machines & Lasers',        subtitle: 'Professional aesthetic laser systems, HIFU, EMS, and facial equipment for clinical use.' },
-        meso:     { label: 'Meso Solutions',   title: 'Meso Solutions',            subtitle: 'Targeted meso cocktails for nano-roller delivery — skin repair, hair growth, brightening and body contouring.' },
-        peels:    { label: 'Chemical Peels',   title: 'Chemical Peels',            subtitle: 'Professional-grade AHA, BHA, TCA and specialty peels with catalogue-stated concentrations and protocols.' }
-      };
-
-      // Read ?category= from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      let activeCat   = urlParams.get('category') || 'all';
-      if (!catMeta[activeCat]) activeCat = 'all';
-
-      // Apply hero heading + breadcrumb on load
-      function applyHeroMeta(cat) {
-        const m = catMeta[cat] || catMeta.all;
-        if (heroTitle) heroTitle.textContent  = m.title;
-        if (heroSub)   heroSub.textContent    = m.subtitle;
-        if (breadSep && breadCat) {
-          if (cat === 'all') {
-            breadSep.style.display = 'none';
-            breadCat.style.display = 'none';
-          } else {
-            breadSep.style.display = '';
-            breadCat.style.display = '';
-            breadCat.textContent = m.label;
-          }
-        }
-      }
-
-      // Set active pill
-      function setActivePill(cat) {
-        pills.forEach(p => {
-          p.classList.toggle('active', p.getAttribute('data-cat') === cat);
-        });
-      }
-
-      // Filter cards
-      function filterCards(cat) {
-        const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
-        cards.forEach(card => {
-          const cardCat    = card.getAttribute('data-cat');
-          const text       = card.innerText.toLowerCase();
-          const catMatch   = (cat === 'all') || (cardCat === cat);
-          const textMatch  = (searchVal === '') || text.includes(searchVal);
-          card.style.display = (catMatch && textMatch) ? '' : 'none';
-        });
-      }
-
-      // Pill click
-      pills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          activeCat = pill.getAttribute('data-cat');
-          setActivePill(activeCat);
-          applyHeroMeta(activeCat);
-          filterCards(activeCat);
-          // Update URL without reload so back-button works
-          const newUrl = activeCat === 'all'
-            ? window.location.pathname
-            : window.location.pathname + '?category=' + activeCat;
-          history.replaceState(null, '', newUrl);
-        });
-      });
-
-      // Search
+      var searchInput = document.getElementById('global-search-input');
+      var cards = document.querySelectorAll('#products-cards-grid-3col .prd-card');
       if (searchInput) {
-        searchInput.addEventListener('input', () => filterCards(activeCat));
+        searchInput.addEventListener('input', function () {
+          var q = searchInput.value.toLowerCase().trim();
+          cards.forEach(function (card) {
+            var text = card.innerText.toLowerCase();
+            card.style.display = (!q || text.includes(q)) ? '' : 'none';
+          });
+        });
       }
-
-      // ── INIT ──
-      setActivePill(activeCat);
-      applyHeroMeta(activeCat);
-      filterCards(activeCat);
     })();
   </script>
-  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -762,9 +305,9 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Services</h4>
         <ul class="footer-links-list">
-          <li><a href="products.html?category=machines">Aesthetic Equipment</a></li>
-          <li><a href="products.html?category=meso">Meso Products</a></li>
-          <li><a href="products.html?category=peels">Chemical Peels</a></li>
+          <li><a href="products-machines.html">Aesthetic Equipment</a></li>
+          <li><a href="products-meso.html">Meso Products</a></li>
+          <li><a href="products-peels.html">Chemical Peels</a></li>
         </ul>
       </div>
 
@@ -772,7 +315,7 @@
         <h4 class="footer-col-title">Useful Links</h4>
         <ul class="footer-links-list">
           <li><a href="index.html">Home</a></li>
-          <li><a href="products.html">All Products</a></li>
+          <li><a href="products-machines.html">All Products</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -802,5 +345,6 @@
     </svg>
   </a>
 
+  <script src="script.js"></script>
 </body>
 </html>

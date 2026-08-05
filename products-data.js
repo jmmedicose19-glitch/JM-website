@@ -1720,7 +1720,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png"
+      "assests/products/Glycolic 25% Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products. AHAs are natural acids that come from plants and consist of small molecules that are easily absorbed by the skin.",
@@ -1745,7 +1745,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png"
+      "assests/products/TCA 25% Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.",
@@ -1767,7 +1767,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (3).png"
+      "assests/products/Lactic Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "A lactic acid chemical peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
@@ -1791,7 +1791,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes or until a white mask appears. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (4).png"
+      "assests/products/Salisalic 25% Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation. It clears the face in a few treatments and leaves the skin clearer, brighter and more youthful. It is described as suitable for all skin types.",
@@ -1810,7 +1810,7 @@ const productsData = [
     "description": "Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 2–8 minutes. Apply Retinol cream over the nanopeel to seal the treatment area. Leave it for 6–8 hours. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (5).png"
+      "assests/products/Jessner Peel Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Jessner Peel works by removing the top layers of skin to reveal smoother, more even-toned skin beneath.",
@@ -1832,7 +1832,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (6).png"
+      "assests/products/Salisalic 20% Mandelac 10% Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs. It is described as effective for hydration, moisturising, glow and skin rejuvenation. It clears the face in a few treatments.",
@@ -1860,7 +1860,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 2–8 minutes. Apply Retinol cream over the nanopeel to seal the treatment area. Leave it for 6–8 hours. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (7).png"
+      "assests/products/Phenol 5% Mild Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation. The PDF lists it for acne scarring, skin discolouration, wrinkling and sun damage.",
@@ -1879,7 +1879,7 @@ const productsData = [
     "description": "Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (8).png"
+      "assests/products/Dark Circle Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Dark Circle Peel uses a chemical solution to improve and smooth the skin’s texture by removing its damaged uppermost layers. It promotes the growth of a new layer of skin that is smoother and younger-looking.",
@@ -1898,7 +1898,7 @@ const productsData = [
     "description": "Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation. It clears the face in a few treatments, leaving the skin clearer, brighter and more youthful.",
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes or until a white mask appears. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (9).png"
+      "assests/products/Whitening Peel Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Arginine Combination Nanopeel is formulated for under-eye dark circles, fine lines around the eyes and facial rejuvenation. It clears the face in a few treatments, leaving the skin clearer, brighter and more youthful.",
@@ -1917,7 +1917,7 @@ const productsData = [
     "description": "Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.",
     "directions": "Apply the single-dose Vitamin C serum and gently massage until penetration. Wait 5–10 minutes before the next step. Apply the single-dose Retinol cream and gently massage until penetration to seal the treatment. Leave it on for a minimum of eight hours. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/ChatGPT Image Jul 29, 2026, 03_44_36 PM (10).png"
+      "assests/products/Party Peel Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Retinol Chemical Peel helps exfoliate and remove dead skin cells and improve the skin’s texture, helping achieve smoother, vibrant and healthier-looking skin.",

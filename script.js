@@ -165,24 +165,24 @@
           { name: "1550nm 10600nm Laser Machine", id: "laser-machine-dual", image: "assests/products/1550 nm + 10600nm (1).png" }
         ]
       },
-      "Skin Tightening & Lifting": {
-        desc: "High-Intensity Focused Ultrasound (HIFU) and multipolar radiofrequency platforms designed to stimulate deep collagen remodeling and face-lifting.",
+      "Skin-Tightening, Fat-Reduction & Double-Chin Applications": {
+        desc: "High-intensity focused ultrasound (HIFU) platforms engineered for SMAS lifting, dermal collagen tightening, and localized subcutaneous fat layer reduction.",
         sub: "Non-surgical skin lifting",
         products: [
-          { name: "HIFU Lifting System 4D", id: "hifu-system", image: "assests/products/Hifu (1).png" },
-          { name: "Fractional RF System", id: "fractional-rf", image: "assests/products/Ems + roller (1).png" },
-          { name: "Monopolar RF Skin Tightening Platform", id: "fractional-rf", image: "assests/products/Hifu (2).png" },
-          { name: "Thermal Ultrasound Contouring Device", id: "hifu-system", image: "assests/products/Hifu (3).png" }
+          { name: "HIFU Lifting System 4D", id: "hifu-system", image: "assests/new products img/High-Intensity-Focused-Ultrasound-HIFU-12D_JMHF-3.png" },
+          { name: "Fractional RF System", id: "fractional-rf", image: "assests/new products img/Microneedling-RF-Machine-MNRF_JMMP-8.png" },
+          { name: "Monopolar RF Skin Tightening Platform", id: "fractional-rf", image: "assests/new products img/High-Intensity-Focused-Ultrasound-HIFU-12D_JMHF-3.png" },
+          { name: "Thermal Ultrasound Contouring Device", id: "hifu-system", image: "assests/new products img/High-Intensity-Focused-Ultrasound-HIFU-12D_JMHF-3.png" }
         ]
       },
       "Scar, Wrinkle & Skin-Texture Applications": {
         desc: "Targeted fractional resurfacing and sub-dermal remodeling devices for acne scar correction, deep wrinkle smoothing, and overall skin refinement.",
         sub: "Scar & wrinkle remodeling",
         products: [
-          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/products/Fractional co2 laser v2 (1).png" },
-          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/products/Fractional co2 laser v2 (2).png" },
-          { name: "Scar & Stretch Mark Repair Meso Cocktail", id: "meso-scar-stretch", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (2).png" },
-          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png" }
+          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/new products img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png" },
+          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/new products img/Fractional-CO2-Laser_JMHF-4.png" },
+          { name: "Scar & Stretch Mark Repair Meso Cocktail", id: "meso-scar-stretch", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (5).png" },
+          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/products/Glycolic 25% Pure Peel_nobg.png" }
         ]
       },
       "HydraFacial, Hydration & Deep Cleansing": {
@@ -747,32 +747,32 @@
         title: `Skin Rejuvenation<br>&amp; Resurfacing`,
         desc:  `Equipment listed in the catalogue for skin rejuvenation and resurfacing applications.`,
         cards: [
-          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/products/Fractional co2 laser v2 (1).png",  link: "product-detail.html?id=fractional-co2-v2" },
-          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/products/Fractional co2 laser (1).png",     link: "product-detail.html?id=fractional-co2" },
-          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/products/Pico laser (1).png",         link: "product-detail.html?id=truepico-laser" }
+          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/new%20products%20img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png",  link: "product-detail.html?id=fractional-co2-v2" },
+          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/new%20products%20img/Fractional-CO2-Laser_JMHF-4.png",     link: "product-detail.html?id=fractional-co2" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/new%20products%20img/350PS-TruePico-Picosecond-Laser_JMPS1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       hair: {
         title: `Hair Removal`,
         desc:  `Equipment listed in the catalogue for hair removal applications.`,
         cards: [
-          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/products/Diode laser JMMD-9 (1).png",        link: "product-detail.html?id=diode-laser" },
-          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/products/Pico laser (1).png",         link: "product-detail.html?id=truepico-laser" }
+          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/new%20products%20img/Diode-Laser_JMMD-9.png",        link: "product-detail.html?id=diode-laser" },
+          { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/new%20products%20img/350PS-TruePico-Picosecond-Laser_JMPS1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
       body: {
         title: `Body Contouring<br>&amp; Fat Reduction`,
         desc:  `Equipment listed in the catalogue for body contouring and fat reduction applications.`,
         cards: [
-          { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/products/Hifu (1).png",           link: "product-detail.html?id=hifu-12d" },
-          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/products/Pulse Lift EMS JMHM-17 (1).png",         link: "product-detail.html?id=pulse-lift-ems" }
+          { tag: "HIFU SYSTEM",  spec: "JMHF-3",    title: "HIFU-12D Machine",             desc: "An ultrasound-based machine listed for body and catalogue-stated fat-reduction applications.",                img: "assests/new%20products%20img/High-Intensity-Focused-Ultrasound-HIFU-12D_JMHF-3.png",           link: "product-detail.html?id=hifu-12d" },
+          { tag: "EMS FACE LIFT",spec: "JMHM-17",   title: "Pulse Lift EMS Face Lift",    desc: "An EMS-based machine with catalogue-stated body and facial contouring applications.",                       img: "assests/new%20products%20img/Pulse-Lift-EMS-Face-Lift_JMHM-17.png",         link: "product-detail.html?id=pulse-lift-ems" }
         ]
       },
       peels: {
         title: `Chemical Peels<br>&amp; Facial Workstations`,
         desc:  `Equipment listed in the catalogue for facial treatments and chemical peel workflows.`,
         cards: [
-          { tag: "PDT HYDRAFACIAL",spec: "JMPD-14", title: "PDT HydraFacial",             desc: "A facial machine with PDT light therapy listed among catalogue-stated applications.",                          img: "assests/products/pdt-hydrafacial-1.png",   link: "product-detail.html?id=pdt-hydrafacial" }
+          { tag: "PDT HYDRAFACIAL",spec: "JMPD-14", title: "PDT HydraFacial",             desc: "A facial machine with PDT light therapy listed among catalogue-stated applications.",                          img: "assests/new%20products%20img/PDT-HydraFacial_JMPD-14.png",   link: "product-detail.html?id=pdt-hydrafacial" }
         ]
       }
     };
@@ -841,7 +841,7 @@
         title: "HAIR RE-GROWTH MESO COCKTAIL",
         model: "JMM-01",
         subtitle: "Hair Re-Growth Meso Cocktail helps in hair re-growth in a few treatments. It is used topically on the scalp with a nano roller for maximum penetration.",
-        image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_10 PM (1).png",
+        image: "assests/products/ChatGPT%20Image%20Jul%2029,%202026,%2002_07_10%20PM%20(1).png",
         detailLink: "contact.html?product=Hair+Re-Growth",
         enquireLink: "contact.html?product=Hair+Re-Growth"
       },
@@ -852,7 +852,7 @@
         title: "GLYCOLIC PEEL SOLUTION",
         model: "JMP-01",
         subtitle: "A water-soluble sugar cane alpha hydroxy acid peel available in 20%, 40%, and 60% concentrations for smooth skin renewal.",
-        image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_33 PM (1).png",
+        image: "assests/products/Glycolic%2025%25%20Pure%20Peel_nobg.png",
         detailLink: "contact.html?product=Glycolic+Peel",
         enquireLink: "contact.html?product=Glycolic+Peel"
       },
@@ -863,7 +863,7 @@
         title: "FRACTIONAL CO₂ LASER MACHINE",
         model: "JMCO-11",
         subtitle: "A professional fractional CO₂ laser system engineered for skin resurfacing, scar revision, and deep collagen remodeling.",
-        image: "assests/products/Fractional co2 laser v2 (1).png",
+        image: "assests/new%20products%20img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png",
         detailLink: "product-detail.html?id=fractional-co2-v2",
         enquireLink: "contact.html?product=Fractional+CO2+Laser+Machine"
       },
@@ -874,7 +874,7 @@
         title: "TCA PEEL SOLUTION",
         model: "JMP-02",
         subtitle: "A professional trichloroacetic acid peel for fine surface wrinkles, superficial blemishes, and targeted skin resurfacing.",
-        image: "assests/products/ChatGPT Image Jul 29, 2026, 03_44_34 PM (2).png",
+        image: "assests/products/TCA%2025%25%20Pure%20Peel_nobg.png",
         detailLink: "contact.html?product=TCA+Peel",
         enquireLink: "contact.html?product=TCA+Peel"
       },
@@ -885,7 +885,7 @@
         title: "GLOW MESO SOLUTION",
         model: "JMM-02",
         subtitle: "Glow Meso Cocktail gives you glowing skin in a few treatments. It is used topically with a nano roller for maximum penetration.",
-        image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (2).png",
+        image: "assests/products/Glow%20Meso_nobg.png",
         detailLink: "contact.html?product=Glow+Meso",
         enquireLink: "contact.html?product=Glow+Meso"
       }
