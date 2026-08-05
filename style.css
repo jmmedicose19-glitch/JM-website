@@ -218,6 +218,141 @@ header.nav-hidden {
   width: 100%;
 }
 
+/* Navigation Dropdown Menu */
+.nav-links li.has-dropdown {
+  position: relative;
+}
+
+.nav-links li.has-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-links li.has-dropdown .dropdown-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s ease;
+}
+
+.nav-links li.has-dropdown:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffffff !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 41, 74, 0.15) !important;
+  border-radius: 12px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 10px 0;
+  min-width: 220px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #ffffff !important;
+  border-top: 1px solid rgba(15, 41, 74, 0.15) !important;
+  border-left: 1px solid rgba(15, 41, 74, 0.15) !important;
+}
+
+.nav-links li.has-dropdown:hover .dropdown-menu,
+.nav-links li.has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li::after {
+  display: none !important;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: var(--font-title, sans-serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #000000 !important;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active {
+  background: rgba(254, 37, 35, 0.08) !important;
+  color: #fe2523 !important;
+  border-left-color: #fe2523 !important;
+  padding-left: 24px;
+}
+
+@media (max-width: 991px) {
+  .nav-links li.has-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    background: rgba(15, 41, 74, 0.04) !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 4px 0 4px 16px;
+    margin-top: 6px;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-menu::before {
+    display: none !important;
+  }
+
+  .dropdown-menu li a {
+    font-size: 13px;
+    padding: 8px 12px;
+    color: #000000 !important;
+  }
+
+  .dropdown-menu li a:hover {
+    padding-left: 16px;
+    color: #fe2523 !important;
+  }
+}
+
+
 /* MAIN HERO BANNER */
 .hero {
   position: relative;
@@ -8497,6 +8632,50 @@ a.header-btn,
   transform: translateY(-6px);
   border-color: #fe2523;
   box-shadow: 0 16px 36px rgba(254, 37, 35, 0.14);
+}
+
+/* Testimonial Image Card Styles */
+.testimonial-slide-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.testimonial-img-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 41, 74, 0.1);
+  border: 1px solid rgba(15, 41, 74, 0.1);
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-img-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(254, 37, 35, 0.15);
+  border-color: rgba(254, 37, 35, 0.3);
+}
+
+.testimonial-img-card img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide-page {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .journey-step-card[data-step="1"]:hover,

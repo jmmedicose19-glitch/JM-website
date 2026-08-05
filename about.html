@@ -4,9 +4,505 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - JM Medicose</title>
-  <meta name="description" content="Learn more about JM Medicose, presenting professional aesthetic, dermatology and medical solutions based on our product catalogue.">
+  <meta name="description" content="About JM Medicose — Mumbai-based manufacturer, importer and supplier of aesthetic laser machines and medical treatment systems in India, established in 2017.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-about.css">
+  <style>
+    /* ── About Page Premium Overrides ── */
+    :root {
+      --jm-blue:   #015699;
+      --jm-dark:   #003e6f;
+      --jm-red:    #fe2523;
+      --jm-light:  #f0f7ff;
+      --jm-slate:  #334155;
+      --jm-muted:  #64748b;
+    }
+
+    /* ── HERO ── */
+    .abt-hero {
+      background: linear-gradient(135deg, #003e6f 0%, #015699 55%, #0171c5 100%);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .abt-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 400px at 90% 20%, rgba(255,255,255,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 300px 300px at 10% 80%, rgba(254,37,35,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .abt-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .abt-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .abt-hero-eyebrow span {
+      width: 6px; height: 6px;
+      background: var(--jm-red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .abt-hero-h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 56px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      margin: 0 0 20px;
+    }
+    .abt-hero-h1 em {
+      font-style: normal;
+      color: #f87171;
+    }
+    .abt-hero-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.82);
+      margin: 0 0 28px;
+      max-width: 520px;
+    }
+    .abt-hero-highlight {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      padding: 16px 22px;
+      margin-bottom: 32px;
+      max-width: 480px;
+      backdrop-filter: blur(4px);
+    }
+    .abt-hero-highlight-icon {
+      font-size: 26px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .abt-hero-highlight p {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.45;
+    }
+    .abt-hero-highlight strong { color: #fca5a5; }
+    .abt-hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .abt-btn-white {
+      background: #fff;
+      color: var(--jm-blue) !important;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.28s ease;
+    }
+    .abt-btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+    .abt-btn-ghost {
+      background: transparent;
+      color: #fff !important;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      transition: all 0.28s ease;
+    }
+    .abt-btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.8); transform: translateY(-2px); }
+
+    /* Hero image card */
+    .abt-hero-img-wrap {
+      position: relative;
+    }
+    .abt-hero-img-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border-radius: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .abt-hero-img-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 28px;
+      padding: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .abt-hero-img-card img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+      display: block;
+    }
+
+    /* ── STATS STRIP ── */
+    .abt-stats-strip {
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 20px rgba(1,86,153,0.06);
+    }
+    .abt-stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .abt-stat-item {
+      padding: 32px 24px;
+      text-align: center;
+      border-right: 1px solid #e2e8f0;
+      position: relative;
+    }
+    .abt-stat-item:last-child { border-right: none; }
+    .abt-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--jm-blue);
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -1px;
+    }
+    .abt-stat-num span { color: var(--jm-red); }
+    .abt-stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--jm-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── MISSION SECTION ── */
+    .abt-mission {
+      padding: 96px 0;
+      background: #f8fafc;
+    }
+    .abt-mission-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .abt-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+    .abt-pill-red { background: rgba(254,37,35,0.08); color: var(--jm-red); border: 1px solid rgba(254,37,35,0.15); }
+    .abt-pill-blue { background: rgba(1,86,153,0.08); color: var(--jm-blue); border: 1px solid rgba(1,86,153,0.15); }
+    .abt-section-h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--jm-dark);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin: 0 0 20px;
+    }
+    .abt-section-h2 em { font-style: normal; color: var(--jm-blue); }
+    .abt-mission-quote {
+      position: relative;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid var(--jm-red);
+      border-radius: 0 20px 20px 0;
+      padding: 32px 32px 32px 36px;
+      box-shadow: 0 8px 32px rgba(1,86,153,0.06);
+    }
+    .abt-mission-quote::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 80px;
+      color: var(--jm-red);
+      opacity: 0.12;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .abt-mission-quote p {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--jm-dark);
+      line-height: 1.6;
+      margin: 0;
+      font-style: italic;
+    }
+    .abt-mission-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .abt-mission-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(1,86,153,0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .abt-mission-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(1,86,153,0.1); }
+    .abt-mc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .abt-mc-icon-blue { background: rgba(1,86,153,0.1); color: var(--jm-blue); }
+    .abt-mc-icon-red  { background: rgba(254,37,35,0.1); color: var(--jm-red); }
+    .abt-mc-title { font-size: 15px; font-weight: 800; color: var(--jm-dark); margin: 0 0 4px; }
+    .abt-mc-desc  { font-size: 13.5px; color: var(--jm-muted); margin: 0; line-height: 1.5; }
+
+    /* ── WHY CHOOSE US ── */
+    .abt-why {
+      padding: 96px 0;
+      background: #fff;
+    }
+    .abt-why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .abt-why-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .abt-why-header .abt-section-h2 { margin-bottom: 12px; }
+    .abt-why-header p { font-size: 16px; color: var(--jm-muted); max-width: 560px; margin: 0 auto; }
+    .abt-why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .abt-why-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 28px 20px 24px;
+      text-align: center;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .abt-why-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--jm-red), var(--jm-blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+      border-radius: 0 0 2px 2px;
+    }
+    .abt-why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(1,86,153,0.1); border-color: #c7d8ee; }
+    .abt-why-card:hover::after { transform: scaleX(1); }
+    .abt-why-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .abt-why-card:nth-child(odd)  .abt-why-icon { background: rgba(254,37,35,0.1); color: var(--jm-red); }
+    .abt-why-card:nth-child(even) .abt-why-icon { background: rgba(1,86,153,0.1);  color: var(--jm-blue); }
+    .abt-why-card h3 { font-size: 15px; font-weight: 800; color: var(--jm-dark); margin: 0 0 8px; line-height: 1.3; }
+    .abt-why-card p  { font-size: 13px; color: var(--jm-muted); line-height: 1.55; margin: 0; }
+
+    /* ── PRODUCTS + COMMITMENT (2-column asymmetric) ── */
+    .abt-bottom {
+      padding: 96px 0;
+      background: linear-gradient(180deg, #f8fafc 0%, #f0f7ff 100%);
+      border-top: 1px solid #e2e8f0;
+    }
+    .abt-bottom-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .abt-products-box {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: 0 8px 40px rgba(1,86,153,0.07);
+    }
+    .abt-products-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 28px;
+    }
+    .abt-tag {
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      border: 1.5px solid;
+    }
+    .abt-tag-blue { color: var(--jm-blue); background: #eff6ff; border-color: #bfdbfe; }
+    .abt-tag-red  { color: var(--jm-red);  background: #fff1f2; border-color: #fecaca; }
+    .abt-products-desc {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--jm-slate);
+      margin: 0 0 28px;
+    }
+
+    .abt-commitment-box {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .abt-commit-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 22px;
+      padding: 30px 28px;
+      box-shadow: 0 4px 20px rgba(1,86,153,0.05);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease;
+    }
+    .abt-commit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--jm-red), var(--jm-blue));
+      border-radius: 2px 0 0 2px;
+    }
+    .abt-commit-card:hover { transform: translateY(-4px); }
+    .abt-commit-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--jm-red);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .abt-commit-h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--jm-dark);
+      margin: 0 0 12px;
+    }
+    .abt-commit-p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--jm-muted);
+      margin: 0 0 18px;
+    }
+    .abt-link {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--jm-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.3px;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+    .abt-link:hover { color: var(--jm-red); gap: 10px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .abt-why-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .abt-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .abt-hero-h1    { font-size: 40px; }
+      .abt-hero-img-wrap { display: none; }
+      .abt-stats-inner  { grid-template-columns: repeat(2, 1fr); }
+      .abt-stat-item:nth-child(2) { border-right: none; }
+      .abt-stat-item:nth-child(3) { border-top: 1px solid #e2e8f0; }
+      .abt-mission-inner { grid-template-columns: 1fr; gap: 48px; }
+      .abt-why-grid  { grid-template-columns: repeat(2, 1fr); }
+      .abt-bottom-inner { grid-template-columns: 1fr; }
+      .abt-section-h2 { font-size: 30px; }
+    }
+    @media (max-width: 600px) {
+      .abt-hero { padding: 72px 0 56px; }
+      .abt-hero-inner { padding: 0 20px; }
+      .abt-hero-h1 { font-size: 32px; }
+      .abt-hero-btns { flex-direction: column; }
+      .abt-stats-inner { grid-template-columns: 1fr 1fr; padding: 0 20px; }
+      .abt-why-grid { grid-template-columns: 1fr 1fr; }
+      .abt-products-box { padding: 28px 20px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -26,149 +522,254 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li class="active"><a href="about.html">About Us</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li class="has-dropdown">
+          <a href="products.html">
+            Products
+            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?category=machines">Machines &amp; Lasers</a></li>
+            <li><a href="products.html?category=meso">Meso Solutions</a></li>
+            <li><a href="products.html?category=peels">Chemical Peels</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
       <a href="contact.html" class="header-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z" />
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z"/>
         </svg>
         Contact us
       </a>
     </div>
   </header>
 
-  <!-- PAGE INTRODUCTION -->
-  <section class="about-page-hero">
-    <div class="section-container">
-      <div class="about-hero-grid">
-        <div class="about-hero-text">
-          <span class="section-badge-orange">THE STORY BEHIND THE PORTFOLIO</span>
-          <h1 class="about-hero-heading">More Than a Product List. A Clearly Built Portfolio.</h1>
-          <div class="heading-orange-line"></div>
-          <p class="about-hero-paragraph" style="font-size:18px; line-height:1.7; font-weight:600; color:#015699;">
-            Discover how JM Medicose brings machines and professional products together within one structured range.
-          </p>
-          <div class="about-hero-buttons">
-            <a href="products.html" class="btn-primary">Explore Products</a>
-            <a href="contact.html" class="btn-secondary">Contact Us</a>
+  <!-- ─────────────────────────────────────────
+       SECTION 1 · HERO
+  ───────────────────────────────────────── -->
+  <section class="abt-hero">
+    <div class="abt-hero-inner">
+
+      <!-- Left: Text -->
+      <div>
+        <div class="abt-hero-eyebrow">
+          <span></span>Established in 2017 · Mumbai, India
+        </div>
+        <h1 class="abt-hero-h1">About<br><em>J.M Medicose</em></h1>
+        <p class="abt-hero-desc">
+          J.M Medicose is a Mumbai-based manufacturer, importer and supplier of aesthetic laser machines and medical treatment systems in India. We serve hospitals, cosmetic clinics and aesthetic centres with solutions for skin rejuvenation, hair removal, body contouring and other aesthetic treatments.
+        </p>
+        <div class="abt-hero-highlight">
+          <div class="abt-hero-highlight-icon">🏆</div>
+          <p>With <strong>200+ happy clients</strong>, we focus on advanced technology, reliable products and professional customer support.</p>
+        </div>
+        <div class="abt-hero-btns">
+          <a href="products.html" class="abt-btn-white">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            Explore Products
+          </a>
+          <a href="contact.html" class="abt-btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.44 2 2 0 0 1 3.54 1.27h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.12 6.12l1.06-.86a2 2 0 0 1 2.11-.45c.91.33 1.85.55 2.81.68a2 2 0 0 1 1.72 2.03z"/></svg>
+            Contact Us
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Image Card -->
+      <div class="abt-hero-img-wrap">
+        <div class="abt-hero-img-card">
+          <img src="assests/products/hifu-12d-1.png" alt="JM Medicose Aesthetic Equipment">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       SECTION 2 · STATS STRIP
+  ───────────────────────────────────────── -->
+  <div class="abt-stats-strip">
+    <div class="abt-stats-inner">
+      <div class="abt-stat-item">
+        <div class="abt-stat-num">200<span>+</span></div>
+        <div class="abt-stat-label">Happy Clients</div>
+      </div>
+      <div class="abt-stat-item">
+        <div class="abt-stat-num">8<span>+</span></div>
+        <div class="abt-stat-label">Years of Excellence</div>
+      </div>
+      <div class="abt-stat-item">
+        <div class="abt-stat-num">3</div>
+        <div class="abt-stat-label">Product Categories</div>
+      </div>
+      <div class="abt-stat-item">
+        <div class="abt-stat-num">Pan<span>‑IN</span></div>
+        <div class="abt-stat-label">India Reach</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────
+       SECTION 3 · OUR MISSION
+  ───────────────────────────────────────── -->
+  <section class="abt-mission">
+    <div class="abt-mission-inner">
+
+      <!-- Left: Mission Statement -->
+      <div>
+        <span class="abt-pill abt-pill-red">Our Mission</span>
+        <h2 class="abt-section-h2">Dedicated to <em>Clinical &amp; Practitioner</em> Success</h2>
+        <div class="abt-mission-quote">
+          <p>"To provide modern, safe and effective aesthetic equipment that meets the changing needs of doctors, practitioners and clinics."</p>
+        </div>
+      </div>
+
+      <!-- Right: Mini Info Cards -->
+      <div class="abt-mission-visual">
+        <div class="abt-mission-card">
+          <div class="abt-mc-icon abt-mc-icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
+          <div>
+            <p class="abt-mc-title">Mumbai Headquarters</p>
+            <p class="abt-mc-desc">Based in Mumbai, serving clinics and hospitals across India.</p>
+          </div>
+        </div>
+        <div class="abt-mission-card">
+          <div class="abt-mc-icon abt-mc-icon-red">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <p class="abt-mc-title">Since 2017</p>
+            <p class="abt-mc-desc">Over eight years of growing expertise in aesthetic laser systems.</p>
+          </div>
+        </div>
+        <div class="abt-mission-card">
+          <div class="abt-mc-icon abt-mc-icon-blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p class="abt-mc-title">Hospitals · Clinics · Aesthetic Centres</p>
+            <p class="abt-mc-desc">We serve a wide range of medical and aesthetic practices nationwide.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────
+       SECTION 4 · WHY CHOOSE US
+  ───────────────────────────────────────── -->
+  <section class="abt-why">
+    <div class="abt-why-inner">
+      <div class="abt-why-header">
+        <span class="abt-pill abt-pill-blue">Why Choose Us?</span>
+        <h2 class="abt-section-h2" style="margin-top:4px;">Why Leading Clinics<br>Trust <em>J.M Medicose</em></h2>
+      </div>
+
+      <div class="abt-why-grid">
+
+        <!-- 1 -->
+        <div class="abt-why-card">
+          <div class="abt-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Experienced &amp; Dedicated Team</h3>
+          <p>Skilled specialists dedicated to serving your practice.</p>
         </div>
 
-        <div class="about-hero-visual-wrapper">
-          <div class="about-blue-curve"></div>
-          <div class="about-hero-card">
-            <img src="assests/products/hifu-12d-1.png" alt="JM Medicose Products" class="about-hero-img">
+        <!-- 2 -->
+        <div class="abt-why-card">
+          <div class="abt-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
+          <h3>Modern Laser Solutions</h3>
+          <p>Advanced laser and energy-based medical platforms.</p>
         </div>
+
+        <!-- 3 -->
+        <div class="abt-why-card">
+          <div class="abt-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Carefully Tested Products</h3>
+          <p>Rigorous testing for safety, performance &amp; consistency.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="abt-why-card">
+          <div class="abt-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Clinical &amp; Technical Support</h3>
+          <p>End-to-end guidance, installation and maintenance.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="abt-why-card">
+          <div class="abt-why-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Customer-Focused Service</h3>
+          <p>Prompt responsiveness tailored to practitioner needs.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- WHO WE ARE SECTION -->
-  <section class="section-light" style="padding: 60px 0; background: #ffffff;">
-    <div class="section-container" style="max-width: 900px;">
-      <span class="section-badge" style="font-size:12px; font-weight:800; color:#fe2523; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; display:inline-block;">WHO WE ARE</span>
-      <h2 class="section-title" style="font-family:var(--font-title); font-size:32px; color:#015699; font-weight:800; margin-bottom:16px;">Product-Focused. Professionally Organised.</h2>
-      <p style="font-size:16px; color:#334155; line-height:1.7; margin-bottom:12px;">JM Medicose operates within the medical and professional product field, bringing together equipment, skincare, Meso Solutions and Chemical Peels.</p>
-      <p style="font-size:16px; color:#334155; line-height:1.7;">The portfolio is designed to make individual products easier to identify, understand and enquire about.</p>
-    </div>
-  </section>
+  <!-- ─────────────────────────────────────────
+       SECTION 5 · PRODUCTS + COMMITMENT
+  ───────────────────────────────────────── -->
+  <section class="abt-bottom">
+    <div class="abt-bottom-inner">
 
-  <!-- HOW IT BEGAN SECTION -->
-  <section style="padding: 60px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
-    <div class="section-container" style="max-width: 900px;">
-      <span class="section-badge-orange" style="font-size:12px; font-weight:800; color:#fe2523; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; display:inline-block;">HOW IT BEGAN</span>
-      <h2 style="font-family:var(--font-title); font-size:32px; color:#015699; font-weight:800; margin-bottom:16px;">The Journey Behind JM Medicose.</h2>
-    </div>
-  </section>
-
-  <!-- WHAT WE OFFER (PRODUCT PILLARS REDESIGN) -->
-  <section class="section-light" style="padding: 80px 0; background: #ffffff;">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-badge">THE RANGE AT A GLANCE</span>
-        <h2 class="section-title">Different Product Categories. One Connected Portfolio.</h2>
-        <div class="section-separator"></div>
+      <!-- Left: Our Products (wider) -->
+      <div class="abt-products-box">
+        <span class="abt-pill abt-pill-blue">Our Range</span>
+        <h2 class="abt-section-h2" style="margin-top:4px;">Our <em>Products</em></h2>
+        <p class="abt-products-desc">
+          Our range includes aesthetic laser machines, hair-removal systems, skin-treatment equipment, chemical peels, and professional hair and skincare products.
+        </p>
+        <div class="abt-products-tags">
+          <span class="abt-tag abt-tag-blue">Aesthetic Laser Machines</span>
+          <span class="abt-tag abt-tag-blue">Hair Removal Systems</span>
+          <span class="abt-tag abt-tag-red">Chemical Peels</span>
+          <span class="abt-tag abt-tag-red">Meso Solutions</span>
+          <span class="abt-tag abt-tag-blue">Skin-Treatment Equipment</span>
+          <span class="abt-tag abt-tag-blue">Skincare Products</span>
+        </div>
+        <a href="products.html" class="abt-btn-white" style="background: var(--jm-blue); color: #fff !important; box-shadow: 0 6px 20px rgba(1,86,153,0.25);">
+          Browse Full Catalog
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <div class="product-range-grid" style="gap: 28px; margin-top: 50px;">
-        <!-- Card 1: Medical & Aesthetic Machines -->
-        <div class="range-card" style="background: #ffffff; padding: 36px 30px; border-radius: 24px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(1, 86, 153, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.35s ease; position: relative; overflow: hidden; height: auto;">
-          <div>
-            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(1, 86, 153, 0.08); display: flex; align-items: center; justify-content: center; color: #015699; margin-bottom: 24px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <span style="font-size: 11px; font-weight: 800; color: #fe2523; text-transform: uppercase; letter-spacing: 1.5px;">PILLAR 01</span>
-            <h3 style="font-size: 24px; font-weight: 800; color: #003e6f; margin: 8px 0 14px 0;">Machines &amp; Lasers</h3>
-            <p style="font-size: 15px; line-height: 1.65; color: #64748b; margin-bottom: 20px;">Medical-grade laser systems, HIFU, RF, and facial equipment with catalogue-certified specifications.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">Fractional CO₂</span>
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">Diode Lasers</span>
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">HIFU 12D</span>
-            </div>
-          </div>
-          <a href="products.html?category=machines" class="explore-link-blue" style="font-weight: 700; font-size: 14px; color: #015699; display: inline-flex; align-items: center; gap: 8px;">
-            Explore Machines
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <!-- Right: Our Commitment (narrower, stacked cards) -->
+      <div class="abt-commitment-box">
+        <div class="abt-commit-card">
+          <span class="abt-commit-label">Our Promise</span>
+          <h3 class="abt-commit-h3">Our Commitment</h3>
+          <p class="abt-commit-p">We continuously explore new technologies to provide advanced and dependable solutions for the aesthetic industry.</p>
+          <a href="contact.html" class="abt-link">
+            Connect With Us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
 
-        <!-- Card 2: Meso Solutions -->
-        <div class="range-card" style="background: #ffffff; padding: 36px 30px; border-radius: 24px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(1, 86, 153, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.35s ease; position: relative; overflow: hidden; height: auto;">
-          <div>
-            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(254, 37, 35, 0.08); display: flex; align-items: center; justify-content: center; color: #fe2523; margin-bottom: 24px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5M14 2v7.5M8.5 2h7M14 9.5a5.5 5.5 0 1 1-4 0"/></svg>
-            </div>
-            <span style="font-size: 11px; font-weight: 800; color: #fe2523; text-transform: uppercase; letter-spacing: 1.5px;">PILLAR 02</span>
-            <h3 style="font-size: 24px; font-weight: 800; color: #003e6f; margin: 8px 0 14px 0;">Meso Solutions</h3>
-            <p style="font-size: 15px; line-height: 1.65; color: #64748b; margin-bottom: 20px;">Targeted meso cocktails formulated for topical nano-roller delivery, skin repair, and hair growth protocols.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-              <span style="font-size: 12px; font-weight: 700; color: #fe2523; background: #fff1f2; padding: 4px 12px; border-radius: 20px;">Hair Re-Growth</span>
-              <span style="font-size: 12px; font-weight: 700; color: #fe2523; background: #fff1f2; padding: 4px 12px; border-radius: 20px;">Glow Meso</span>
-              <span style="font-size: 12px; font-weight: 700; color: #fe2523; background: #fff1f2; padding: 4px 12px; border-radius: 20px;">Lipo Dissolve</span>
-            </div>
-          </div>
-          <a href="products.html?category=meso" class="explore-link-blue" style="font-weight: 700; font-size: 14px; color: #015699; display: inline-flex; align-items: center; gap: 8px;">
-            Explore Meso Solutions
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-
-        <!-- Card 3: Chemical Peels -->
-        <div class="range-card" style="background: #ffffff; padding: 36px 30px; border-radius: 24px; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(1, 86, 153, 0.05); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.35s ease; position: relative; overflow: hidden; height: auto;">
-          <div>
-            <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(1, 86, 153, 0.08); display: flex; align-items: center; justify-content: center; color: #015699; margin-bottom: 24px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="3" x2="20" y2="3"/></svg>
-            </div>
-            <span style="font-size: 11px; font-weight: 800; color: #fe2523; text-transform: uppercase; letter-spacing: 1.5px;">PILLAR 03</span>
-            <h3 style="font-size: 24px; font-weight: 800; color: #003e6f; margin: 8px 0 14px 0;">Chemical Peels</h3>
-            <p style="font-size: 15px; line-height: 1.65; color: #64748b; margin-bottom: 20px;">Professional dermatological peels with catalogue-stated concentrations, directions, and protocols.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">Glycolic AHA</span>
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">TCA Peels</span>
-              <span style="font-size: 12px; font-weight: 700; color: #015699; background: #eff6ff; padding: 4px 12px; border-radius: 20px;">Salicylic Nanopeels</span>
-            </div>
-          </div>
-          <a href="products.html?category=peels" class="explore-link-blue" style="font-weight: 700; font-size: 14px; color: #015699; display: inline-flex; align-items: center; gap: 8px;">
-            Explore Chemical Peels
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <div class="abt-commit-card" style="border-left-color: var(--jm-blue);">
+          <span class="abt-commit-label" style="color: var(--jm-blue);">Technology Focus</span>
+          <h3 class="abt-commit-h3">Always Advancing</h3>
+          <p class="abt-commit-p">From fractional CO₂ lasers to picosecond platforms and professional meso formulations — we bring clinic-grade technology to Indian practitioners.</p>
+          <a href="products.html" class="abt-link">
+            Explore Products
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- DOCUMENTATION SECTION -->
-  <section style="background:#f8fafc; padding:60px 0; border-top:1px solid #e2e8f0;">
-    <div class="section-container" style="max-width:800px; text-align:center;">
-      <span class="section-badge-orange" style="font-size:12px; font-weight:800; color:#fe2523; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; display:inline-block;">PRODUCT-SPECIFIC DOCUMENTATION</span>
-      <h2 style="font-family:var(--font-title); font-size:28px; color:#015699; margin:16px 0;">Information and Documentation, Applied Where Relevant.</h2>
-      <p style="font-size:16px; line-height:1.7; color:#334155;">
-        Certification or documentation information will be displayed only for the respective product to which it applies and where supporting material is available.
-      </p>
     </div>
   </section>
 

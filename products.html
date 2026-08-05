@@ -25,7 +25,17 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li class="active"><a href="products.html">Products</a></li>
+        <li class="has-dropdown active">
+          <a href="products.html">
+            Products
+            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?category=machines">Machines &amp; Lasers</a></li>
+            <li><a href="products.html?category=meso">Meso Solutions</a></li>
+            <li><a href="products.html?category=peels">Chemical Peels</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
@@ -42,8 +52,16 @@
   <!-- PRODUCTS HERO SECTION -->
   <section class="products-hero-section">
     <div class="products-hero-container">
-      <h1 class="products-hero-title">Explore Products</h1>
-      <p class="products-hero-subtitle">Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.</p>
+      <!-- Breadcrumb -->
+      <nav class="products-breadcrumb" style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);margin-bottom:18px;">
+        <a href="index.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Home</a>
+        <span style="color:rgba(255,255,255,0.35);">›</span>
+        <a href="products.html" style="color:rgba(255,255,255,0.6);text-decoration:none;">Products</a>
+        <span id="breadcrumb-sep" style="color:rgba(255,255,255,0.35);display:none;">›</span>
+        <span id="breadcrumb-cat" style="color:#fff;display:none;"></span>
+      </nav>
+      <h1 class="products-hero-title" id="products-hero-title">Explore Products</h1>
+      <p class="products-hero-subtitle" id="products-hero-subtitle">Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.</p>
     </div>
     <div class="products-hero-bg-graphic"></div>
   </section>
@@ -51,14 +69,14 @@
   <!-- MAIN CATALOG CONTENT CONTAINER -->
   <main style="max-width: 1320px; margin: 0 auto; padding: 0 24px;">
 
-    <!-- TOP TOOLBAR: CATEGORY PILLS + GLOBAL SEARCH + COUNT -->
-    <div class="catalog-toolbar-card">
-      <!-- Category Pills -->
-      <div class="category-pills-row" id="top-category-pills" role="tablist" aria-label="Product Categories">
-        <button class="cat-pill-btn active" data-cat="all" role="tab" aria-selected="true">All Products</button>
-        <button class="cat-pill-btn" data-cat="machines" role="tab" aria-selected="false">Machines &amp; Lasers</button>
-        <button class="cat-pill-btn" data-cat="meso" role="tab" aria-selected="false">Meso Solutions</button>
-        <button class="cat-pill-btn" data-cat="peels" role="tab" aria-selected="false">Chemical Peels</button>
+    <!-- TOP TOOLBAR: GLOBAL SEARCH ONLY -->
+    <div class="catalog-toolbar-card" style="justify-content: flex-end;">
+      <!-- Hidden category pills used by script only (not rendered) -->
+      <div id="top-category-pills" style="display:none;">
+        <button class="cat-pill-btn active" data-cat="all"></button>
+        <button class="cat-pill-btn" data-cat="machines"></button>
+        <button class="cat-pill-btn" data-cat="meso"></button>
+        <button class="cat-pill-btn" data-cat="peels"></button>
       </div>
 
       <!-- Search Wrapper -->
@@ -621,55 +639,90 @@
   <script src="products-data.js"></script>
   <script src="script.js"></script>
 
-  <!-- Category Filter for Static Cards -->
+  <!-- Category Filtering Script -->
   <script>
     (function () {
-      const pills = document.querySelectorAll('.cat-pill-btn');
-      const cards = document.querySelectorAll('.prd-card');
-      const countEl = document.getElementById('catalog-count-text');
+      const pills       = document.querySelectorAll('.cat-pill-btn');
+      const cards       = document.querySelectorAll('.prd-card');
       const searchInput = document.getElementById('global-search-input');
+      const heroTitle   = document.getElementById('products-hero-title');
+      const heroSub     = document.getElementById('products-hero-subtitle');
+      const breadSep    = document.getElementById('breadcrumb-sep');
+      const breadCat    = document.getElementById('breadcrumb-cat');
 
-      function filterCards() {
-        const activePill = document.querySelector('.cat-pill-btn.active');
-        const activeCat = activePill ? activePill.getAttribute('data-cat') : 'all';
-        const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      // Category meta — labels, hero copy, breadcrumb text
+      const catMeta = {
+        all:      { label: 'All Products',     title: 'Explore Products',          subtitle: 'Discover our advanced range of medical-aesthetic solutions trusted by professionals worldwide.' },
+        machines: { label: 'Machines & Lasers', title: 'Machines & Lasers',        subtitle: 'Professional aesthetic laser systems, HIFU, EMS, and facial equipment for clinical use.' },
+        meso:     { label: 'Meso Solutions',   title: 'Meso Solutions',            subtitle: 'Targeted meso cocktails for nano-roller delivery — skin repair, hair growth, brightening and body contouring.' },
+        peels:    { label: 'Chemical Peels',   title: 'Chemical Peels',            subtitle: 'Professional-grade AHA, BHA, TCA and specialty peels with catalogue-stated concentrations and protocols.' }
+      };
 
-        let visible = 0;
-        cards.forEach(function (card) {
-          const cat = card.getAttribute('data-cat') || 'all';
-          const text = card.innerText.toLowerCase();
-          const catMatch = activeCat === 'all' || cat === activeCat;
-          const searchMatch = searchVal === '' || text.includes(searchVal);
-          if (catMatch && searchMatch) {
-            card.style.display = '';
-            visible++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
-      }
-
-      pills.forEach(function (pill) {
-        pill.addEventListener('click', function () {
-          pills.forEach(function (p) { p.classList.remove('active'); });
-          pill.classList.add('active');
-          filterCards();
-        });
-      });
-
-      // Check URL search params (e.g. ?category=meso or ?category=peels)
+      // Read ?category= from URL
       const urlParams = new URLSearchParams(window.location.search);
-      const catParam = urlParams.get('category');
-      if (catParam) {
-        const matchingPill = document.querySelector(`.cat-pill-btn[data-cat="${catParam}"]`);
-        if (matchingPill) {
-          pills.forEach(p => p.classList.remove('active'));
-          matchingPill.classList.add('active');
+      let activeCat   = urlParams.get('category') || 'all';
+      if (!catMeta[activeCat]) activeCat = 'all';
+
+      // Apply hero heading + breadcrumb on load
+      function applyHeroMeta(cat) {
+        const m = catMeta[cat] || catMeta.all;
+        if (heroTitle) heroTitle.textContent  = m.title;
+        if (heroSub)   heroSub.textContent    = m.subtitle;
+        if (breadSep && breadCat) {
+          if (cat === 'all') {
+            breadSep.style.display = 'none';
+            breadCat.style.display = 'none';
+          } else {
+            breadSep.style.display = '';
+            breadCat.style.display = '';
+            breadCat.textContent = m.label;
+          }
         }
       }
 
-      filterCards();
+      // Set active pill
+      function setActivePill(cat) {
+        pills.forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-cat') === cat);
+        });
+      }
+
+      // Filter cards
+      function filterCards(cat) {
+        const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        cards.forEach(card => {
+          const cardCat    = card.getAttribute('data-cat');
+          const text       = card.innerText.toLowerCase();
+          const catMatch   = (cat === 'all') || (cardCat === cat);
+          const textMatch  = (searchVal === '') || text.includes(searchVal);
+          card.style.display = (catMatch && textMatch) ? '' : 'none';
+        });
+      }
+
+      // Pill click
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          activeCat = pill.getAttribute('data-cat');
+          setActivePill(activeCat);
+          applyHeroMeta(activeCat);
+          filterCards(activeCat);
+          // Update URL without reload so back-button works
+          const newUrl = activeCat === 'all'
+            ? window.location.pathname
+            : window.location.pathname + '?category=' + activeCat;
+          history.replaceState(null, '', newUrl);
+        });
+      });
+
+      // Search
+      if (searchInput) {
+        searchInput.addEventListener('input', () => filterCards(activeCat));
+      }
+
+      // ── INIT ──
+      setActivePill(activeCat);
+      applyHeroMeta(activeCat);
+      filterCards(activeCat);
     })();
   </script>
   </main>
