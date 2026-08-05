@@ -912,6 +912,35 @@
         `;
       }
 
+      // Delegate submit handler for dynamically rendered product detail enquiry forms (#pd-enquiry-form)
+      document.addEventListener('submit', async function(e) {
+        if (e.target && e.target.id === 'pd-enquiry-form') {
+          e.preventDefault();
+          const form = e.target;
+          const submitBtn = form.querySelector('.pd-enquiry-submit');
+          const prevText = submitBtn ? submitBtn.textContent : '';
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending Enquiry...'; }
+
+          try {
+            const formData = new FormData(form);
+            formData.append('_subject', 'Single Product Enquiry - JM Medicose Website');
+            formData.append('_template', 'table');
+            formData.append('_captcha', 'false');
+
+            await fetch('https://formsubmit.co/ajax/jmmedicose19@gmail.com', {
+              method: 'POST',
+              body: formData
+            });
+            form.reset();
+            alert('Thank you! Your product enquiry has been sent to jmmedicose19@gmail.com. Our team will contact you shortly.');
+          } catch (err) {
+            alert('Something went wrong. Please try again or contact us directly at jmmedicose19@gmail.com.');
+          } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = prevText; }
+          }
+        }
+      });
+
     })();
   </script>
   <!-- Floating WhatsApp Button -->

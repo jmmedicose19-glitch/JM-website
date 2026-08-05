@@ -558,13 +558,17 @@
 
       try {
         const formData = new FormData(mainEnquiryForm);
-        const response = await fetch('https://api.web3forms.com/submit', {
+        formData.append('_subject', 'New Product Enquiry - JM Medicose Website');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+
+        const response = await fetch('https://formsubmit.co/ajax/jmmedicose19@gmail.com', {
           method: 'POST',
           body: formData
         });
         const result = await response.json();
 
-        if (result.success) {
+        if (response.ok || result.success || result.ok) {
           mainEnquiryForm.reset();
           if (successMsg) successMsg.style.display = 'flex';
         } else {
@@ -580,19 +584,32 @@
     });
   }
 
-  // Legacy multi-form handler (for non-main-enquiry-form instances on other pages)
+  // Legacy multi-form handler (for enquiry form instances on other pages)
   const legacyForms = document.querySelectorAll('.enquiry-form:not(#main-enquiry-form)');
   legacyForms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = form.querySelector("button[type='submit']");
       const prevText = submitBtn ? submitBtn.textContent : '';
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
-      setTimeout(() => {
+
+      try {
+        const formData = new FormData(form);
+        formData.append('_subject', 'New Product Enquiry - JM Medicose Website');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+
+        await fetch('https://formsubmit.co/ajax/jmmedicose19@gmail.com', {
+          method: 'POST',
+          body: formData
+        });
         form.reset();
+        alert('Thank you. Your enquiry has been sent to jmmedicose19@gmail.com. Our team will contact you shortly.');
+      } catch (err) {
+        alert('Something went wrong. Please try again or contact us directly at jmmedicose19@gmail.com.');
+      } finally {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = prevText; }
-        alert('Thank you. Your enquiry has been recorded. Our team will contact you shortly.');
-      }, 1000);
+      }
     });
   });
 

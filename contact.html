@@ -324,8 +324,11 @@
           <p>Choose the relevant category and product, then share your contact details and requirement.</p>
         </div>
 
-        <form class="cnt-form-grid" id="contact-page-form">
-          <!-- Hidden tracking fields & honeypot spam prevention -->
+        <form class="cnt-form-grid" id="contact-page-form" action="https://formsubmit.co/jmmedicose19@gmail.com" method="POST">
+          <!-- FormSubmit Configuration & tracking fields -->
+          <input type="hidden" name="_subject" value="New Product Enquiry - JM Medicose Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <input type="hidden" id="form-product-id" name="product_id" value="">
           <input type="hidden" id="form-exact-product-name" name="exact_product_name" value="">
           <input type="hidden" id="form-model-number" name="model_number" value="">
@@ -333,7 +336,7 @@
           <input type="hidden" id="form-utm-source" name="utm_source" value="">
           <input type="hidden" id="form-utm-medium" name="utm_medium" value="">
           <input type="hidden" id="form-utm-campaign" name="utm_campaign" value="">
-          <input type="text" name="website_url_hp" id="website_url_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+          <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off">
 
           <div class="cnt-form-group">
             <label for="form-product">Product of Interest <span style="color:#fe2523;">*</span></label>
@@ -556,21 +559,20 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
-          // Honeypot spam check
-          if (hpInput && hpInput.value !== '') {
-            console.warn('Spam submission blocked');
-            return false;
-          }
-
           // UI Loading State
           submitBtn.disabled = true;
           submitBtn.style.opacity = '0.7';
           submitBtn.innerHTML = `Submitting Inquiry...`;
-
           statusBanner.style.display = 'none';
 
-          // Simulate fast server response
-          setTimeout(function () {
+          const formData = new FormData(form);
+
+          fetch('https://formsubmit.co/ajax/jmmedicose19@gmail.com', {
+            method: 'POST',
+            body: formData
+          })
+          .then(function(res) { return res.json(); })
+          .then(function(data) {
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
             submitBtn.innerHTML = `Submit Product Enquiry`;
@@ -579,10 +581,20 @@
             statusBanner.style.background = '#dcfce7';
             statusBanner.style.color = '#15803d';
             statusBanner.style.border = '1px solid #86efac';
-            statusBanner.innerHTML = `✔ Thank you! Your product enquiry has been received. Our clinical specialist will contact you shortly.`;
-
+            statusBanner.innerHTML = `✔ Thank you! Your product enquiry has been sent to jmmedicose19@gmail.com. Our clinical specialist will contact you shortly.`;
             form.reset();
-          }, 800);
+          })
+          .catch(function(err) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+            submitBtn.innerHTML = `Submit Product Enquiry`;
+
+            statusBanner.style.display = 'block';
+            statusBanner.style.background = '#fef2f2';
+            statusBanner.style.color = '#991b1b';
+            statusBanner.style.border = '1px solid #fca5a5';
+            statusBanner.innerHTML = `Something went wrong while sending your inquiry. Please try again or email us directly at jmmedicose19@gmail.com.`;
+          });
         });
       }
     })();
