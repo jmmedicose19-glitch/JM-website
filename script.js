@@ -80,13 +80,21 @@
   const dropdownItems = document.querySelectorAll(".nav-links li.has-dropdown");
   dropdownItems.forEach(item => {
     const link = item.querySelector("> a");
+    const icon = item.querySelector(".dropdown-icon");
+    
+    function toggleMobileDropdown(e) {
+      if (window.innerWidth <= 991) {
+        e.preventDefault();
+        e.stopPropagation();
+        item.classList.toggle("mobile-open");
+      }
+    }
+
     if (link) {
-      link.addEventListener("click", (e) => {
-        if (window.innerWidth <= 991) {
-          e.preventDefault();
-          item.classList.toggle("mobile-open");
-        }
-      });
+      link.addEventListener("click", toggleMobileDropdown);
+    }
+    if (icon) {
+      icon.addEventListener("click", toggleMobileDropdown);
     }
   });
 
