@@ -76,6 +76,20 @@
     });
   }
 
+  // Mobile Accordion Toggle for Products Dropdown
+  const dropdownItems = document.querySelectorAll(".nav-links li.has-dropdown");
+  dropdownItems.forEach(item => {
+    const link = item.querySelector("> a");
+    if (link) {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth <= 991) {
+          e.preventDefault();
+          item.classList.toggle("mobile-open");
+        }
+      });
+    }
+  });
+
   // Populate Enquiry Form Product Dropdowns
   const productDropdowns = document.querySelectorAll(".product-select");
   if (productDropdowns.length > 0 && typeof productsData !== "undefined") {

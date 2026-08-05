@@ -7719,6 +7719,81 @@ a.header-btn,
     color: var(--secondary-color) !important;
   }
 
+  /* Mobile Dropdown Styling Fix */
+  .nav-links li.has-dropdown {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .nav-links li.has-dropdown > a {
+    width: 100% !important;
+    cursor: pointer !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-icon {
+    width: 16px !important;
+    height: 16px !important;
+    color: var(--secondary-color) !important;
+    transition: transform 0.25s ease !important;
+  }
+
+  .nav-links li.has-dropdown.mobile-open .dropdown-icon {
+    transform: rotate(180deg) !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: none !important;
+    background: #f8fafc !important;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 6px 0 !important;
+    margin: 4px 0 12px 0 !important;
+    width: 100% !important;
+    list-style: none !important;
+  }
+
+  .nav-links li.has-dropdown.mobile-open .dropdown-menu {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-menu::before {
+    display: none !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-menu li {
+    border-bottom: none !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-menu li a {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    padding: 10px 16px !important;
+    color: #334155 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border-left: 3px solid transparent !important;
+    transition: all 0.2s ease !important;
+  }
+
+  .nav-links li.has-dropdown .dropdown-menu li a:hover,
+  .nav-links li.has-dropdown .dropdown-menu li a.active {
+    background: rgba(254, 37, 35, 0.08) !important;
+    color: #fe2523 !important;
+    border-left-color: #fe2523 !important;
+    padding-left: 20px !important;
+  }
+
   /* Section 1: Hero Banner */
   .hero {
     min-height: auto !important;
