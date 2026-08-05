@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /scratch/
-Disallow: /assests/
 
 Sitemap: https://jmmedicose.com/sitemap.xml
