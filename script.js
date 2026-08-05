@@ -1225,75 +1225,35 @@
   // Product Spotlight Interactive Sliding Orbital Carousel
   const initProductSpotlightSlider = () => {
     const track = document.getElementById("spotlight-track");
-    let slides = document.querySelectorAll(".spotlight-slide-item");
+    const slides = document.querySelectorAll(".spotlight-slide-item");
     const prevBtn = document.getElementById("spotlight-prev");
     const nextBtn = document.getElementById("spotlight-next");
     const dots = document.querySelectorAll(".indicator-dot");
 
     if (!track || !slides.length) return;
 
-    const originalCount = slides.length;
-
-    // Clone first slide and append to the end for seamless infinite loop (1 -> 2 -> 3 -> 1...)
-    const firstClone = slides[0].cloneNode(true);
-    firstClone.classList.add("is-clone");
-    track.appendChild(firstClone);
-
+    const totalSlides = slides.length;
     let currentIndex = 0;
-    let isTransitioning = false;
     let autoPlayTimer = null;
 
-    const setTrackPosition = (index, animated = true) => {
-      if (animated) {
-        track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
-      } else {
-        track.style.transition = "none";
-      }
-      track.style.transform = `translateX(-${index * 100}%)`;
-    };
-
-    const updateDots = (realIndex) => {
+    const updateSlider = (index) => {
+      currentIndex = (index + totalSlides) % totalSlides;
+      track.style.transition = "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)";
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
       dots.forEach((dot, idx) => {
-        dot.classList.toggle("active", idx === realIndex);
+        dot.classList.toggle("active", idx === currentIndex);
       });
     };
 
     const goToNext = () => {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      currentIndex++;
-      setTrackPosition(currentIndex, true);
-      updateDots(currentIndex % originalCount);
+      updateSlider(currentIndex + 1);
     };
 
     const goToPrev = () => {
-      if (isTransitioning) return;
-      isTransitioning = true;
-      if (currentIndex === 0) {
-        // Jump to clone position instantly, then animate to last original slide
-        setTrackPosition(originalCount, false);
-        // Force reflow
-        track.offsetHeight;
-        currentIndex = originalCount - 1;
-        setTrackPosition(currentIndex, true);
-      } else {
-        currentIndex--;
-        setTrackPosition(currentIndex, true);
-      }
-      updateDots(currentIndex % originalCount);
+      updateSlider(currentIndex - 1);
     };
 
-    track.addEventListener("transitionend", () => {
-      isTransitioning = false;
-      // If reached the clone after the last slide, snap back to first slide seamlessly
-      if (currentIndex === originalCount) {
-        setTrackPosition(0, false);
-        currentIndex = 0;
-      }
-    });
-
     const startAutoPlay = () => {
-      // Check prefers-reduced-motion
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       if (autoPlayTimer) clearInterval(autoPlayTimer);
       autoPlayTimer = setInterval(() => {
@@ -1302,27 +1262,26 @@
     };
 
     if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
+      nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         goToNext();
         startAutoPlay();
       });
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
+      prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         goToPrev();
         startAutoPlay();
       });
     }
 
     dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        if (isTransitioning) return;
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
         const slideIdx = parseInt(dot.getAttribute("data-slide"), 10);
-        isTransitioning = true;
-        currentIndex = slideIdx;
-        setTrackPosition(currentIndex, true);
-        updateDots(currentIndex);
+        updateSlider(slideIdx);
         startAutoPlay();
       });
     });
