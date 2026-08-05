@@ -42,7 +42,7 @@ body {
   line-height: 1.6;
   background-color: var(--bg-white) !important;
   margin: 0 !important;
-  padding-top: 72px !important;
+  padding-top: 110px !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
   padding-bottom: 0 !important;
@@ -87,9 +87,11 @@ canvas,
   pointer-events: none !important;
 }
 
-/* Allow interactive links wrapping images to function normally */
+/* Allow interactive links wrapping images and svgs to function normally */
 a img,
-button img {
+button img,
+a svg,
+button svg {
   pointer-events: auto !important;
 }
 
@@ -224,7 +226,7 @@ header.nav-hidden {
   background-size: cover !important;
   background-position: center right !important;
   background-repeat: no-repeat !important;
-  padding-top: 85px;
+  padding-top: 60px;
   padding-bottom: 85px;
   display: flex;
   align-items: center;
@@ -2440,11 +2442,48 @@ section {
   text-align: center;
 }
 
-.about-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-top: 50px;
+/* BEYOND VIALS ROW & PERFECT BOTTLE ALIGNMENT */
+.beyond-vials-row {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin: 24px 0 28px !important;
+  height: 180px !important;
+}
+
+.beyond-vial-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 1 !important;
+  height: 100% !important;
+  text-align: center !important;
+}
+
+.beyond-vial-item img {
+  max-height: 130px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15)) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.beyond-vial-item.featured-vial img {
+  max-height: 150px !important;
+}
+
+.beyond-vial-item:hover img {
+  transform: translateY(-4px) scale(1.05) !important;
+}
+
+.vial-label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #0f294a !important;
+  margin-bottom: 8px !important;
+  white-space: nowrap !important;
 }
 
 /* FOOTER - FULL VIEWPORT BLEED LOGIC (GUARANTEED NO GAPS) */
@@ -8308,5 +8347,288 @@ a.header-btn,
   .pd-enquiry-submit {
     width: 100% !important;
     text-align: center !important;
+  }
+}
+
+/* PRODUCTS IN FOCUS MOBILE HERO SHOWCASE OVERLAY & RESPONSIVE FIX */
+@media (max-width: 991px) {
+  .hero-showcase-container {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 10px 16px 20px !important;
+  }
+  .hero-display-stage {
+    order: -1 !important;
+    height: auto !important;
+  }
+  .hero-featured-stage {
+    height: 200px !important;
+    background: transparent !important;
+  }
+  .hero-featured-img {
+    max-height: 185px !important;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)) !important;
+  }
+  .hero-master-content {
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+  .hero-eyebrow-wrapper {
+    justify-content: center !important;
+  }
+  .hero-title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+  }
+  .hero-subtitle {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 18px !important;
+    color: #e2e8f0 !important;
+  }
+  .hero-buttons {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 12px 16px !important;
+  }
+  .hero-nav-footer {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  .hero-overlay {
+    background: radial-gradient(circle at center, rgba(1, 45, 92, 0.92) 0%, rgba(6, 24, 46, 0.96) 100%) !important;
+    z-index: 2 !important;
+  }
+}
+
+/* ==========================================================================
+   SECTION 8: A SIMPLER PRODUCT JOURNEY HORIZONTAL SCROLL & GLOW LINE
+   ========================================================================== */
+.journey-scroll-viewport {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 30px 10px 40px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
+
+.journey-scroll-viewport:active {
+  cursor: grabbing;
+}
+
+/* Hide scrollbar for clean visual appearance while keeping scroll capability */
+.journey-scroll-viewport::-webkit-scrollbar {
+  height: 6px;
+}
+.journey-scroll-viewport::-webkit-scrollbar-track {
+  background: rgba(1, 86, 153, 0.08);
+  border-radius: 10px;
+}
+.journey-scroll-viewport::-webkit-scrollbar-thumb {
+  background: #fe2523;
+  border-radius: 10px;
+}
+
+.journey-track-wrapper {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  min-width: 960px;
+  padding: 30px 20px 20px;
+  align-items: stretch;
+}
+
+/* Horizontal Connecting Line Track */
+.journey-line-track {
+  position: absolute;
+  top: 72px;
+  left: 60px;
+  right: 60px;
+  height: 4px;
+  background: rgba(226, 232, 240, 0.8);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.journey-line-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, #fe2523 0%, #ff6b6b 70%, #ffffff 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 16px rgba(254, 37, 35, 0.9), 0 0 30px rgba(254, 37, 35, 0.6);
+  transition: width 0.15s ease-out, left 0.15s ease-out;
+}
+
+/* Journey Step Cards */
+.journey-step-card {
+  flex: 1;
+  min-width: 290px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 36px 30px 32px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(15, 41, 74, 0.05);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-step-card:hover,
+.journey-step-card.active-step {
+  transform: translateY(-6px);
+  border-color: #fe2523;
+  box-shadow: 0 16px 36px rgba(254, 37, 35, 0.14);
+}
+
+.journey-step-card[data-step="1"]:hover,
+.journey-step-card[data-step="1"].active-step {
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px rgba(15, 41, 74, 0.05) !important;
+}
+
+.journey-step-card[data-step="1"]:hover .step-badge-node,
+.journey-step-card[data-step="1"].active-step .step-badge-node {
+  background: #015699 !important;
+  box-shadow: 0 4px 12px rgba(1, 86, 153, 0.3) !important;
+  transform: none !important;
+}
+
+.step-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.step-badge-node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #015699;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(1, 86, 153, 0.3);
+  transition: all 0.3s ease;
+  border: 3px solid #ffffff;
+}
+
+.journey-step-card.active-step .step-badge-node,
+.journey-step-card:hover .step-badge-node {
+  background: #fe2523;
+  box-shadow: 0 0 16px rgba(254, 37, 35, 0.6);
+  transform: scale(1.1);
+}
+
+.step-num {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fe2523;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.step-card-title {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f294a;
+  margin-bottom: 10px;
+}
+
+.step-card-desc {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Mobile Journey Controls */
+.journey-mobile-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.journey-nav-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #015699;
+  color: #015699;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(1, 86, 153, 0.12);
+  transition: all 0.2s ease;
+}
+
+.journey-nav-arrow:active {
+  transform: scale(0.92);
+  background: #015699;
+  color: #ffffff;
+}
+
+.journey-nav-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #cbd5e1;
+  color: #94a3b8;
+}
+
+.journey-mobile-step-indicator {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #015699;
+  min-width: 80px;
+}
+
+@media (max-width: 991px) {
+  .journey-scroll-viewport {
+    overflow-x: visible !important;
+    padding: 0 !important;
+  }
+  .journey-track-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  .journey-step-card {
+    width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 28px 20px !important;
+    border-radius: 20px !important;
+  }
+  .journey-line-track {
+    display: none !important;
   }
 }

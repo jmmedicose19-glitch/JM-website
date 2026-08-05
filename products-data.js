@@ -296,6 +296,7 @@ const productsData = [
     "categoryLabel": "Fractional Laser",
     "description": "A console-based fractional CO₂ laser system designed for catalogue-listed resurfacing and skin-texture applications.",
     "images": [
+      "assests/products/Fractional co2 laser (1).png",
       "assests/new products img/Fractional-CO2-Laser_JMHF-4.png",
       "assests/products/Fractional co2 laser (2).png",
       "assests/products/Fractional co2 laser (3).png"
@@ -394,6 +395,7 @@ const productsData = [
     "categoryLabel": "Laser Hair Removal",
     "description": "A diode laser system for catalogue-listed hair-removal applications.",
     "images": [
+      "assests/products/Diode laser JMMD-9 (1).png",
       "assests/new products img/Diode-Laser_JMMD-9.png",
       "assests/products/diode laser (2).png",
       "assests/products/diode laser (3).png"
@@ -488,6 +490,7 @@ const productsData = [
     "categoryLabel": "Picosecond Laser",
     "description": "A picosecond-laser system for catalogue-listed tattoo-removal, pigmentation-correction and skin-rejuvenation applications.",
     "images": [
+      "assests/products/Pico laser (1).png",
       "assests/new products img/350PS-TruePico-Picosecond-Laser_JMPS1.png",
       "assests/products/Pico laser (2).png",
       "assests/products/Pico laser (3).png"
@@ -843,7 +846,7 @@ const productsData = [
   },
   {
     "id": "cool-360-technology",
-    "name": "Cool 360° Technology",
+    "name": "Crayo",
     "model": "JMCO-6",
     "category": "machines",
     "categoryLabel": "Body Contouring System",
@@ -857,7 +860,7 @@ const productsData = [
       "15 inch true color touch LCD display"
     ],
     "overviewHeading": "360° Body Contouring & Cellulite Reduction Platform",
-    "overviewParagraph1": "The Cool 360° machine addresses skin rejuvenation, cellulite reduction, and muscle toning using 360° cooling and compressive microvibration with 55 silicon spheres.",
+    "overviewParagraph1": "The Crayo machine addresses skin rejuvenation, cellulite reduction, and muscle toning using 360° cooling and compressive microvibration with 55 silicon spheres.",
     "overviewParagraph2": "Equipped with 4 multi-functional handles, adjustable vacuum pressure (0-60kpa), and -10°C to 10°C temperature range.",
     "applications": [
       "Cellulite reduction",
@@ -890,7 +893,7 @@ const productsData = [
     "infoTable": [
       {
         "field": "Product Name",
-        "value": "Cool 360° Technology"
+        "value": "Crayo"
       },
       {
         "field": "Product Category",

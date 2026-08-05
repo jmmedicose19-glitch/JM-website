@@ -835,17 +835,6 @@
     // Products covering all 3 categories (Machines, Meso Solutions, Chemical Peels)
     const heroSlides = [
       {
-        id: "hifu-12d",
-        category: "MACHINES",
-        eyebrow: "FOCUSED ULTRASOUND PLATFORM",
-        title: "HIFU-12D MACHINE",
-        model: "JMHF-3",
-        subtitle: "A focused-ultrasound clinical platform engineered for precision skin tightening, wrinkle removal, and body contouring applications.",
-        image: "assests/products/Hifu (1).png",
-        detailLink: "product-detail.html?id=hifu-12d",
-        enquireLink: "contact.html?product=HIFU-12D+Machine"
-      },
-      {
         id: "hair-re-growth",
         category: "MESO SOLUTION",
         eyebrow: "SCALP & HAIR REVITALIZATION",
@@ -868,15 +857,15 @@
         enquireLink: "contact.html?product=Glycolic+Peel"
       },
       {
-        id: "hifu-12d",
+        id: "fractional-co2-v2",
         category: "MACHINES",
-        eyebrow: "FOCUSED ULTRASOUND PLATFORM",
-        title: "HIFU-12D MACHINE",
-        model: "JMHF-3",
-        subtitle: "A professional focused-ultrasound platform for skin tightening, fat reduction, and facial lifting applications.",
-        image: "assests/products/Hifu (1).png",
-        detailLink: "product-detail.html?id=hifu-12d",
-        enquireLink: "contact.html?product=HIFU-12D+Machine"
+        eyebrow: "FRACTIONAL LASER PLATFORM",
+        title: "FRACTIONAL CO₂ LASER MACHINE",
+        model: "JMCO-11",
+        subtitle: "A professional fractional CO₂ laser system engineered for skin resurfacing, scar revision, and deep collagen remodeling.",
+        image: "assests/products/Fractional co2 laser v2 (1).png",
+        detailLink: "product-detail.html?id=fractional-co2-v2",
+        enquireLink: "contact.html?product=Fractional+CO2+Laser+Machine"
       },
       {
         id: "tca-peel",
@@ -1325,5 +1314,108 @@
   };
 
   initProductSpotlightSlider();
+
+  /* ==========================================================================
+     A SIMPLER PRODUCT JOURNEY HORIZONTAL SCROLL & GLOW LINE LOGIC
+     ========================================================================== */
+  const initJourneyScroll = () => {
+    const viewport = document.getElementById('journey-scroll-viewport');
+    const glowLine = document.getElementById('journey-line-glow');
+    const stepCards = document.querySelectorAll('.journey-step-card');
+
+    if (!viewport || !glowLine) return;
+
+    const updateGlowLine = () => {
+      const scrollLeft = viewport.scrollLeft;
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      const scrollPercent = maxScroll > 0 ? Math.min(Math.max(scrollLeft / maxScroll, 0), 1) : 0;
+
+      // Update glowing line width & position proportional to scroll
+      const minGlowWidth = 25; // Base percentage width
+      const totalWidth = minGlowWidth + (scrollPercent * 70); // Up to 95% line fill
+      const leftOffset = scrollPercent * 5;
+
+      glowLine.style.width = `${totalWidth}%`;
+      glowLine.style.left = `${leftOffset}%`;
+
+      // Highlight step cards based on scroll position
+      stepCards.forEach((card, idx) => {
+        const threshold = idx / (stepCards.length - 1 || 1);
+        if (scrollPercent >= threshold && idx > 0) {
+          card.classList.add('active-step');
+        } else {
+          card.classList.remove('active-step');
+        }
+      });
+    };
+
+    // Listen to scroll events
+    viewport.addEventListener('scroll', updateGlowLine, { passive: true });
+
+    // Drag to scroll functionality
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    viewport.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - viewport.offsetLeft;
+      scrollLeft = viewport.scrollLeft;
+    });
+
+    viewport.addEventListener('mouseleave', () => { isDown = false; });
+    viewport.addEventListener('mouseup', () => { isDown = false; });
+
+    viewport.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - viewport.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      viewport.scrollLeft = scrollLeft - walk;
+    });
+
+    // Mobile Arrow Navigation Controls
+    const prevBtn = document.getElementById('journey-prev-btn');
+    const nextBtn = document.getElementById('journey-next-btn');
+    const indicator = document.getElementById('journey-mobile-indicator');
+
+    const updateMobileControls = () => {
+      if (!stepCards.length) return;
+      const cardWidth = stepCards[0].offsetWidth + 20; // card width + gap
+      const currentStepIdx = Math.round(viewport.scrollLeft / cardWidth);
+
+      if (indicator) {
+        indicator.textContent = `Step ${currentStepIdx + 1} of ${stepCards.length}`;
+      }
+      if (prevBtn) {
+        prevBtn.disabled = currentStepIdx <= 0;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = currentStepIdx >= stepCards.length - 1;
+      }
+    };
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const cardWidth = stepCards[0].offsetWidth + 20;
+        viewport.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const cardWidth = stepCards[0].offsetWidth + 20;
+        viewport.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      });
+    }
+
+    viewport.addEventListener('scroll', updateMobileControls, { passive: true });
+    updateMobileControls();
+
+    // Initial trigger
+    updateGlowLine();
+  };
+
+  initJourneyScroll();
 
 

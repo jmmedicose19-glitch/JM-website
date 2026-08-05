@@ -415,7 +415,6 @@
           <nav class="pd-sticky-nav" id="pd-sticky-nav">
             <div class="pd-sticky-nav-inner">
               <a href="#pd-overview-anchor" class="pd-nav-link active">Overview</a>
-              <a href="#pd-features" class="pd-nav-link">Features</a>
               <a href="#pd-technology" class="pd-nav-link">Technology</a>
               <a href="#pd-info-table" class="pd-nav-link">Product Information</a>
               <a href="#pd-enquiry" class="pd-nav-link">Enquire</a>
@@ -441,32 +440,10 @@
                 ` : ''}
               </div>
               <div class="pd-overview-img-box">
-                <img src="${(p.images && p.images.length > 1) ? p.images[1] : (p.images ? p.images[0] : '')}" alt="${p.name} Detail" style="width:100%;display:block;padding:24px;box-sizing:border-box;background:#f0f7ff;max-height:340px;object-fit:contain;border-radius:16px;">
+                <img src="${(p.images && p.images.length > 0) ? p.images[0] : ''}" alt="${p.name} Detail" style="width:100%;display:block;padding:24px;box-sizing:border-box;background:#f0f7ff;max-height:340px;object-fit:contain;border-radius:16px;">
               </div>
             </div>
           </section>
-
-
-          <!-- FEATURES SECTION -->
-          ${p.features ? `
-          <section id="pd-features">
-            <div class="pd-section">
-              <span class="pd-section-tag">VISIBLE CONFIGURATION</span>
-              <h2 class="pd-section-heading">Common Features</h2>
-              <div class="pd-features-grid">
-                ${p.features.map(f => `
-                  <div class="pd-feature-card">
-                    <div class="pd-feature-icon">
-                      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="3" y1="9" x2="21" y2="9" stroke-linecap="round"/></svg>
-                    </div>
-                    <div class="pd-feature-title">${f.title}</div>
-                    <p class="pd-feature-text">${f.text}</p>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </section>
-          ` : ''}
 
           <!-- TECHNOLOGY SECTION -->
           ${p.techHeading || p.techCopy ? `
