@@ -278,14 +278,14 @@
       <div class="spotlight-stage">
         
         <!-- Left Navigation Button -->
-        <button class="spotlight-nav-btn prev-btn" id="spotlight-prev" aria-label="Previous Product">
+        <button class="spotlight-nav-btn prev-btn" id="spotlight-prev" onclick="spotlightPrev(event)" aria-label="Previous Product">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
 
         <!-- Right Navigation Button -->
-        <button class="spotlight-nav-btn next-btn" id="spotlight-next" aria-label="Next Product">
+        <button class="spotlight-nav-btn next-btn" id="spotlight-next" onclick="spotlightNext(event)" aria-label="Next Product">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
@@ -1259,12 +1259,12 @@
         <!-- Navigation Footer with Progress Track & Counter -->
         <div class="hero-nav-footer">
           <div class="hero-controls">
-            <button type="button" class="hero-arrow-btn hero-prev-btn" id="hero-prev-btn" aria-label="Previous Slide">
+            <button type="button" class="hero-arrow-btn hero-prev-btn" id="hero-prev-btn" onclick="slideHeroPrev(event)" aria-label="Previous Slide">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
-            <button type="button" class="hero-arrow-btn hero-next-btn" id="hero-next-btn" aria-label="Next Slide">
+            <button type="button" class="hero-arrow-btn hero-next-btn" id="hero-next-btn" onclick="slideHeroNext(event)" aria-label="Next Slide">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>

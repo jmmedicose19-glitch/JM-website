@@ -1265,20 +1265,24 @@
       }, 6000);
     };
 
+    window.spotlightNext = (e) => {
+      if (e && typeof e.preventDefault === 'function') e.preventDefault();
+      goToNext();
+      startAutoPlay();
+    };
+
+    window.spotlightPrev = (e) => {
+      if (e && typeof e.preventDefault === 'function') e.preventDefault();
+      goToPrev();
+      startAutoPlay();
+    };
+
     if (nextBtn) {
-      nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        goToNext();
-        startAutoPlay();
-      });
+      nextBtn.addEventListener("click", window.spotlightNext);
     }
 
     if (prevBtn) {
-      prevBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        goToPrev();
-        startAutoPlay();
-      });
+      prevBtn.addEventListener("click", window.spotlightPrev);
     }
 
     dots.forEach((dot) => {
