@@ -348,8 +348,8 @@
           <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off">
 
           <div class="cnt-form-group">
-            <label for="form-product">Product of Interest <span style="color:#fe2523;">*</span></label>
-            <select id="form-product" name="product_of_interest" required>
+            <label for="form-product">Product of Interest <span style="font-size:12px; font-weight:400; color:#64748b;">(Optional)</span></label>
+            <select id="form-product" name="product_of_interest">
               <option value="">-- Select a Product / Machine --</option>
               <option value="Pulse Lift EMS Face Lift (JMHM-17)">Pulse Lift EMS Face Lift (JMHM-17)</option>
               <option value="HIFU-12D Machine (JMHF-3)">HIFU-12D Machine (JMHF-3)</option>
@@ -360,7 +360,13 @@
               <option value="PDT HydraFacial (JMPD-14)">PDT HydraFacial (JMPD-14)</option>
               <option value="O2 Hydrafacial">O2 Hydrafacial</option>
               <option value="Ems + roller">Ems + roller</option>
+              <option value="Other">Other (Specify below)</option>
             </select>
+          </div>
+
+          <div class="cnt-form-group" id="custom-product-group">
+            <label for="form-custom-product">Or Type Product / Requirement Name <span style="font-size:12px; font-weight:400; color:#64748b;">(Optional)</span></label>
+            <input type="text" id="form-custom-product" name="custom_product_name" placeholder="Type machine / product name here...">
           </div>
 
           <div class="cnt-form-group">
