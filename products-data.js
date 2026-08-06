@@ -198,7 +198,7 @@ const productsData = [
     "categoryLabel": "Fractional Laser",
     "description": "A professional fractional CO₂ laser system for resurfacing, scar, wrinkle and skin-texture applications.",
     "images": [
-      "assests/new products img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png",
+      "assests/new products img/Fractional co2 laser v2.png",
       "assests/products/Fractional co2 laser v2 (2).png",
       "assests/products/Fractional co2 laser v2 (3).png"
     ],
@@ -296,8 +296,8 @@ const productsData = [
     "categoryLabel": "Fractional Laser",
     "description": "A console-based fractional CO₂ laser system designed for catalogue-listed resurfacing and skin-texture applications.",
     "images": [
+      "assests/new products img/Fractional co2 laser.png",
       "assests/products/Fractional co2 laser (1).png",
-      "assests/new products img/Fractional-CO2-Laser_JMHF-4.png",
       "assests/products/Fractional co2 laser (2).png",
       "assests/products/Fractional co2 laser (3).png"
     ],
@@ -395,8 +395,8 @@ const productsData = [
     "categoryLabel": "Laser Hair Removal",
     "description": "A diode laser system for catalogue-listed hair-removal applications.",
     "images": [
+      "assests/new products img/Diode laser.png",
       "assests/products/Diode laser JMMD-9 (1).png",
-      "assests/new products img/Diode-Laser_JMMD-9.png",
       "assests/products/diode laser (2).png",
       "assests/products/diode laser (3).png"
     ],
@@ -490,10 +490,7 @@ const productsData = [
     "categoryLabel": "Picosecond Laser",
     "description": "A picosecond-laser system for catalogue-listed tattoo-removal, pigmentation-correction and skin-rejuvenation applications.",
     "images": [
-      "assests/products/Pico laser (1).png",
-      "assests/new products img/350PS-TruePico-Picosecond-Laser_JMPS1.png",
-      "assests/products/Pico laser (2).png",
-      "assests/products/Pico laser (3).png"
+      "assests/new products img/350PS-TruePico-Picosecond-Laser_JMPS1.png"
     ],
     "highlights": [
       "Picosecond pulse technology",
@@ -1720,7 +1717,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/Glycolic 25% Pure Peel_nobg.png"
+      "assests/products/Glycolic 25percent Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Glycolic acid is a water-soluble alpha hydroxy acid, or AHA, made from sugar cane. It is one of the most widely used AHAs in skincare products. AHAs are natural acids that come from plants and consist of small molecules that are easily absorbed by the skin.",
@@ -1745,7 +1742,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 3–5 minutes. Remove the nanopeel by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/TCA 25% Pure Peel_nobg.png"
+      "assests/products/TCA 25percent Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "TCA peels are medium-depth peels that treat fine surface wrinkles, superficial blemishes and pigment problems using trichloroacetic acid.",
@@ -1791,7 +1788,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes or until a white mask appears. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/Salisalic 25% Pure Peel_nobg.png"
+      "assests/products/Salisalic 25percent Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Salicylic Nanopeel is specially formulated for teenagers with mild-to-severe acne. It is also described as effective for skin rejuvenation. It clears the face in a few treatments and leaves the skin clearer, brighter and more youthful. It is described as suitable for all skin types.",
@@ -1832,7 +1829,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 5–10 minutes. Remove it by applying neutralising lotion. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/Salisalic 20% Mandelac 10% Cocktail Peel_nobg.png"
+      "assests/products/Salisalic 20percent Mandelac 10percent Cocktail Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Salisalic Mandelac Nanopeel is formulated for teenagers with mild-to-severe acne, photo-aged skin, skin spots, greasy skin and skin sensitivity to other AHAs. It is described as effective for hydration, moisturising, glow and skin rejuvenation. It clears the face in a few treatments.",
@@ -1860,7 +1857,7 @@ const productsData = [
     ],
     "directions": "Wash and degrease the skin using Activator Pre-Treatment Gel. Apply protective cream to sensitive areas, including around the eyes, lips and nose. Apply the nanopeel and leave it for 2–8 minutes. Apply Retinol cream over the nanopeel to seal the treatment area. Leave it for 6–8 hours. If irritation occurs, rinse immediately with plenty of cold water.",
     "images": [
-      "assests/products/Phenol 5% Mild Pure Peel_nobg.png"
+      "assests/products/Phenol 5percent Mild Pure Peel_nobg.png"
     ],
     "overviewHeading": "About This Chemical Peel",
     "overviewParagraph1": "Phenol Peel is known as a deep peel that usually permeates deeper into the skin to cause substantial skin exfoliation. The PDF lists it for acne scarring, skin discolouration, wrinkling and sun damage.",
@@ -1925,6 +1922,145 @@ const productsData = [
       "jessner-peel",
       "phenol-5-percent-peel",
       "glycolic-peel"
+    ]
+  },
+  {
+    "id": "o2-hydrafacial",
+    "name": "O2 Hydrafacial",
+    "category": "machines",
+    "categoryLabel": "Facial Equipment",
+    "description": "An advanced multi-functional oxygen hydration and facial conditioning workstation for deep skin rejuvenation.",
+    "images": [
+      "assests/new products img/O2 Hydrafacial.png"
+    ],
+    "highlights": [
+      "Oxygen facial infusion",
+      "Deep hydro-cleansing probe",
+      "Multi-applicator facial station"
+    ],
+    "overviewHeading": "O2 Hydrafacial Workstation",
+    "overviewParagraph1": "The O2 Hydrafacial is a clinical facial treatment platform designed for deep pore cleansing, oxygenation, and skin hydration.",
+    "overviewParagraph2": "Equipped with multiple specialized facial probes and an ergonomic main console, it provides comprehensive facial therapy for tone and texture refinement.",
+    "applications": [
+      "Skin hydration",
+      "Deep cleansing",
+      "Oxygenation therapy",
+      "Skin rejuvenation"
+    ],
+    "features": [
+      {
+        "title": "Integrated Oxygen Infusion",
+        "text": "Supports localized oxygen delivery to promote cellular turnover and skin vitality."
+      },
+      {
+        "title": "Multi-Handpiece Console",
+        "text": "Houses multiple facial applicators for targeted hydro-dermabrasion and nutrient delivery."
+      },
+      {
+        "title": "Clinical Workstation Design",
+        "text": "Full-height vertical console engineered for seamless operation in clinical aesthetic procedures."
+      }
+    ],
+    "techHeading": "O2 Hydrafacial Technology",
+    "techCopy": "Combines hydro-exfoliation and oxygen infusion technology to purify, hydrate, and nourish skin layers effectively.",
+    "systemItems": [
+      "Main O2 Hydrafacial console",
+      "Hydro-cleansing handpiece",
+      "Oxygen spray applicator",
+      "Integrated control screen",
+      "Wheeled base"
+    ],
+    "infoTable": [
+      {
+        "field": "Product Name",
+        "value": "O2 Hydrafacial"
+      },
+      {
+        "field": "Product Category",
+        "value": "Facial Equipment"
+      },
+      {
+        "field": "Technology Type",
+        "value": "Hydro-dermabrasion & Oxygen Infusion"
+      },
+      {
+        "field": "System Format",
+        "value": "Console-based facial workstation"
+      }
+    ],
+    "relatedIds": [
+      "pdt-hydrafacial",
+      "ems-roller",
+      "pulse-lift-ems"
+    ]
+  },
+  {
+    "id": "ems-roller",
+    "name": "Ems + roller",
+    "category": "machines",
+    "categoryLabel": "Facial & Body Equipment",
+    "description": "An aesthetic treatment platform combining Electrical Muscle Stimulation (EMS) with mechanical roller therapy for skin firming and body contouring.",
+    "images": [
+      "assests/new products img/Ems + roller.png"
+    ],
+    "highlights": [
+      "EMS technology",
+      "Mechanical roller applicator",
+      "Integrated control console"
+    ],
+    "overviewHeading": "EMS & Mechanical Roller System",
+    "overviewParagraph1": "The Ems + roller machine is a dual-modality clinical device designed for targeted muscle stimulation, lymphatic drainage, and skin firming.",
+    "overviewParagraph2": "Combining EMS energy delivery with roller massage probes, this platform helps improve skin tone, contouring, and microcirculation.",
+    "applications": [
+      "Skin firming",
+      "Body contouring",
+      "Muscle stimulation",
+      "Lymphatic drainage"
+    ],
+    "features": [
+      {
+        "title": "Dual-Modality EMS & Roller",
+        "text": "Combines electrical muscle stimulation with targeted roller massage for comprehensive dermal and muscular treatment."
+      },
+      {
+        "title": "Ergonomic Handpieces",
+        "text": "Includes specialized roller handpieces for face and body contouring applications."
+      },
+      {
+        "title": "Touchscreen Console Interface",
+        "text": "Enables precise control of pulse frequency, intensity, and rotation speed."
+      }
+    ],
+    "techHeading": "EMS & Roller Technology",
+    "techCopy": "Integrates electrical muscle stimulation with active roller dynamics to enhance collagen production and support lymphatic circulation.",
+    "systemItems": [
+      "Main EMS + roller console",
+      "EMS roller handpieces",
+      "Integrated touch display",
+      "Wheeled chassis"
+    ],
+    "infoTable": [
+      {
+        "field": "Product Name",
+        "value": "Ems + roller"
+      },
+      {
+        "field": "Product Category",
+        "value": "Facial & Body Equipment"
+      },
+      {
+        "field": "Technology Type",
+        "value": "EMS (Electrical Muscle Stimulation) & Mechanical Roller"
+      },
+      {
+        "field": "System Format",
+        "value": "Mobile console platform"
+      }
+    ],
+    "relatedIds": [
+      "pulse-lift-ems",
+      "o2-hydrafacial",
+      "cool-360-technology"
     ]
   }
 ];

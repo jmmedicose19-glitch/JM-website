@@ -201,10 +201,10 @@
         desc: "Targeted fractional resurfacing and sub-dermal remodeling devices for acne scar correction, deep wrinkle smoothing, and overall skin refinement.",
         sub: "Scar & wrinkle remodeling",
         products: [
-          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/new products img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png" },
-          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/new products img/Fractional-CO2-Laser_JMHF-4.png" },
+          { name: "Fractional CO2 Laser Machine", id: "fractional-co2-laser", image: "assests/new products img/Fractional co2 laser v2.png" },
+          { name: "Fractional RF Matrix System", id: "fractional-rf", image: "assests/new products img/Fractional co2 laser.png" },
           { name: "Scar & Stretch Mark Repair Meso Cocktail", id: "meso-scar-stretch", image: "assests/products/ChatGPT Image Jul 29, 2026, 02_07_11 PM (5).png" },
-          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/products/Glycolic 25% Pure Peel_nobg.png" }
+          { name: "Glycolic Acid Peel Formulation", id: "glycolic-peel", image: "assests/products/Glycolic 25percent Pure Peel_nobg.png" }
         ]
       },
       "HydraFacial, Hydration & Deep Cleansing": {
@@ -786,8 +786,8 @@
         title: `Skin Rejuvenation<br>&amp; Resurfacing`,
         desc:  `Equipment listed in the catalogue for skin rejuvenation and resurfacing applications.`,
         cards: [
-          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/new%20products%20img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png",  link: "product-detail.html?id=fractional-co2-v2" },
-          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/new%20products%20img/Fractional-CO2-Laser_JMHF-4.png",     link: "product-detail.html?id=fractional-co2" },
+          { tag: "CO₂ LASER",   spec: "JMCO-11",   title: "Fractional CO₂ Laser — V2",    desc: "A fractional CO₂ laser machine listed for skin resurfacing and related catalogue-stated applications.",       img: "assests/new%20products%20img/Fractional%20co2%20laser%20v2.png",  link: "product-detail.html?id=fractional-co2-v2" },
+          { tag: "CO₂ LASER",   spec: "JMCO-10",   title: "Fractional CO₂ Laser",         desc: "A CO₂ fractional laser machine listed for resurfacing and catalogue-stated skin applications.",              img: "assests/new%20products%20img/Fractional%20co2%20laser.png",     link: "product-detail.html?id=fractional-co2" },
           { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated skin-rejuvenation applications.",                    img: "assests/new%20products%20img/350PS-TruePico-Picosecond-Laser_JMPS1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
@@ -795,7 +795,7 @@
         title: `Hair Removal`,
         desc:  `Equipment listed in the catalogue for hair removal applications.`,
         cards: [
-          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/new%20products%20img/Diode-Laser_JMMD-9.png",        link: "product-detail.html?id=diode-laser" },
+          { tag: "DIODE LASER",  spec: "JMMD-9",    title: "Diode Laser Machine",          desc: "A diode-laser system listed for hair removal and other catalogue-stated applications.",                        img: "assests/new%20products%20img/Diode%20laser.png",        link: "product-detail.html?id=diode-laser" },
           { tag: "PICO LASER",   spec: "JMPS1",     title: "350PS TruePico Laser",         desc: "A picosecond laser machine listed for catalogue-stated hair and pigment applications.",                        img: "assests/new%20products%20img/350PS-TruePico-Picosecond-Laser_JMPS1.png",         link: "product-detail.html?id=truepico-laser" }
         ]
       },
@@ -891,7 +891,7 @@
         title: "GLYCOLIC PEEL SOLUTION",
         model: "JMP-01",
         subtitle: "A water-soluble sugar cane alpha hydroxy acid peel available in 20%, 40%, and 60% concentrations for smooth skin renewal.",
-        image: "assests/products/Glycolic%2025%25%20Pure%20Peel_nobg.png",
+        image: "assests/products/Glycolic%2025percent%20Pure%20Peel_nobg.png",
         detailLink: "contact.html?product=Glycolic+Peel",
         enquireLink: "contact.html?product=Glycolic+Peel"
       },
@@ -902,7 +902,7 @@
         title: "FRACTIONAL CO₂ LASER MACHINE",
         model: "JMCO-11",
         subtitle: "A professional fractional CO₂ laser system engineered for skin resurfacing, scar revision, and deep collagen remodeling.",
-        image: "assests/new%20products%20img/Fractional-CO2-Laser-Machine-60W_JMCO-11.png",
+        image: "assests/new%20products%20img/Fractional%20co2%20laser%20v2.png",
         detailLink: "product-detail.html?id=fractional-co2-v2",
         enquireLink: "contact.html?product=Fractional+CO2+Laser+Machine"
       },
@@ -913,7 +913,7 @@
         title: "TCA PEEL SOLUTION",
         model: "JMP-02",
         subtitle: "A professional trichloroacetic acid peel for fine surface wrinkles, superficial blemishes, and targeted skin resurfacing.",
-        image: "assests/products/TCA%2025%25%20Pure%20Peel_nobg.png",
+        image: "assests/products/TCA%2025percent%20Pure%20Peel_nobg.png",
         detailLink: "contact.html?product=TCA+Peel",
         enquireLink: "contact.html?product=TCA+Peel"
       },
