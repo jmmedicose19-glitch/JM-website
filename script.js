@@ -974,10 +974,14 @@
       const nextSlide = heroSlides[realIndex];
       currentIndex = targetIndex;
 
-      // 1. Instant & Direct Content Updates
+      // 1. Smooth Fade-Scale Image Transition & Direct Content Updates
       if (featuredImgEl) {
-        featuredImgEl.src = nextSlide.image;
-        featuredImgEl.alt = nextSlide.title;
+        featuredImgEl.classList.add('changing');
+        setTimeout(() => {
+          featuredImgEl.src = nextSlide.image;
+          featuredImgEl.alt = nextSlide.title;
+          featuredImgEl.classList.remove('changing');
+        }, 150);
       }
 
       if (bgActive) {
