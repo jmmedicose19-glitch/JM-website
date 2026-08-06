@@ -79,7 +79,7 @@
   // Mobile Accordion Toggle for Products Dropdown
   const dropdownItems = document.querySelectorAll(".nav-links li.has-dropdown");
   dropdownItems.forEach(item => {
-    const link = item.querySelector("> a");
+    const link = item.querySelector(":scope > a") || item.querySelector("a");
     const icon = item.querySelector(".dropdown-icon");
     
     function toggleMobileDropdown(e) {

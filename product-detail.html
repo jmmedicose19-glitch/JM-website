@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -389,7 +389,7 @@
         return path.split('/').map(segment => {
           try {
             segment = decodeURIComponent(segment);
-          } catch(e) {}
+          } catch (e) { }
           return encodeURIComponent(segment);
         }).join('/');
       }

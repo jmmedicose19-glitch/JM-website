@@ -6591,17 +6591,17 @@ h3 span {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 10px 25px rgba(1, 86, 153, 0.15), 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  box-shadow: 0 10px 25px rgba(1, 86, 153, 0.25), 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .spotlight-nav-btn.prev-btn {
-  left: -10px;
+  left: 10px;
 }
 
 .spotlight-nav-btn.next-btn {
-  right: -10px;
+  right: 10px;
 }
 
 .spotlight-nav-btn:hover {
@@ -6620,7 +6620,6 @@ h3 span {
 .spotlight-stage {
   position: relative;
   margin-top: 40px;
-  overflow: hidden;
 }
 
 .spotlight-track-viewport {
