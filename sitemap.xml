@@ -61,5 +61,15 @@
   <url><loc>https://jmmedicose.com/product-detail.html?id=phenol-5-percent-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jmmedicose.com/product-detail.html?id=dark-circle-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://jmmedicose.com/product-detail.html?id=arginine-cocktail-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://jmmedicose.com/product-detail.html?id=retinol-yellow-peel</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <!-- Treatments -->
+  <url><loc>https://jmmedicose.com/treatment-hair-removal.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-hair-growth.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-pigmentation-tattoo-removal.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-skin-rejuvenation-resurfacing.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-skin-tightening-lifting.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-scar-wrinkle-skin-texture.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-hydrafacial-hydration-deep-cleansing.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-skin-analysis.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-fat-reduction-cellulite.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://jmmedicose.com/treatment-hemorrhoids-fistulas-sinus-pilonidalis.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
